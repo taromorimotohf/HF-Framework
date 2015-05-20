@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+//============================================================
+//    インポート
+//============================================================
+
+@import "compass";    //compass
+@import "sanitize";   //スタイルリセット
+@import "setting";    //基本設定やプロトコル
+@import "web-fonts";  //Google Webフォント
+@import "base";       //mixinやextendなど
+
+//Font Awesome
+@import "font-awesome/variables";
+@import "font-awesome/mixins";
+@import "font-awesome/path";
+@import "font-awesome/core";
+@import "font-awesome/larger";
+@import "font-awesome/fixed-width";
+@import "font-awesome/list";
+@import "font-awesome/bordered-pulled";
+@import "font-awesome/animated";
+@import "font-awesome/rotated-flipped";
+@import "font-awesome/stacked";
+@import "font-awesome/icons";
+
+//============================================================
+//    基本部分
+//============================================================
+
+body {
+    background-color: #ffffff;
+    text-align:justify;
+    text-justify:inter-ideograph;
+    text-align: left;
+    overflow-y:scroll;
+    *font-size:small;
+    *font:x-small;
+    font-weight: normal;
+    font-style: normal;
+    font-family:$font;
+    @include fz(14px);
+    line-height:1.61;
+    color: $tc;
+}
+
+a {
+    @include link-colors($lc, $lcH, $lcA, $lcV, $lcF);
+    text-decoration: none;
+    &:hover {
+        color:$lcH;
+        text-decoration: underline;
+        @include transition-property(all);
+        @include transition-duration(300ms);
+        @include transition-timing-function(linear);
+    }
+    &:avtive {
+        color:$lcA;
+    }
+    img:hover {
+        @include opacity(0.8);
+        @include transition-property(all);
+        @include transition-duration(300ms);
+        @include transition-timing-function(linear);
+    }
+}
+
+//============================================================
+//    ヘッダー部分
+//============================================================
+header {
+    @include cf;
+    width: $w-pc - 10px;
+    padding: 5px;
+    margin-bottom: $mB;
+
+    nav#gNav {
+        @include cf;
+        li {
+            float: left;
+            list-style-type: none;
+        }
+    }
+}
+
+//============================================================
+//    コンテンツ部分
+//============================================================
+#contents {
+    @include cf;
+    width: $w-pc - 10px;
+    padding: 5px;
+    margin-bottom: $mB;
+    @include fz(16px);
+}
+
+//----------------------------------------------------
+//    コンテンツ1
+//----------------------------------------------------
+
+//----------------------------------------------------
+//    コンテンツ2
+//----------------------------------------------------
+
+//----------------------------------------------------
+//    コンテンツ3
+//----------------------------------------------------
+
+//----------------------------------------------------
+//    コンテンツ4
+//----------------------------------------------------
+
+//----------------------------------------------------
+//    コンテンツ5
+//----------------------------------------------------
+
+//============================================================
+//    フッター部分
+//============================================================
+footer {
+    @include cf;
+    width: $w-pc - 10px;
+    padding: 10px;
+
+    .copyright {
+        text-align: center;
+        @include web-fonts("Bree Serif");
+        font-weight: bold;
+        @include fz(24px);
+    }
+}
+
+//============================================================
+//    その他部分
+//============================================================
+
+@import "wp";     //Wordpressの投稿スタイルやプラグイン用
+@import "print";  //印刷スタイル

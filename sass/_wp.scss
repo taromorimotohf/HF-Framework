@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+//===================================================================
+//    Wordpress 投稿関係スタイル
+//===================================================================
+
+//----------------------------------------------------
+//    Wp Post Style
+//----------------------------------------------------
+.alignleft {
+  display: inline;
+  float: left!important;
+  margin-right: 1.625em; }
+
+.alignright {
+  display: inline;
+  float: right!important;
+  margin-left: 1.625em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}
+
+//----------------------------------------------------
+//    カルーセル by jetpack
+//----------------------------------------------------
+.jp-carousel-buttons {
+    display: none!important
+}
+#jp-carousel-comment-form-container {
+    display: none;
+}
+#jp-carousel-comment-form {
+    display: none;
+}
+
+//----------------------------------------------------
+//    contact form 7
+//----------------------------------------------------
+.wpcf7 .wpcf7-response-output {
+  margin: 0;
+  padding: 12px;
+  font-size: fz(13);
+}
+
+.wpcf7 .wpcf7-validation-errors {
+  background: #B22222;
+  color: #fff;
+  padding: 12px;
+  @include border-radius(3px);
+  border: none;
+  text-align: center;
+}
+
+.wpcf7 .wpcf7-mail-sent-ok {
+  background: #87CEFA;
+  padding: 12px;
+  color: #fff;
+  @include border-radius(3px);
+  border: none;
+  text-align: center;
+}
+
+.wpcf7 span.wpcf7-not-valid-tip {
+  font-size: fz(12);
+  padding: 12px;
+  color: #B22222;
+}

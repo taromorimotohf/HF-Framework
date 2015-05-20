@@ -1,0 +1,24 @@
+@charset "utf-8";
+// ===================================================================
+// ブラウザ対応 (IE)
+// ===================================================================
+
+// IE9より下
+
+html.lt-ie9 {
+}
+
+// IE8より下
+
+html.lt-ie8 {
+}
+
+// IE7より下
+
+html.lt-ie7 {
+}
+
+html.ie7 img {
+	-ms-interpolation-mode: bicubic;
+	filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}
