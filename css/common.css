@@ -181,18 +181,6 @@ td, th {
 }
 
 body {
-  width: 100%;
-  *zoom: 1;
-}
-body:before, body:after {
-  content: "";
-  display: table;
-}
-body:after {
-  clear: both;
-}
-
-body {
   background-color: #ffffff;
   text-align: justify;
   text-justify: inter-ideograph;
@@ -202,9 +190,10 @@ body {
   *font: x-small;
   font-weight: normal;
   font-style: normal;
-  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: Opens San, "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 14px;
   font-size: 0.875rem;
+  @import url("//fonts.googleapis.com/css?family=Opens%20San");
   line-height: 1.61;
   color: #585858;
 }
@@ -263,8 +252,6 @@ a img:hover {
     width: 1030px;
     padding: 5px;
     margin-bottom: 20px;
-    font-size: 16px;
-    font-size: 1rem;
   }
   #contents:after {
     content: "";
@@ -275,20 +262,50 @@ a img:hover {
     content: "";
     display: table;
   }
-  #contents .btn {
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: “Arial”;
-    font-size: 12px;
-    color: #ffffff;
-    background-color: #34dec6;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: color 300ms, background 300ms;
+
+  .row .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
-  #contents .btn:hover {
-    background: #60e5d2;
+  .row .row .col-1 {
+    width: 8.33333%;
+  }
+  .row .row .col-2 {
+    width: 16.66667%;
+  }
+  .row .row .col-3 {
+    width: 25%;
+  }
+  .row .row .col-4 {
+    width: 33.33333%;
+  }
+  .row .row .col-5 {
+    width: 41.66667%;
+  }
+  .row .row .col-6 {
+    width: 50%;
+  }
+  .row .row .col-7 {
+    width: 58.33333%;
+  }
+  .row .row .col-8 {
+    width: 66.66667%;
+  }
+  .row .row .col-9 {
+    width: 75%;
+  }
+  .row .row .col-10 {
+    width: 83.33333%;
+  }
+  .row .row .col-11 {
+    width: 91.66667%;
+  }
+  .row .row .col-12 {
+    width: 100%;
+  }
+  .row .row [class*='col-'] {
+    float: left;
   }
 
   footer {
@@ -307,7 +324,6 @@ a img:hover {
   }
   footer .copyright {
     text-align: center;
-    @import url("//fonts.googleapis.com/css?family=Bree%20Serif");
     font-weight: bold;
     font-size: 24px;
     font-size: 1.5rem;

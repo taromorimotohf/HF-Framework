@@ -1,3 +1,0 @@
-html.ie7 img {
-  -ms-interpolation-mode: bicubic;
-  filter: expression(document.execCommand("BackgroundImageCache", false, true)); }

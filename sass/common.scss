@@ -4,11 +4,12 @@
 //    インポート
 //============================================================
 
-@import "reset/normalize";     //Style Reset and Normalize
-@import "setting";             //Basic Settings
-@import "addon/web-fonts";     //Google Web Fonts
-@import "components/grid";     //grid
-@import "components/mixin";     //mixin
+@import "reset/normalize";  //Style Reset and Normalize
+@import "setting";  //Basic Settings
+@import "addon/web-fonts";  //Google Web Fonts
+@import "components/grid";  //grid
+@import "components/utility.scss";  //utility
+@import "mixin";    //mixin
 
 //============================================================
 //    基本部分
@@ -26,6 +27,7 @@ body {
     font-style: normal;
     font-family:$font;
     @include fz(14px);
+    @include web-fonts("Opens San");
     line-height:1.61;
     color: $tc;
 }
@@ -76,11 +78,10 @@ header {
     width: $w-site - 10px;
     padding: 5px;
     margin-bottom: $mb3;
-    @include fz(16px);
-    .btn {
-        @include flatBtn(“Arial”, 12px, #ffffff, #34dec6, 4px, 5px 10px, 300ms);
-    }
 }
+    .row {
+        @include rowSplit(12,row);
+    }
 
 //----------------------------------------------------
 //    コンテンツ1
@@ -112,7 +113,6 @@ footer {
 
     .copyright {
         text-align: center;
-        @include web-fonts("Bree Serif");
         font-weight: bold;
         @include fz(24px);
     }

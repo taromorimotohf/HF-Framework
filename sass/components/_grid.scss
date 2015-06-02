@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+//============================================================
+//    グリッドシステム
+//============================================================
+
+//--------------------------------------
+//    分割数だけ指定（マージンなし）
+//--------------------------------------
+@mixin rowSplit($col:12, $class:'row-split') {
+    .#{$class}:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    @for $i from 1 through $col
+    {
+        $width: (100% / ($col/$i));
+        .#{$class} .col-#{$i}
+        {
+            width: $width;
+        }
+    }
+    .#{$class} [class*='col-'] {
+        float: left;
+    }
+}
+//@include rowSplit();
+
+//--------------------------------------
+//    分割数・マージンを指定する
+//--------------------------------------
+@mixin rows($col:12, $gutter: 3%, $class:'row') {
+    $grid: (100% - (($col - 1) * $gutter)) / $col;
+    @for $i from 1 through $col
+    {
+        $num: $col - $i + 1;
+        $width: ($grid * $num) + ($gutter * ($num - 1));
+        .#{$class} .col-#{$num}
+        {
+            width: $width;
+        }
+    }
+    .#{$class} [class*='col-'] {
+        margin-left: $gutter;
+        float: left;
+    }
+    .#{$class} [class*='col-']:first-child {
+        margin-left: 0;
+    }
+    .#{$class}:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+//@include rows();
+
+//--------------------------------------
+//    リストで並べる
+//--------------------------------------
+
+@mixin blocks($col, $gutter: 3%, $class:'blocks') {
+    [class*='#{$class}-'] {
+        padding-left: 0;
+        list-style: none;
+        margin-left: -$gutter;
+    }
+    [class*='#{$class}-']:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    [class*='#{$class}-'] > li {
+        height: auto;
+        float: left;
+        margin-bottom: 1em;
+        margin-left: $gutter;
+    }
+    [class*='#{$class}-'] > li li {
+        float: none;
+        margin: 0;
+    }
+
+    @for $i from 2 through $col
+    {
+        $width: (100% / $i )- $gutter;
+        .#{$class}-#{$i} > li
+        {
+            width: $width;
+        }
+    }
+}
+//@include blocks(6);
