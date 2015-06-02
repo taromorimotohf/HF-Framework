@@ -4,25 +4,11 @@
 //    インポート
 //============================================================
 
-@import "compass";    //compass
-@import "sanitize";   //スタイルリセット
-@import "setting";    //基本設定やプロトコル
-@import "web-fonts";  //Google Webフォント
-@import "base";       //mixinやextendなど
-
-//Font Awesome
-@import "font-awesome/variables";
-@import "font-awesome/mixins";
-@import "font-awesome/path";
-@import "font-awesome/core";
-@import "font-awesome/larger";
-@import "font-awesome/fixed-width";
-@import "font-awesome/list";
-@import "font-awesome/bordered-pulled";
-@import "font-awesome/animated";
-@import "font-awesome/rotated-flipped";
-@import "font-awesome/stacked";
-@import "font-awesome/icons";
+@import "reset/normalize";     //Style Reset and Normalize
+@import "setting";             //Basic Settings
+@import "addon/web-fonts";     //Google Web Fonts
+@import "components/grid";     //grid
+@import "components/mixin";     //mixin
 
 //============================================================
 //    基本部分
@@ -45,34 +31,33 @@ body {
 }
 
 a {
-    @include link-colors($lc, $lcH, $lcA, $lcV, $lcF);
+    color: $lc ;
     text-decoration: none;
     &:hover {
-        color:$lcH;
+        color:lighten($lc, 20%);
         text-decoration: underline;
-        @include transition-property(all);
-        @include transition-duration(300ms);
-        @include transition-timing-function(linear);
+        @include tr(all, 300ms, linear);
     }
-    &:avtive {
-        color:$lcA;
+    &:active, &:focus {
+        color:lighten($lc, 50%);
     }
     img:hover {
-        @include opacity(0.8);
-        @include transition-property(all);
-        @include transition-duration(300ms);
-        @include transition-timing-function(linear);
+        @include tr(all, 300ms, linear);
     }
 }
+
+//============================================================
+@media screen and (min-width: $w-tab + 1) { //pc用スタイルここから
+//============================================================
 
 //============================================================
 //    ヘッダー部分
 //============================================================
 header {
     @include cf;
-    width: $w-pc - 10px;
+    width: $w-site - 10px;
     padding: 5px;
-    margin-bottom: $mB;
+    margin-bottom: $mb3;
 
     nav#gNav {
         @include cf;
@@ -88,10 +73,13 @@ header {
 //============================================================
 #contents {
     @include cf;
-    width: $w-pc - 10px;
+    width: $w-site - 10px;
     padding: 5px;
-    margin-bottom: $mB;
+    margin-bottom: $mb3;
     @include fz(16px);
+    .btn {
+        @include flatBtn(“Arial”, 12px, #ffffff, #34dec6, 4px, 5px 10px, 300ms);
+    }
 }
 
 //----------------------------------------------------
@@ -119,7 +107,7 @@ header {
 //============================================================
 footer {
     @include cf;
-    width: $w-pc - 10px;
+    width: $w-site - 10px;
     padding: 10px;
 
     .copyright {
@@ -131,8 +119,46 @@ footer {
 }
 
 //============================================================
+} //pc用スタイルここまで
+//============================================================
+
+//============================================================
+@media only screen
+    and (min-width: $w-sp + 1)
+    and (max-width: $w-tab)
+    { //tablet用スタイルここから
+//============================================================
+
+//============================================================
+} //tablet用スタイルここまで
+//============================================================
+
+//============================================================
+@media screen and (max-width: $w-sp) { //pc用スタイルここから
+//============================================================
+
+//============================================================
+} //tablet用スタイルここまで
+//============================================================
+
+//============================================================
 //    その他部分
 //============================================================
 
-@import "wp";     //Wordpressの投稿スタイルやプラグイン用
-@import "print";  //印刷スタイル
+//@import "addon/wp";     //for Wordpress
+
+//Font Awesome
+@import "addon/font-awesome/variables";
+@import "addon/font-awesome/mixins";
+@import "addon/font-awesome/path";
+@import "addon/font-awesome/core";
+@import "addon/font-awesome/larger";
+@import "addon/font-awesome/fixed-width";
+@import "addon/font-awesome/list";
+@import "addon/font-awesome/bordered-pulled";
+@import "addon/font-awesome/animated";
+@import "addon/font-awesome/rotated-flipped";
+@import "addon/font-awesome/stacked";
+@import "addon/font-awesome/icons";
+
+@import "components/print";  //Print Style

@@ -64,7 +64,7 @@ img[class*="attachment-"] {
   background: #B22222;
   color: #fff;
   padding: 12px;
-  @include border-radius(3px);
+  border-radius: 3px;
   border: none;
   text-align: center;
 }
@@ -73,7 +73,7 @@ img[class*="attachment-"] {
   background: #87CEFA;
   padding: 12px;
   color: #fff;
-  @include border-radius(3px);
+  border-radius: 3px;
   border: none;
   text-align: center;
 }

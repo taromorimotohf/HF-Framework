@@ -1,74 +1,25 @@
 @charset "utf-8";
 
 //============================================================
-//    フォント
-//============================================================
-@font-face {
-    font-family: 'hannari';
-    src: url('../fonts/mincho/hannari_jp.eot');
-    src: url('../fonts/mincho/hannari_jp.woff') format('woff');
-}
-@font-face {
-    font-family: 'yokohama';
-    src: url('../fonts/yokohama/yokohama.eot');
-    src: url('../fonts/yokohama/yokohama.woff') format('woff');
-}
-@font-face {
-    font-family: 'notoBK';
-    src: url('../fonts/noto/noto_sans_jp_black.eot');
-    src: url('../fonts/noto/noto_sans_jp_black.woff') format('woff');
-}
-@font-face {
-    font-family: 'notoB';
-    src: url('../fonts/noto/noto_sans_jp_bold.eot');
-    src: url('../fonts/noto/noto_sans_jp_bold.woff') format('woff');
-}
-@font-face {
-    font-family: 'notoD';
-    src: url('../fonts/noto/noto_sans_jp_demiLight.eot');
-    src: url('../fonts/noto/noto_sans_jp_demiLight.woff') format('woff');
-}
-@font-face {
-    font-family: 'notoL';
-    src: url('../fonts/noto/noto_sans_jp_light.eot');
-    src: url('../fonts/noto/noto_sans_jp_light.woff') format('woff');
-}
-@font-face {
-    font-family: 'noto';
-    src: url('../fonts/noto/noto_sans_jp_regular.eot');
-    src: url('../fonts/noto/noto_sans_jp_regular.woff') format('woff');
-}
-@font-face {
-    font-family: 'notoM';
-    src: url('../fonts/noto/noto_sans_jp_medium.eot');
-    src: url('../fonts/noto/noto_sans_jp_medium.woff') format('woff');
-}
-@font-face {
-    font-family: 'notoT';
-    src: url('../fonts/noto/noto_sans_jp_thin.eot');
-    src: url('../fonts/noto/noto_sans_jp_thin.woff') format('woff');
-}
-
-//============================================================
 //    基本設定
 //============================================================
 
-@import "base";       //mixinやextendなど
+@import "components/mixin";
 
 // フォント設定
-$font: 'yokohama', "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , Meiryo , Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , Meiryo , Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
 // 基本ピクセル設定
 $px: 5px;
 
-// カラー5種
+// カラーテーマ
 $c1: #fcfff5;
 $c2: #91aa9d;
 $c3: #193441;
 $c4: #3e606f;
 $c5: #d1dbbd;
 
-// グレースケール
+// グレーテーマ
 $grey1: #f2f2f2;
 $grey2: #efefef;
 $grey3: #ccc;
@@ -76,20 +27,20 @@ $black1: #101010;
 $black2: #585858;
 
 // サイト横幅
-$w-pc : 1040px;
-$w-tab: 768px;
-$w-sp: 480px;
-$w-scrollbar: 20px;
+$w-site : 1040px;
+
+//ブレイクポイント
+$w-tab: 960px;
+$w-sp: 640px;
 
 // 標準テキストカラー
 $tc : #585858;
 
-// 標準リンクカラー設定
+// 標準リンクカラー
 $lc : #2971a7;
-$lcH : #2971a7;
-$lcA : #2971a7;
-$lcV : #2971a7;
-$lcF : #2971a7;
 
-// 標準マージンボトム
-$mB: 30px;
+// マージンボトム
+$mb1: $px;
+$mb2: $mb1 * 2;
+$mb3: $mb2 * 2;
+$mb4: $mb3 * 2;
