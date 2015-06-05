@@ -28,30 +28,49 @@
 <body>
     <div id="page">
         <header>
-            <h1 class="title"><a href="#">タイトル</a></h1>
-            <nav id="gNav">
-                <ul>
-                    <li>
-                        <a href="#">nav ul li a</a>
-                    </li>
-                    <li>
-                        <a href="#">nav ul li a</a>
-                    </li>
-                    <li>
-                        <a href="#">nav ul li a</a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- /#gNav -->
+            <hgroup>
+                <h1 class="title"><a href="#">タイトル</a></h1>
+                <nav id="gNav">
+                    <ul>
+                        <li>
+                            <a href="#">nav ul li a</a>
+                        </li>
+                        <li>
+                            <a href="#">nav ul li a</a>
+                        </li>
+                        <li>
+                            <a href="#">nav ul li a</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /#gNav -->
+            </hgroup>
         </header>
             <div id="contents">
 
-        <div class="row">
-            <div class="col-3"><p>Grid 3</p></div>
-            <div class="col-3"><p>Grid 3</p></div>
-            <div class="col-3"><p>Grid 3</p></div>
-            <div class="col-3"><p>Grid 3</p></div>
-        </div>
+                <div class="row1">
+                    <div class="col-md-1">可変5カラム1</div>
+                    <div class="col-md-1">可変5カラム2</div>
+                    <div class="col-md-1">可変5カラム3</div>
+                    <div class="col-md-1">可変5カラム4</div>
+                    <div class="col-md-1">可変5カラム5</div>
+                </div>
+
+                <div class="row2">
+                    <div class="col-md-1">可変5カラム1</div>
+                    <div class="col-md-1">可変5カラム2</div>
+                    <div class="col-md-1">可変5カラム3</div>
+                    <div class="col-md-1">可変5カラム4</div>
+                    <div class="col-md-1">可変5カラム5</div>
+                </div>
+
+                <div class="row1">
+                    <div class="col-md-1">可変5カラム1</div>
+                    <div class="col-md-1">可変5カラム2</div>
+                    <div class="col-md-1">可変5カラム3</div>
+                    <div class="col-md-1">可変5カラム4</div>
+                    <div class="col-md-1">可変5カラム5</div>
+                </div>
 
             </div>
             <!-- #contents -->
