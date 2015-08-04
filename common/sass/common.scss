@@ -1,15 +1,11 @@
 @charset "utf-8";
-
 //============================================================
-//    インポート
+//    メインCSS
 //============================================================
-
-@import "conponents/normalize";  //リセットスタイルを選ぶ
+@import "components/normalize";  //リセットスタイルを選ぶ
 @import "setting";  //基本設定
-@import "addon/web-fonts";  //Google Web Fontsを読み込み
 @import "components/mixin";  //便利なmixin
-@import "components/base";  //utility
-
+@import "components/base";  //プロトコル
 //============================================================
 @media screen and (min-width: $w-sp + 1) { //pc用スタイルここから
 //============================================================
@@ -19,13 +15,7 @@
 ---------------------------------------------*/
 header {
     width: 100%;
-    margin-bottom: $mb3;
-
-    hgroup {
-        @include cf;
-        width: $w-site;
-        margin: 0 auto;
-    }
+    margin-bottom: $px3x;
 
     nav#gNav {
         @include cf;
@@ -42,18 +32,9 @@ header {
 #contents {
     @include cf;
     width: 100%;
-    margin-bottom: $mb3;
-    margin: 0 auto $mb3 auto;
+    margin-bottom: $px3x;
+    margin: 0 auto $px3x auto;
     background: #ccc;
-}
-
-.row1 {
-    @include grid-type-float(10px,10px,200,5,5,1040);
-    div {
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        background: red;
-    }
 }
 
 /*--------------------------------------------
@@ -62,7 +43,7 @@ header {
 footer {
     @include cf;
     width: $w-site;
-    margin: 0 auto $mb3 auto;
+    margin: 0 auto $px3x auto;
 
     .copyright {
         text-align: center;
@@ -87,4 +68,4 @@ footer {
 //============================================================
 //    その他部分
 //============================================================
-@import "components/print";  //Print Style
+@import "addon/print";  //Print Style

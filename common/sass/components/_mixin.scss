@@ -38,13 +38,11 @@
 }
 //@include fz(14px);
 
-
 //--------------------------------------
 //    opacity（不透明度）
 //--------------------------------------
 @mixin op($opacity) {
     opacity: $opacity;
-    filter: alpha(opacity=($opacity * 100));
 }
 //@include op(0.5);
 
@@ -211,13 +209,6 @@
 @mixin middleL($height,$ie: 0) {
         height: $height + px;
         line-height: $height + px;
-        &:not(: target) {
-            line-height: $height + $ie + px + \9;
-        }
-        :root & {
-            line-height: $height + $ie + px + \9;
-        }
     }
 
 //@include middleL(25)
-//@include middleL(25, -1) //IE
