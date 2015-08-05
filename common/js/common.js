@@ -39,9 +39,9 @@ $(function(){
   $('.js-accordion').next('*').hide();
   $('.js-accordion').click(function() {
     if($(this).hasClass('show-accordion')){
-      $(this).removeClass('show-accordion').next('*').slideDown();
-    } else {
       $(this).addClass('show-accordion').next('*').slideUp();
+    } else {
+      $(this).removeClass('show-accordion').next('*').slideDown();
     }
   });
   //TAB
@@ -51,7 +51,6 @@ $(function(){
       hash = [];
       hash = new Array();
       hash = url.split('#');
-      console.log(hash);
 
   if(hash[1]){
     var indexId = tab.index($('#' + hash[1]));
