@@ -12,14 +12,14 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 ### 基本
 + HTMLバージョン ⇒ HTML5を利用
 + CSSレベル ⇒ CSS2.1/CSS3 (プログレッシブ・エンハンスメント)
-+ 文字コード ⇒ UTF-8[no BOM] (採用するバックエンドによってはこの限りではない)
++ 文字コード ⇒ UTF-8 (採用するバックエンドによってはこの限りではない)
 + 改行コード
   + LF(UNIX)
   + CR+LF(Windows)
 + タグ及び属性記述 ⇒ 小文字 (大文字を使用しない)
 + 属性値の囲み ⇒ ダブルクォーテーション『"』
 + インデント ⇒ 半角スペース2個
-+ PHPインクルード ⇒ 特別な理由がなければ共通パーツをインクルード可して再利用する
++ PHPインクルード ⇒ 特別な理由がなければ共通パーツをインクルード可して再利用する [よく使うインクルード](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/)
 + 対応OS
   + PC ⇒ Windows,Mac
   + SP ⇒ Android,iOS
@@ -28,6 +28,7 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
   + Chrome
   + Firefox
   + safari
++ Type属性 ⇒ stylesheetとscriptのtype属性は省略する。
 + バリデーション ⇒ [W3C HTML validator](http://validator.w3.org/nu/)なんか使って標準に沿った記述を心がける
 
 **ただし、案件によりコーディング規約を指定された場合はこの限りではない。**
@@ -41,36 +42,6 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 詳しくは下記
   + [画像](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/)
   + [ID/Class名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/)
-
-### PHPインクルード
-+ [よく使うインクルード](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/)
-
-### Type属性
-stylesheetとscriptのtype属性は省略する。
-HTML5ではデフォルトで解釈されるため必要ない。
-```html
-<!-- 非推奨 -->
-<link rel="stylesheet" href="//www.google.com/css/maia.css"
-  type="text/css">
-<!-- 推奨 -->
-<link rel="stylesheet" href="//www.google.com/css/maia.css">
-```
-```html
-<!-- 非推奨 -->
-<script src="//www.google.com/js/gweb/analytics/autotrack.js"
-  type="text/javascript"></script>
-<!-- 推奨 -->
-<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
-```
-
-###引用符
-属性値の引用符は、ダブルクオーテーション(")を使用する。
-```html
-<!-- 非推奨 -->
-<a class='maia-button maia-button-secondary'>Sign in</a>
-<!-- 推奨 -->
-<a class="maia-button maia-button-secondary">Sign in</a>
-```
 
 ###ヘッダー
 すべて記述する事は少ないが、記述順は下記の通り
