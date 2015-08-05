@@ -49,7 +49,7 @@ link要素で複数のCSSファイルを指定している場合、その中で�
 | apple-touch-icon | 180x180 |
 | favicon | 32x32 |
 
-便利なリンク:
+便利なリンク:  
 [OGP画像シミュレータ | og:image Simulator](http://ogimage.tsmallfield.com/)  
 [Debugger | og:image Simulator](https://developers.facebook.com/tools/debug/)
 
