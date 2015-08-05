@@ -53,7 +53,7 @@ $(function(){
       hash = url.split('#');
 
   if(hash[1]){
-    var indexId = tab.index($('#' + hash[1]));
+    var indexId = tab.index($('.' + hash[1]));
     tab.eq(indexId).addClass('show-tab');
     tabChild.hide().eq(indexId).show().addClass('show-tab-child');
   } else {
