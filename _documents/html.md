@@ -113,11 +113,11 @@ imageやmedia、scriptなどを指定するときに、http:,https:は省略す�
 ### 命名規則
 理解しやすく、一般的なネーミングにする。
 
-| 属性  | 命名法  | サンプル  | 備考 |
+| 属性  | 命名法  | サンプル  | 
 |---|---|---|
-| ID  | キャメルケース | pageTop, gNav | 原則IDは使用しない |
-| CLASS  | ハイフン  | contents-top, side-wrap | |
-| IMAGES  | アンダーバー  | bnr_top001.png, main_title.png | |
+| ID | キャメルケース | pageTop, gNav |
+| CLASS  | ハイフン  | contents-top, side-wrap |
+| IMAGES  | アンダーバー  | bnr_top001.png, main_title.png |
 
 またID以外では原則大文字は使用しない
 詳しくは下記命名サンプル表を参照
