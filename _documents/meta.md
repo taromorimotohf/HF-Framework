@@ -5,7 +5,7 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
 </a>
 
-At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)
+At First, learn [Coding Guide](#Coding Guide)
 
 ## Quickstart
 

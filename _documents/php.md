@@ -5,7 +5,7 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
 </a>
 
-At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)
+At First, learn [Coding Guide](#Coding Guide)
 
 ## Quickstart
 
@@ -14,20 +14,21 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 
 ## Documents
 ### Coding Guide
-* [HTML](https://github.com/hanuman6/HF-Framework/blob/master/_documents/html.md/ "Qiita")
-* [Meta](https://github.com/hanuman6/HF-Framework/blob/master/_documents/meta.md/ "Qiita")
-* [Short Name](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/ "Qiita")
-* [CSS(SASS)](https://github.com/hanuman6/HF-Framework/blob/master/_documents/css.md/ "Qiita")
-* [Image Elements](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/ "Qiita")
-* [javascript](https://github.com/hanuman6/HF-Framework/blob/master/_documents/js.md/ "Qiita")
-* [php](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/ "Qiita")
-* [Sass(SCSS) Basic Training](https://github.com/hanuman6/HF-Framework/blob/master/_documents/sass.md/ "Qiita")
+* [HTML](http://qiita.com "Qiita")
+* [Meta](http://qiita.com "Qiita")
+* [Short Name](http://qiita.com "Qiita")
+* [CSS(SASS)](http://qiita.com "Qiita")
+* [Image Elements](http://qiita.com "Qiita")
+* [javascript](http://qiita.com "Qiita")
+* [php](http://qiita.com "Qiita")
+* [Sass(SCSS) Basic Training](http://qiita.com "Qiita")
 
 ### Framework
-* [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/_documents/intro.md/ "Qiita")
-* [Basic Usage](https://github.com/hanuman6/HF-Framework/blob/master/_documents/usage.md/ "Qiita")
-* [Use Mixin/Protocol](https://github.com/hanuman6/HF-Framework/blob/master/_documents/mixin.md/ "Qiita")
-* [Development](https://github.com/hanuman6/HF-Framework/blob/master/_documents/dev.md/ "Qiita")
+* [Introduction](http://qiita.com "Qiita")
+* [Basic Usage](http://qiita.com "Qiita")
+* [Use Mixin/Protocol](http://qiita.com "Qiita")
+* [Mixin/Protocol](http://qiita.com "Qiita")
+* [Development](http://qiita.com "Qiita")
 
 #### Directory
 ```
@@ -63,15 +64,18 @@ HF-Framework/ ...................... Root Directory
 ```
 
 #### Other documentation
-##### Library
-- JS:   [Modernizr](http://modernizr.com/)
-- CSS:  [Semantic Grid Layout](http://gridle.org/)
 
-##### Links
-- [SASS（SCSS）とcompassとPreprosの、初心者にも優しいお付き合い](http://satohmsys.info/sass-compass-prepros/)
+- [Babel](https://babeljs.io/)
+- [EJS](http://www.embeddedjs.com/)
+- [ESLint](http://eslint.org/)
+- [FrontNote](http://frontainer.com/frontnote/)
 - [HTMLHint](http://htmlhint.com/)
 - [SASS](http://sass-lang.com/)
+- [webpack](http://webpack.github.io/)
 - [JSHint](http://jshint.com/)
+- [Mocha](http://mochajs.org/)
+- [PowerAssert](https://github.com/power-assert-js/power-assert)
+- [Sinon](http://sinonjs.org/)
 
 ### History
 * 0.3.1 - ドキュメントを整備
