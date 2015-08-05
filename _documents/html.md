@@ -117,7 +117,7 @@ imageやmedia、scriptなどを指定するときに、http:,https:は省略す�
 |---|---|---|
 | ID  | キャメルケース | pageTop, gNav | 原則IDは使用しない |
 | CLASS  | ハイフン  | contents-top, side-wrap | |
-| IMAGES  | アンダーバー  | bnr_top001.png, main_title.png | ||
+| IMAGES  | アンダーバー  | bnr_top001.png, main_title.png | |
 
 またID以外では原則大文字は使用しない
 詳しくは下記命名サンプル表を参照
@@ -125,9 +125,9 @@ imageやmedia、scriptなどを指定するときに、http:,https:は省略す�
   + [ID/Class名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/)
 
 ### パスの記述
-サイト内のリンク・画像などは原則サイトルートパスで記述します。
-Wordpressのテーマ作成の場合は、```<?php bloginfo('template_url'); ?>/```などで一括置換してください。
-OK  ```<a href="/mypage/page.html">```
+サイト内のリンク・画像などは原則サイトルートパスで記述します。  
+Wordpressのテーマ作成の場合は、```<?php bloginfo('template_url'); ?>/```などで一括置換してください。  
+OK  ```<a href="/mypage/page.html">```  
 NG  ```<a href="../mypage/page.html">```
 
 ## Links
