@@ -5,78 +5,53 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
 </a>
 
-At First, learn [Coding Guide](#Coding Guide)
+At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)
 
-## Quickstart
+## Meta
 
-  * [Download the latest release](https://github.com/hanuman6/HF-Framework/archive/master.zip): `HF-Framework`
-  * [Install prepros](https://prepros.io/): `prepros`
-
-## Documents
-### Coding Guide
-* [HTML](https://github.com/hanuman6/HF-Framework/blob/master/_documents/html.md/ "Qiita")
-* [Meta](https://github.com/hanuman6/HF-Framework/blob/master/_documents/meta.md/ "Qiita")
-* [Short Name](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/ "Qiita")
-* [CSS(SASS)](https://github.com/hanuman6/HF-Framework/blob/master/_documents/css.md/ "Qiita")
-* [Image Elements](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/ "Qiita")
-* [javascript](https://github.com/hanuman6/HF-Framework/blob/master/_documents/js.md/ "Qiita")
-* [php](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/ "Qiita")
-* [Sass(SCSS) Basic Training](https://github.com/hanuman6/HF-Framework/blob/master/_documents/sass.md/ "Qiita")
-
-### Framework
-* [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/_documents/intro.md/ "Qiita")
-* [Basic Usage](https://github.com/hanuman6/HF-Framework/blob/master/_documents/usage.md/ "Qiita")
-* [Use Mixin/Protocol](https://github.com/hanuman6/HF-Framework/blob/master/_documents/mixin.md/ "Qiita")
-* [Development](https://github.com/hanuman6/HF-Framework/blob/master/_documents/dev.md/ "Qiita")
-
-#### Directory
-```
-HF-Framework/ ...................... Root Directory
-├── common/
-│    ├── css/ ...................... Output Css Directory
-│    │    ├── common.css
-│    │    └── ie.css
-│    ├── fonts/
-│    ├── img/
-│    │    └── libs/  ............... Absolute Images(OGP,ICON,etc...)
-│    ├── inc/
-│    ├── js/
-│    │    ├── libs/  ............... jQuery and other Core Liblry
-│    │    ├── app.js ............... jQuery Plugins (compressed)
-│    │    └── common.js ............ edit Javascript
-│    └── sass/
-│         ├── addon/ ............... Addon Partials
-│         │    ├── _bxslider.scss
-│         │    ├── _print.scss
-│         │    └── _wp.scss
-│         ├── components/ .......... Useful Partials
-│         │    ├── _base.scss
-│         │    ├── _mixin.scss
-│         │    ├── _normalize.scss
-│         │    └── _reset.scss
-│         ├── _setting.scss ........ Base Setting Partial
-│         ├── common.scss .......... main Style
-│         └── ie.scss
-├─── index.php ..................... Root PHP
-├─── screenshot.php
-└─── style.css ..................... edit CSS (for Editer)
+### name属性
+#### キーワード
+たくさん指定しても意味がないので3~5程度。
+現在SEO対策として効果はない。
+参考:[SEOの基本中の基本！「titleタグ」「meta description」「h1タグ」の書き方まとめ](http://liginc.co.jp/web/seo/127545)
+```html
+<meta name="keywords" content="hoge1,hoge2,hoge3">
 ```
 
-#### Other documentation
-##### Library
-- JS:   [Modernizr](http://modernizr.com/)
-- CSS:  [Semantic Grid Layout](http://gridle.org/)
+#### サイト説明
+検索結果に表示されるので文字数は50～100文字程度。それを超えると文字切りされてしまうので注意。
 
-##### Links
-- [SASS（SCSS）とcompassとPreprosの、初心者にも優しいお付き合い](http://satohmsys.info/sass-compass-prepros/)
-- [HTMLHint](http://htmlhint.com/)
-- [SASS](http://sass-lang.com/)
-- [JSHint](http://jshint.com/)
+| 検索エンジン | 文字数 |
+|:-----|:-----|
+| Google | 全角110文字前後 |
+| Yahoo | 全角110文字前後 |
+| Googleモバイル | 全角55文字前後 |
+| Yahooモバイル |全角30文字以内 |
 
-### History
-* 0.3.1 - ドキュメントを整備
-* 0.3.0 - グループで使えるように変更
-* 0.0.1 - 個人で使ってたのを移植
+```html
+<meta name="description" content="サイトの説明文">
+```
+### http-equiv
+**デフォルトCSSの指定**
+デフォルトで使用されるスタイルの指定。
+link要素で複数のCSSファイルを指定している場合、その中で優先利用するCSSファイルを指定する事ができる。
+```html
+<meta http-equiv="default-style" content="style.css">
+```
+### OGP
+各ベンダーのガイドラインに添って記載する。
+コロコロ変わるので注意。
+2015/8/1時点でのよくあるOGP仕様は下記の通り。
+
+| 項目 | 仕様 |
+|:-----|:----- |
+| OGP image | 最低600 x 315（推奨1200 x 630 px 以上） |
+| apple-touch-icon | 180x180 |
+| favicon | 32x32 |
+
+便利なリンク:
+[OGP画像シミュレータ | og:image Simulator](http://ogimage.tsmallfield.com/)
+[Debugger | og:image Simulator](https://developers.facebook.com/tools/debug/)
 
 ### License
 

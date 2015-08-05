@@ -7,80 +7,102 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 
 At First, learn [Coding Guide](#Coding Guide)
 
-## Quickstart
+## よく使われる短縮名
 
-  * [Download the latest release](https://github.com/hanuman6/HF-Framework/archive/master.zip): `HF-Framework`
-  * [Install prepros](https://prepros.io/): `prepros`
+[あ](#A) | [か](#KA) | [さ](#SA) | [た](#TA) | [な](#NA) | [は](#HA) | [ま](#MA) | [や](#YA) | [ら](#RA) | [わ](#WA) |
 
-## Documents
-### Coding Guide
-* [HTML](http://qiita.com "Qiita")
-* [Meta](http://qiita.com "Qiita")
-* [Short Name](http://qiita.com "Qiita")
-* [CSS(SASS)](http://qiita.com "Qiita")
-* [Image Elements](http://qiita.com "Qiita")
-* [javascript](http://qiita.com "Qiita")
-* [php](http://qiita.com "Qiita")
-* [Sass(SCSS) Basic Training](http://qiita.com "Qiita")
+### <a name="A">あ
 
-### Framework
-* [Introduction](http://qiita.com "Qiita")
-* [Basic Usage](http://qiita.com "Qiita")
-* [Use Mixin/Protocol](http://qiita.com "Qiita")
-* [Mixin/Protocol](http://qiita.com "Qiita")
-* [Development](http://qiita.com "Qiita")
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+| アイコン | ico | icon |
+| アプリケーション | app | application |
+| アラート | alrt | alert |
+| 以前の、前の | prv | previous |
+| エラー | err | error |
 
-#### Directory
-```
-HF-Framework/ ...................... Root Directory
-├── common/
-│    ├── css/ ...................... Output Css Directory
-│    │    ├── common.css
-│    │    └── ie.css
-│    ├── fonts/
-│    ├── img/
-│    │    └── libs/  ............... Absolute Images(OGP,ICON,etc...)
-│    ├── inc/
-│    ├── js/
-│    │    ├── libs/  ............... jQuery and other Core Liblry
-│    │    ├── app.js ............... jQuery Plugins (compressed)
-│    │    └── common.js ............ edit Javascript
-│    └── sass/
-│         ├── addon/ ............... Addon Partials
-│         │    ├── _bxslider.scss
-│         │    ├── _print.scss
-│         │    └── _wp.scss
-│         ├── components/ .......... Useful Partials
-│         │    ├── _base.scss
-│         │    ├── _mixin.scss
-│         │    ├── _normalize.scss
-│         │    └── _reset.scss
-│         ├── _setting.scss ........ Base Setting Partial
-│         ├── common.scss .......... main Style
-│         └── ie.scss
-├─── index.php ..................... Root PHP
-├─── screenshot.php
-└─── style.css ..................... edit CSS (for Editer)
-```
 
-#### Other documentation
+### <a name="KA">か
 
-- [Babel](https://babeljs.io/)
-- [EJS](http://www.embeddedjs.com/)
-- [ESLint](http://eslint.org/)
-- [FrontNote](http://frontainer.com/frontnote/)
-- [HTMLHint](http://htmlhint.com/)
-- [SASS](http://sass-lang.com/)
-- [webpack](http://webpack.github.io/)
-- [JSHint](http://jshint.com/)
-- [Mocha](http://mochajs.org/)
-- [PowerAssert](https://github.com/power-assert-js/power-assert)
-- [Sinon](http://sinonjs.org/)
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+| カテゴリー | cat | category |
+| カラム | col | column |
+| 画像 | img | image |
+| 現在位置 | cr | current |
+| 答え | ans | answer |
 
-### History
-* 0.3.1 - ドキュメントを整備
-* 0.3.0 - グループで使えるように変更
-* 0.0.1 - 個人で使ってたのを移植
+
+### <a name="SA">さ
+
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+| 写真 | pic |　picture |
+| 最小 | min | minimum |
+| 最大 | max | maximum |
+| 下 | dn | down |
+| 説明 | exp | explain |
+
+
+### <a name="TA">た
+
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+| タイトル | ttl | title |
+| チェック | chk | check |
+| テキスト | txt | text |
+| ドキュメント | doc | document |
+
+
+### <a name="NA">な
+
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+| ナビゲーション | nav | navigation |
+
+
+### <a name="HA">は
+
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+| バナー | bnr | banner |
+| パンくず | brd | bread crumbs |
+| 番号 | num | number |
+| ボタン | btn | button |
+
+
+### <a name="MA">ま
+
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+| メッセージ | msg | message |
+| 目次 | toc | table of contents |
+
+
+### <a name="YA">や
+
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+| 容器 | wrap | wrapper |
+| 容器 | cnt | container |
+
+
+### <a name="RA">ら
+
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+
+
+### <a name="WA">わ
+
+| 日本語| 短縮名 | 英単語 |
+|:-----|:-----|:-----|
+
+
+参考:<a href="http://www.wgag.net/doc/abbr.html" target="_blank">プログラミング用語省略形- 窓を視ればアマグラマ]</a>
+参考:<a href="http://homepage1.nifty.com/~takaot/prprpr/varname.html" target="_blank">変数名の力 - いいプログラムを書こう</a>
+参考:<a href="http://www.alc.co.jp/" target="_blank">英辞郎</a>
+
 
 ### License
 

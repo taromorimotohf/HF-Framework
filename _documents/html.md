@@ -9,88 +9,49 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 
 ## HTML
 
-### 基本
-+ HTMLバージョン ⇒ HTML5を利用
-+ CSSレベル ⇒ CSS2.1/CSS3 (プログレッシブ・エンハンスメント)
-+ 文字コード ⇒ UTF-8 (採用するバックエンドによってはこの限りではない)
-+ 改行コード
-  + LF(UNIX)
-  + CR+LF(Windows)
-+ タグ及び属性記述 ⇒ 小文字 (大文字を使用しない)
-+ 属性値の囲み ⇒ ダブルクォーテーション『"』
-+ インデント ⇒ 半角スペース2個
-+ PHPインクルード ⇒ 特別な理由がなければ共通パーツをインクルード可して再利用する [よく使うインクルード](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/)
-+ 対応OS
-  + PC ⇒ Windows,Mac
-  + SP ⇒ Android,iOS
-+ 対応ブラウザ(バージョン指定がないものは最新）
-  + IE8〜
-  + Chrome
-  + Firefox
-  + safari
-+ Type属性 ⇒ stylesheetとscriptのtype属性は省略する。
-+ バリデーション ⇒ [W3C HTML validator](http://validator.w3.org/nu/)なんか使って標準に沿った記述を心がける
+### 構造
+HTML5を採用し、原則としてスタイルと構造を分離したWeb標準に沿った記述でコーディングします。
+HTML(構造)とCSS(スタイル)とScript(動き)は独立させて、3つの相互関係はなるべく最小限に。
+必要であれば下記のツールなどでバリデーション確認します。
++ [W3C HTML validator](http://validator.w3.org/nu/)
++ [Another HTML-lint ](http://www.htmllint.net/html-lint/htmllint.html)
++ [HTML5 Validator Bookmarklet](http://fotis.co/projects/html5-validator-bookmarklet/)
 
-**ただし、案件によりコーディング規約を指定された場合はこの限りではない。**
+### スタイル
+CSS2.1/CSS3を使用します。
+プログレッシブ・エンハンスメントにもとづいてブラウザ対応をします。
+詳細は[CSS](https://github.com/hanuman6/HF-Framework/blob/master/_documents/css.md)の項目を確認ください。
 
-### 命名規則
-理解しやすく、一般的なネーミングにする。
-+ ID ⇒ camelcase記法 ex: pageTop,gNav (原則IDは使用しない)
-+ CLASS ⇒ ハイフン記法 ex: contents-top,side-wrap
-+ IMAGES ⇒ アンダーバー記法 ex: bnr_top001.png,main_title.png
-
-詳しくは下記
-  + [画像](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/)
-  + [ID/Class名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/)
-
-###ヘッダー
-すべて記述する事は少ないが、記述順は下記の通り
-
-+ DOCTYPE宣言
-+ title要素
-+ charaset ⇒ 文字コード
-+ meta要素 ⇒[参考](https://github.com/hanuman6/HF-Framework/blob/master/_documents/META.md)
-  [OGP](http://l-w-i.net/d/20130316_01.txt)、[Twitter Cards](http://l-w-i.net/d/20130324_01.txt)の設定が必要な場合は上記に追加する。
-+ link要素
-+ rel属性
-  + stylecheet
-  + shortcut icon(apple-touch-icon)
-  + canonical //URL正規タグ http://web-tan.forum.impressrd.jp/e/2009/03/05/5112
-+ script要素
-  html5タグを利用するために内蔵の```ie.js``` を利用するか、html5shivの[cdn](https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js)を利用する
-+ style要素
+### 文字コード
+エンコードはUTF-8(no BOM)を基本的には使用します。
+ただし採用するバックエンドによってはこの限りではない
 
 ### タイトル要素
 指定がない場合は下記の内容で表示
 
-+ トップページ ⇒ 『サイト説明文 - サイト名』 または 『サイト名』
-+ カテゴリートップ ⇒ 『カテゴリー名 | サイト説明文 - サイト名』 または 『カテゴリー名 | サイト名』
-+ 個別ページ ⇒ 『ページ名 - カテゴリー名 | サイト説明文 - サイト名』 または 『ページ名 - カテゴリー名 | サイト名』
++ トップページ ⇒ 『サイト名』
++ カテゴリートップ ⇒ 『カテゴリー名 | サイト名』
++ 個別ページ ⇒ 『ページ名 - カテゴリー名 | サイト名』
 + 文字数が60文字を超える場合は『ページ名(カテゴリー名) | サイト名』
 
-### パスの記述
-サイト内のリンク・画像などは原則サイトルートパスで記述します。
-Wordpressのテーマ作成の場合は、```<?php bloginfo('template_url'); ?>/```などで一括置換してください。
-OK  ```<a href="/mypage/page.html">```
-NG  ```<a href="../mypage/page.html">```
+### meta要素
+詳細は[CSS](https://github.com/hanuman6/HF-Framework/blob/master/_documents/meta.md)の項目を確認ください。
+rel属性、link要素、OGPについても上記項目で説明しています。
 
-CDNなどで絶対パスで書く場合は、http:,https:は省略する。
-```html
-<!-- 非推奨 -->
-<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
-<!-- 推奨 -->
-<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
-```
-```css
-/* 非推奨 */
-.example {
-  background: url(http://www.google.com/images/example);
-}
-/* 推奨 */
-.example {
-  background: url(//www.google.com/images/example);
-}
-```
+### Type属性
+stylesheetとscriptのtype属性は省略する。
+
+### script要素
+ヘッダではhtml5タグを利用するためにフレームワークの```ie.js``` を利用する、
+もしくはhtml5shivの[cdn](https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js)を必ず利用する。
+詳細は[javascript](https://github.com/hanuman6/HF-Framework/blob/master/_documents/js.md)の項目を確認ください。
+
+### 改行コード
+  + LF(UNIX)
+  + CR+LF(Windows)
+
+## 属性値の囲み
+ダブルクォーテーション『"』を使用します。
 
 ### 改行・インデント・コメント
 改行とインデントを使って構造を判断しやすいように記述します。
@@ -123,7 +84,55 @@ CDNなどで絶対パスで書く場合は、http:,https:は省略する。
 > ⇒  使用:2スペース
 > ⇒  タブサイズ2,『スペースとして挿入』チェック
 
-> sublimeやbracketsはググってください
+sublimeやbracketsはググってください
+
+### PHPインクルード
+環境が対応しているのであれば、できるだけ共通パーツをインクルード可して再利用する
+[よく使うインクルードについて](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/)
+
+### 対応OS
++ PC ⇒ Windows,Mac
++ SP ⇒ Android,iOS
+
+### 対応ブラウザ(バージョン指定がないものは最新）
++ IE8〜
++ Chrome
++ Firefox
++ safari
+
+### 外部ファイル参照
+imageやmedia、scriptなどを指定するときに、http:,https:は省略する。
+```html
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
+```css
+.example {
+  background: url(//www.google.com/images/example);
+}
+```
+### 命名規則
+理解しやすく、一般的なネーミングにする。
+
+| 属性  | 命名法  | サンプル  | 備考 |
+|---|---|---|
+| ID  | キャメルケース | pageTop, gNav | 原則IDは使用しない |
+| CLASS  | ハイフン  | contents-top, side-wrap | |
+| IMAGES  | アンダーバー  | bnr_top001.png, main_title.png | ||
+
+またID以外では原則大文字は使用しない
+詳しくは下記命名サンプル表を参照
+  + [画像](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/)
+  + [ID/Class名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/)
+
+### パスの記述
+サイト内のリンク・画像などは原則サイトルートパスで記述します。
+Wordpressのテーマ作成の場合は、```<?php bloginfo('template_url'); ?>/```などで一括置換してください。
+OK  ```<a href="/mypage/page.html">```
+NG  ```<a href="../mypage/page.html">```
+
+## Links
+- [HTML/CSSを爆速コーディング Emmet入門](http://www.adobe.com/jp/jos/pinchin/article/learning-Emmet/why-emmet.html)
+- [Sublime Text入門](http://www.buildinsider.net/small/sublimetext)
 
 ### License
 
