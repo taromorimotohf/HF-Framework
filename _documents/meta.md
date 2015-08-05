@@ -11,8 +11,8 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 
 ### name属性
 #### キーワード
-たくさん指定しても意味がないので3~5程度。
-現在SEO対策として効果はない。
+たくさん指定しても意味がないので3~5程度。  
+現在SEO対策として効果はない。  
 参考:[SEOの基本中の基本！「titleタグ」「meta description」「h1タグ」の書き方まとめ](http://liginc.co.jp/web/seo/127545)
 ```html
 <meta name="keywords" content="hoge1,hoge2,hoge3">
@@ -33,14 +33,14 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 ```
 ### http-equiv
 **デフォルトCSSの指定**
-デフォルトで使用されるスタイルの指定。
-link要素で複数のCSSファイルを指定している場合、その中で優先利用するCSSファイルを指定する事ができる。
+デフォルトで使用されるスタイルの指定。  
+link要素で複数のCSSファイルを指定している場合、その中で優先利用するCSSファイルを指定する事ができる。  
 ```html
 <meta http-equiv="default-style" content="style.css">
 ```
 ### OGP
-各ベンダーのガイドラインに添って記載する。
-コロコロ変わるので注意。
+各ベンダーのガイドラインに添って記載する。  
+コロコロ変わるので注意。  
 2015/8/1時点でのよくあるOGP仕様は下記の通り。
 
 | 項目 | 仕様 |
