@@ -8,22 +8,12 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 At First, learn [Coding Guide](#Coding Guide)
 
 ## CSS
-+ [基本](#BASIC)
-+ [命名規則](#NAMING)
-+ [目次と見出し](#HEADING)
-+ [インデントについて](#INDENT)
-+ [共通](#COMMON)
-+ [オプション](#OPTION)
-  + 汎用クラスの使用について
-  + z-indexを多用した時
 
-
-
-<a name="BASIC"> ### 基本
+### 基本
 1. リセット
   + セレクタのリセットは慎重に行う。アスタリスク(*)で全セレクタリセットはしない。フレームワークではresetかnormalizeを選択する。
 1. インデント
-  + インデント ⇒ 半角スペース2個。[インデントについて](#INDENT)
+  + インデント ⇒ 半角スペース2個。
 1. ID/CLASS
   + IDは極力使わない（jQueryのアンカーとして利用したいため）。単語をつなげる場合はキャメルケースを用いる
   + CLASS名は小文字。単語をつなげる場合はハイフンを用いる
@@ -43,7 +33,7 @@ At First, learn [Coding Guide](#Coding Guide)
   + できる限り1ファイルに記述をまとめるようにする。ただし、リセット用のスタイルは別ファイルでもOK
 
 
-<a name="NAMING">### 命名規則
+### 命名規則
 + BEMを基本とした命名規則を使用します。  
 + Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）を利用しすべてハイフン連結で命名していきます。
 + ただし、下層要素で省略できるクラス名は省略する。
@@ -84,13 +74,13 @@ At First, learn [Coding Guide](#Coding Guide)
     + NG ⇒ ```.red``` (文字色が赤いため) 色が変更になった場合、整合性がとれなくなる
     + OK ⇒ ```.profile-box``` (プロフィールに使用するボックスの意) ボックスサイズが変更されても、プロフィールに関わる要素である事は変わらない
     + OK ⇒ ```.state-error```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
-    + OK ⇒ ```.mb10```  (margin-bottom: 10px;) 場合によって使用可。 ただし、規則性がなければならない。[『プロトコル』参照](#OPTION)
+    + OK ⇒ ```.mb10```  (margin-bottom: 10px;) 場合によって使用可。 ただし、規則性がなければならない。『プロトコル』参照
 + jQueryなどjs用のidまたはclassにはプレフィックス（接頭辞）```js_``` を付与する
 
 ⇒ [よく使われる短縮名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md)
 
 
-<a name="HEADING">### 見出し
+### 見出し
 適時見出しをつける
 ```css
 /*背景をメインカラーに*/
@@ -100,13 +90,13 @@ At First, learn [Coding Guide](#Coding Guide)
 ```
 ###SCSS
 下記のような見出しはCSSにコンパイル後、削除されるので、残したい場合は使用を控える
-```css
+```scss
 //============================================================
 //    基本部分
 //============================================================
 ```
 
-<a name="INDENT">インデントについて
+インデントについて
 ----------------
 インデントは半角スペースを使用します。
 下記□は半角スペースを表します。
@@ -124,7 +114,7 @@ At First, learn [Coding Guide](#Coding Guide)
 > ⇒  使用:2スペース
 > ⇒  タブサイズ2,『スペースとして挿入』チェック
 
-<a name="OPTION">### プロトコル
+### プロトコル
 ----------------
 必要があれば使用します（任意）  
 
@@ -336,7 +326,7 @@ At First, learn [Coding Guide](#Coding Guide)
 
 ```
 
-####汎用クラス命名規則
+#### 汎用クラス命名規則
 命名規則はEmmet/Zen Codingの短縮に準じます。　
 
 
