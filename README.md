@@ -17,11 +17,11 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 * [HTML](https://github.com/hanuman6/HF-Framework/blob/master/_documents/html.md/)
 * [Meta](https://github.com/hanuman6/HF-Framework/blob/master/_documents/meta.md/)
 * [Short Name](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/)
-* [CSS(SASS)](https://github.com/hanuman6/HF-Framework/blob/master/_documents/css.md/)
+* [CSS](https://github.com/hanuman6/HF-Framework/blob/master/_documents/css.md/)
 * [Image Elements](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/)
 * [javascript](https://github.com/hanuman6/HF-Framework/blob/master/_documents/js.md/)
 * [php](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/)
-* [Sass(SCSS) Basic Training](https://github.com/hanuman6/HF-Framework/blob/master/_documents/sass.md/)
+* [Sass(SCSS) Usage](https://github.com/hanuman6/HF-Framework/blob/master/_documents/sass.md/)
 
 ### Framework
 * [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/_documents/intro.md/)
@@ -64,14 +64,15 @@ HF-Framework/ ...................... Root Directory
 
 #### Other documentation
 ##### Library
-- JS:   [Modernizr](http://modernizr.com/)
-- CSS:  [Semantic Grid Layout](http://gridle.org/)
+- JS:   [html5shiv](https://github.com/afarkas/html5shiv)
+- JS:   [css3-mediaqueries-js](https://github.com/livingston/css3-mediaqueries-js)
+- JS:   [jquery-match-height](https://github.com/liabru/jquery-match-height)
+- JS:   [bxslider-4](https://github.com/stevenwanderski/bxslider-4)
 
 ##### Links
 - [SASS（SCSS）とcompassとPreprosの、初心者にも優しいお付き合い](http://satohmsys.info/sass-compass-prepros/)
 - [HTMLHint](http://htmlhint.com/)
 - [SASS](http://sass-lang.com/)
-- [JSHint](http://jshint.com/)
 
 ### History
 * 0.3.1 - ドキュメントを整備
