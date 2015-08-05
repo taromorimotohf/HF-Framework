@@ -75,7 +75,7 @@ At First, learn [Coding Guide](#Coding Guide)
     + OK ⇒ ```.profile-box``` (プロフィールに使用するボックスの意) ボックスサイズが変更されても、プロフィールに関わる要素である事は変わらない
     + OK ⇒ ```.state-error```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
     + OK ⇒ ```.mb10```  (margin-bottom: 10px;) 場合によって使用可。 ただし、規則性がなければならない。『プロトコル』参照
-+ jQueryなどjs用のidまたはclassにはプレフィックス（接頭辞）```js_``` を付与する
++ jQueryなどjs用のclassにはプレフィックス（接頭辞）```js_``` を付与する
 
 ⇒ [よく使われる短縮名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md)
 
