@@ -14,20 +14,20 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 
 ## Documents
 ### Coding Guide
-* [HTML](https://github.com/hanuman6/HF-Framework/blob/master/_documents/html.md/ "Qiita")
-* [Meta](https://github.com/hanuman6/HF-Framework/blob/master/_documents/meta.md/ "Qiita")
-* [Short Name](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/ "Qiita")
-* [CSS(SASS)](https://github.com/hanuman6/HF-Framework/blob/master/_documents/css.md/ "Qiita")
-* [Image Elements](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/ "Qiita")
-* [javascript](https://github.com/hanuman6/HF-Framework/blob/master/_documents/js.md/ "Qiita")
-* [php](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/ "Qiita")
-* [Sass(SCSS) Basic Training](https://github.com/hanuman6/HF-Framework/blob/master/_documents/sass.md/ "Qiita")
+* [HTML](https://github.com/hanuman6/HF-Framework/blob/master/_documents/html.md/)
+* [Meta](https://github.com/hanuman6/HF-Framework/blob/master/_documents/meta.md/)
+* [Short Name](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/)
+* [CSS(SASS)](https://github.com/hanuman6/HF-Framework/blob/master/_documents/css.md/)
+* [Image Elements](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/)
+* [javascript](https://github.com/hanuman6/HF-Framework/blob/master/_documents/js.md/)
+* [php](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/)
+* [Sass(SCSS) Basic Training](https://github.com/hanuman6/HF-Framework/blob/master/_documents/sass.md/)
 
 ### Framework
-* [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/_documents/intro.md/ "Qiita")
-* [Basic Usage](https://github.com/hanuman6/HF-Framework/blob/master/_documents/usage.md/ "Qiita")
-* [Use Mixin/Protocol](https://github.com/hanuman6/HF-Framework/blob/master/_documents/mixin.md/ "Qiita")
-* [Development](https://github.com/hanuman6/HF-Framework/blob/master/_documents/dev.md/ "Qiita")
+* [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/_documents/intro.md/)
+* [Basic Usage](https://github.com/hanuman6/HF-Framework/blob/master/_documents/usage.md/)
+* [Use Mixin/Protocol](https://github.com/hanuman6/HF-Framework/blob/master/_documents/mixin.md/)
+* [Development](https://github.com/hanuman6/HF-Framework/blob/master/_documents/dev.md/)
 
 #### Directory
 ```

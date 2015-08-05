@@ -5,82 +5,154 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
 </a>
 
-At First, learn [Coding Guide](#Coding Guide)
+At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)
 
-## Quickstart
+## HTML
 
-  * [Download the latest release](https://github.com/hanuman6/HF-Framework/archive/master.zip): `HF-Framework`
-  * [Install prepros](https://prepros.io/): `prepros`
+### 基本
++ HTMLバージョン ⇒ HTML5を利用
++ CSSレベル ⇒ CSS2.1/CSS3 (プログレッシブ・エンハンスメント)
++ 文字コード ⇒ UTF-8[no BOM] (採用するバックエンドによってはこの限りではない)
++ 改行コード
+  + LF(UNIX)
+  + CR+LF(Windows)
++ タグ及び属性記述 ⇒ 小文字 (大文字を使用しない)
++ 属性値の囲み ⇒ ダブルクォーテーション『"』
++ インデント ⇒ 半角スペース2個
++ PHPインクルード ⇒ 特別な理由がなければ共通パーツをインクルード可して再利用する
++ 対応OS
+  + PC ⇒ Windows,Mac
+  + SP ⇒ Android,iOS
++ 対応ブラウザ(バージョン指定がないものは最新）
+  + IE8〜
+  + Chrome
+  + Firefox
+  + safari
++ バリデーション ⇒ [W3C HTML validator](http://validator.w3.org/nu/)なんか使って標準に沿った記述を心がける
 
-## Documents
-### Coding Guide
-* [HTML](http://qiita.com "Qiita")
-* [Meta](http://qiita.com "Qiita")
-* [Short Name](http://qiita.com "Qiita")
-* [CSS(SASS)](http://qiita.com "Qiita")
-* [Image Elements](http://qiita.com "Qiita")
-* [javascript](http://qiita.com "Qiita")
-* [php](http://qiita.com "Qiita")
-* [Sass(SCSS) Basic Training](http://qiita.com "Qiita")
+**ただし、案件によりコーディング規約を指定された場合はこの限りではない。**
 
-### Framework
-* [Introduction](http://qiita.com "Qiita")
-* [Basic Usage](http://qiita.com "Qiita")
-* [Use Mixin/Protocol](http://qiita.com "Qiita")
-* [Mixin/Protocol](http://qiita.com "Qiita")
-* [Development](http://qiita.com "Qiita")
+### 命名規則
+理解しやすく、一般的なネーミングにする。
++ ID ⇒ camelcase記法 ex: pageTop,gNav (原則IDは使用しない)
++ CLASS ⇒ ハイフン記法 ex: contents-top,side-wrap
++ IMAGES ⇒ アンダーバー記法 ex: bnr_top001.png,main_title.png
 
-#### Directory
+詳しくは下記
+  + [画像](https://github.com/hanuman6/HF-Framework/blob/master/_documents/images.md/)
+  + [ID/Class名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md/)
+
+### PHPインクルード
++ [よく使うインクルード](https://github.com/hanuman6/HF-Framework/blob/master/_documents/php.md/)
+
+### Type属性
+stylesheetとscriptのtype属性は省略する。
+HTML5ではデフォルトで解釈されるため必要ない。
+```html
+<!-- 非推奨 -->
+<link rel="stylesheet" href="//www.google.com/css/maia.css"
+  type="text/css">
+<!-- 推奨 -->
+<link rel="stylesheet" href="//www.google.com/css/maia.css">
 ```
-HF-Framework/ ...................... Root Directory
-├── common/
-│    ├── css/ ...................... Output Css Directory
-│    │    ├── common.css
-│    │    └── ie.css
-│    ├── fonts/
-│    ├── img/
-│    │    └── libs/  ............... Absolute Images(OGP,ICON,etc...)
-│    ├── inc/
-│    ├── js/
-│    │    ├── libs/  ............... jQuery and other Core Liblry
-│    │    ├── app.js ............... jQuery Plugins (compressed)
-│    │    └── common.js ............ edit Javascript
-│    └── sass/
-│         ├── addon/ ............... Addon Partials
-│         │    ├── _bxslider.scss
-│         │    ├── _print.scss
-│         │    └── _wp.scss
-│         ├── components/ .......... Useful Partials
-│         │    ├── _base.scss
-│         │    ├── _mixin.scss
-│         │    ├── _normalize.scss
-│         │    └── _reset.scss
-│         ├── _setting.scss ........ Base Setting Partial
-│         ├── common.scss .......... main Style
-│         └── ie.scss
-├─── index.php ..................... Root PHP
-├─── screenshot.php
-└─── style.css ..................... edit CSS (for Editer)
+```html
+<!-- 非推奨 -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"
+  type="text/javascript"></script>
+<!-- 推奨 -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
 ```
 
-#### Other documentation
+###引用符
+属性値の引用符は、ダブルクオーテーション(")を使用する。
+```html
+<!-- 非推奨 -->
+<a class='maia-button maia-button-secondary'>Sign in</a>
+<!-- 推奨 -->
+<a class="maia-button maia-button-secondary">Sign in</a>
+```
 
-- [Babel](https://babeljs.io/)
-- [EJS](http://www.embeddedjs.com/)
-- [ESLint](http://eslint.org/)
-- [FrontNote](http://frontainer.com/frontnote/)
-- [HTMLHint](http://htmlhint.com/)
-- [SASS](http://sass-lang.com/)
-- [webpack](http://webpack.github.io/)
-- [JSHint](http://jshint.com/)
-- [Mocha](http://mochajs.org/)
-- [PowerAssert](https://github.com/power-assert-js/power-assert)
-- [Sinon](http://sinonjs.org/)
+###ヘッダー
+すべて記述する事は少ないが、記述順は下記の通り
 
-### History
-* 0.3.1 - ドキュメントを整備
-* 0.3.0 - グループで使えるように変更
-* 0.0.1 - 個人で使ってたのを移植
++ DOCTYPE宣言
++ title要素
++ charaset ⇒ 文字コード
++ meta要素 ⇒[参考](https://github.com/hanuman6/HF-Framework/blob/master/_documents/META.md)
+  [OGP](http://l-w-i.net/d/20130316_01.txt)、[Twitter Cards](http://l-w-i.net/d/20130324_01.txt)の設定が必要な場合は上記に追加する。
++ link要素
++ rel属性
+  + stylecheet
+  + shortcut icon(apple-touch-icon)
+  + canonical //URL正規タグ http://web-tan.forum.impressrd.jp/e/2009/03/05/5112
++ script要素
+  html5タグを利用するために内蔵の```ie.js``` を利用するか、html5shivの[cdn](https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js)を利用する
++ style要素
+
+### タイトル要素
+指定がない場合は下記の内容で表示
+
++ トップページ ⇒ 『サイト説明文 - サイト名』 または 『サイト名』
++ カテゴリートップ ⇒ 『カテゴリー名 | サイト説明文 - サイト名』 または 『カテゴリー名 | サイト名』
++ 個別ページ ⇒ 『ページ名 - カテゴリー名 | サイト説明文 - サイト名』 または 『ページ名 - カテゴリー名 | サイト名』
++ 文字数が60文字を超える場合は『ページ名(カテゴリー名) | サイト名』
+
+### パスの記述
+サイト内のリンク・画像などは原則サイトルートパスで記述します。
+Wordpressのテーマ作成の場合は、```<?php bloginfo('template_url'); ?>/```などで一括置換してください。
+OK  ```<a href="/mypage/page.html">```
+NG  ```<a href="../mypage/page.html">```
+
+CDNなどで絶対パスで書く場合は、http:,https:は省略する。
+```html
+<!-- 非推奨 -->
+<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
+<!-- 推奨 -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
+```css
+/* 非推奨 */
+.example {
+  background: url(http://www.google.com/images/example);
+}
+/* 推奨 */
+.example {
+  background: url(//www.google.com/images/example);
+}
+```
+
+### 改行・インデント・コメント
+改行とインデントを使って構造を判断しやすいように記述します。
+
++ インデントは半角スペース2つ
++ タブ文字はエディタによってサイズが変わるのでNG
++ タブ文字と半角スペースを混在させる事もNG
+
+□は半角スペースを表します。
+また、```<div>``` の閉じ位置などがわかりづらい時に、タグを閉じた直後にコメントアウト入れます。
+コメントアウトはEmmet/Zen Codingでは```|c```を末尾に付けて展開するだけで便利ですね。
+```html
+<section>
+□□<div class="profile">
+□□□□<div class="profile-detail">
+□□□□□□<div class="profile-img">
+□□□□□□□□<img src="icon_photo.jpg" alt="プロフィール画像">
+□□□□□□</div>
+□□□□□□<p>テキストテキストテキストテキストテキストテキスト<br>
+□□□□□□テキストテキストテキストテキストテキストテキスト</p>
+□□□□</div><!-- /.profile_detail -->
+□□</div><!-- /.profile -->
+</section>
+```
+
+*キーボードの[tab]を使い、効率よくインデントする方法*
+> DWの場合は設定を下記に変更する
+> [環境設定] ⇒ [コードフォーマット]
+> ⇒ 『インデント』チェック
+> ⇒  使用:2スペース
+> ⇒  タブサイズ2,『スペースとして挿入』チェック
+
+> sublimeやbracketsはググってください
 
 ### License
 
