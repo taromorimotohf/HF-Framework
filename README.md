@@ -25,16 +25,16 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 #### 3. 開発する(上級)
 
 [Node.js](http://nodejs.org/)をインストール  
-  * [Install Nodejs](http://nodejs.org/): `Nodejs`  
+  * [Install Node.js](http://nodejs.org/): `Node.js`  
   
 npmでGulp本体と必要なモジュールをインストール  
-```
+```rb
 sudo npm install -g gulp
-```
+```rb
 作業ディレクトリ移動し、必要なモジュールをインストール
 ```
 npm install --save-dev gulp gulp-watch gulp-ruby-sass
-```
+```rb
 実行してみる  
 ```
 # scss のコンパイル ( gulp-ruby-sass )
