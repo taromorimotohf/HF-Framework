@@ -5,12 +5,44 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
 </a>
 
-At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)
+まず最初に[Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)をお読みください。
 
 ## Quickstart
 
+#### 1. すぐに使う
+
+フレームワーク本体をダウンロードして利用します。
+
   * [Download the latest release](https://github.com/hanuman6/HF-Framework/archive/master.zip): `HF-Framework`
+
+#### 2. Sassを使って利用する
+
+[フレームワーク本体](https://github.com/hanuman6/HF-Framework/archive/master.zip)とSassコンパイルアプリケーションの[prepros](https://prepros.io/)をインストールして利用します。preprosの設定ファイルが入っているので簡単に利用できます。
+
   * [Install prepros](https://prepros.io/): `prepros`
+
+
+#### 3. 開発する(上級)
+
+[Node.js](http://nodejs.org/)をインストール  
+  * [Install Nodejs](http://nodejs.org/): `Nodejs`  
+  
+npmでGulp本体と必要なモジュールをインストール  
+```
+sudo npm install -g gulp
+```
+作業ディレクトリ移動し、必要なモジュールをインストール
+```
+npm install --save-dev gulp gulp-watch gulp-ruby-sass
+```
+実行してみる  
+```
+# scss のコンパイル ( gulp-ruby-sass )
+gulp rubysass
+ 
+# scss に変更があったら自動的にコンパイル
+gulp watch 
+```
 
 ## Documents
 ### Coding Guide
@@ -31,35 +63,35 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 
 #### Directory
 ```
-HF-Framework/ ...................... Root Directory
+HF-Framework/ ...................... ルート・ディレクトリ
 ├── common/
-│    ├── css/ ...................... Output Css Directory
+│    ├── css/ ...................... 出力CSS
 │    │    ├── common.css
 │    │    └── ie.css
 │    ├── fonts/
 │    ├── img/
-│    │    └── libs/  ............... Absolute Images(OGP,ICON,etc...)
+│    │    └── libs/  ............... アイコンやサムネイルなど固定素材
 │    ├── inc/
 │    ├── js/
-│    │    ├── libs/  ............... jQuery and other Core Liblry
-│    │    ├── app.js ............... jQuery Plugins (compressed)
-│    │    └── common.js ............ edit Javascript
+│    │    ├── libs/  ............... jQueryなどのライブラリ
+│    │    ├── app.js ............... jQueryプラグイン (基本触らない)
+│    │    └── common.js ............ メインスクリプト
 │    └── sass/
-│         ├── addon/ ............... Addon Partials
+│         ├── addon/ ............... 追加用Sassパーシャル
 │         │    ├── _bxslider.scss
 │         │    ├── _print.scss
 │         │    └── _wp.scss
-│         ├── components/ .......... Useful Partials
+│         ├── components/ .......... コンテンツ用Sassパーシャル
 │         │    ├── _base.scss
 │         │    ├── _mixin.scss
 │         │    ├── _normalize.scss
 │         │    └── _reset.scss
-│         ├── _setting.scss ........ Base Setting Partial
-│         ├── common.scss .......... main Style
+│         ├── _setting.scss ........ 基本設定Sassパーシャル
+│         ├── common.scss .......... メインSCSS
 │         └── ie.scss
-├─── index.php ..................... Root PHP
+├─── index.php ..................... ルートファイル
 ├─── screenshot.php
-└─── style.css ..................... edit CSS (for Editer)
+└─── style.css ..................... 上書き編集用CSS
 ```
 
 #### Other documentation

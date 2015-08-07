@@ -1,5 +1,4 @@
-/* line 21, C:/Users/HFOD-075-USER.HOT-FACTORY/google/htdocs/HF-Framework/common/sass/ie.scss */
 html.ie7 img {
   -ms-interpolation-mode: bicubic;
-  -webkit-filter: expression(document.execCommand("BackgroundImageCache", false, true));
-          filter: expression(document.execCommand("BackgroundImageCache", false, true)); }
+  filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}
