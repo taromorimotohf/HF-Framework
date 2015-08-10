@@ -5,7 +5,6 @@
   <title>Home | <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/title.php')/* title */ ?></title>
   <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/meta.php')/* meta */ ?>
   <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/ogp.php')/* ogp */ ?>
-  <meta http-equiv="default-style" content="style.css">
   <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/css.php')/* css */ ?>
 </head>
 

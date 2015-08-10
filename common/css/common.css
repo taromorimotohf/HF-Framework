@@ -265,36 +265,36 @@ a img:hover {
 
 /*テキストサイズ変更*/
 .fz10 {
-  font-size: 10px;
+  font-size: 10px !important;
 }
 
 .fz11 {
-  font-size: 11px;
+  font-size: 11px !important;
 }
 
 .fz12 {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 .fz13 {
-  font-size: 13px;
+  font-size: 13px !important;
 }
 
 .fz14 {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 .fz15 {
-  font-size: 15px;
+  font-size: 15px !important;
 }
 
 .fz16 {
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
 /*文字の太さ*/
 .fwb {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .fwn {
@@ -303,123 +303,123 @@ a img:hover {
 
 /*文字の位置*/
 .tac {
-  text-align: center;
+  text-align: center !important;
 }
 
 .tal {
-  text-align: left;
+  text-align: left !important;
 }
 
 .tar {
-  text-align: right;
+  text-align: right !important;
 }
 
 /*文字をメインカラーに*/
 .cm {
-  color: #fcfff5;
+  color: #fcfff5 !important;
 }
 
 /*背景をメインカラーに*/
 .bg {
-  background: #fcfff5;
+  background: #fcfff5 !important;
 }
 
 /*マージンボトム*/
 .mb1 {
-  margin-bottom: 5px;
+  margin-bottom: 5px !important;
 }
 
 .mb2 {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 
 .mb3 {
-  margin-bottom: 15px;
+  margin-bottom: 15px !important;
 }
 
 .mb4 {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .mb5 {
-  margin-bottom: 25px;
+  margin-bottom: 25px !important;
 }
 
 .mb6 {
-  margin-bottom: 30px;
+  margin-bottom: 30px !important;
 }
 
 /*マージンライト*/
 .mr1 {
-  margin-right: 5px;
+  margin-right: 5px !important;
 }
 
 .mr2 {
-  margin-right: 10px;
+  margin-right: 10px !important;
 }
 
 .mr3 {
-  margin-right: 15px;
+  margin-right: 15px !important;
 }
 
 .mr4 {
-  margin-right: 20px;
+  margin-right: 20px !important;
 }
 
 .mr5 {
-  margin-right: 25px;
+  margin-right: 25px !important;
 }
 
 .mr6 {
-  margin-right: 30px;
+  margin-right: 30px !important;
 }
 
 /*パディング*/
 .p1 {
-  padding: 5px;
+  padding: 5px !important;
 }
 
 .p2 {
-  padding: 10px;
+  padding: 10px !important;
 }
 
 .p3 {
-  padding: 15px;
+  padding: 15px !important;
 }
 
 .p4 {
-  padding: 20px;
+  padding: 20px !important;
 }
 
 .p5 {
-  padding: 25px;
+  padding: 25px !important;
 }
 
 .p6 {
-  padding: 30px;
+  padding: 30px !important;
 }
 
 /*フロート*/
 .fl {
-  float: left;
+  float: left !important;
 }
 
 .fr {
-  float: right;
+  float: right !important;
 }
 
 .imgfl {
   float: left;
-  margin: 0 5px 5px 0;
+  margin: 0 5px 5px 0 !important;
 }
 
 .imgfr {
   float: right;
-  margin: 0 0 5px 5px;
+  margin: 0 0 5px 5px !important;
 }
 
 .cb {
-  clear: both;
+  clear: both !important;
 }
 
 /*インラインブロック*/
@@ -431,12 +431,12 @@ a img:hover {
 
 /*画像ホバー*/
 .hvop:hover {
-  opacity: 0.8;
+  opacity: 0.8 !important;
 }
 
 /*画像ホバー(拡大)*/
 .hvsc:hover {
-  transform: scale(1.2);
+  transform: scale(1.2 !important);
 }
 
 @media screen and (min-width: 768px) {

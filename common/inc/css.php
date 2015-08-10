@@ -3,6 +3,7 @@
 <link rel="shortcut icon" href="/common/img/libs/icon_touch.png">
 <link rel="icon" sizes="192x192" href="/common/img/libs/icon_touch.png">
 <link rel="stylesheet" href="/common/css/common.css">
+<link rel="stylesheet" href="/style.css">
 <!--[if lt IE 9]>
 <script src="/common/js/libs/css3-mediaqueries.js"></script>
 <script src="/common/js/libs/ie.js"></script>

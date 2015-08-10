@@ -67,54 +67,54 @@ a {
 /*画像置換*/
 .ir{@include ir}
 /*テキストサイズ変更*/
-.fz10{font-size:10px;}
-.fz11{font-size:11px;}
-.fz12{font-size:12px;}
-.fz13{font-size:13px;}
-.fz14{font-size:14px;}
-.fz15{font-size:15px;}
-.fz16{font-size:16px;}
+.fz10{font-size:10px!important;}
+.fz11{font-size:11px!important;}
+.fz12{font-size:12px!important;}
+.fz13{font-size:13px!important;}
+.fz14{font-size:14px!important;}
+.fz15{font-size:15px!important;}
+.fz16{font-size:16px!important;}
 /*文字の太さ*/
-.fwb{font-weight:bold;}
+.fwb{font-weight:bold!important;}
 .fwn{font-weight:normal!important;}
 /*文字の位置*/
-.tac{text-align: center;}
-.tal{text-align: left;}
-.tar{text-align: right;}
+.tac{text-align: center!important;}
+.tal{text-align: left!important;}
+.tar{text-align: right!important;}
 /*文字をメインカラーに*/
-.cm{color: $c1;}
+.cm{color: $c1!important;}
 /*背景をメインカラーに*/
-.bg{background: $c1;}
+.bg{background: $c1!important;}
 /*マージンボトム*/
-.mb1{margin-bottom: $px1x;}
-.mb2{margin-bottom: $px2x;}
-.mb3{margin-bottom: $px3x;}
-.mb4{margin-bottom: $px4x;}
-.mb5{margin-bottom: $px5x;}
-.mb6{margin-bottom: $px6x;}
+.mb1{margin-bottom: $px1x!important;}
+.mb2{margin-bottom: $px2x!important;}
+.mb3{margin-bottom: $px3x!important;}
+.mb4{margin-bottom: $px4x!important;}
+.mb5{margin-bottom: $px5x!important;}
+.mb6{margin-bottom: $px6x!important;}
 /*マージンライト*/
-.mr1{margin-right: $px1x;}
-.mr2{margin-right: $px2x;}
-.mr3{margin-right: $px3x;}
-.mr4{margin-right: $px4x;}
-.mr5{margin-right: $px5x;}
-.mr6{margin-right: $px6x;}
+.mr1{margin-right: $px1x!important;}
+.mr2{margin-right: $px2x!important;}
+.mr3{margin-right: $px3x!important;}
+.mr4{margin-right: $px4x!important;}
+.mr5{margin-right: $px5x!important;}
+.mr6{margin-right: $px6x!important;}
 /*パディング*/
-.p1{padding: $px1x;}
-.p2{padding: $px2x;}
-.p3{padding: $px3x;}
-.p4{padding: $px4x;}
-.p5{padding: $px5x;}
-.p6{padding: $px6x;}
+.p1{padding: $px1x!important;}
+.p2{padding: $px2x!important;}
+.p3{padding: $px3x!important;}
+.p4{padding: $px4x!important;}
+.p5{padding: $px5x!important;}
+.p6{padding: $px6x!important;}
 /*フロート*/
-.fl{float: left;}
-.fr{float: right;}
-.imgfl{float: left;margin: 0 $px $px 0;}
-.imgfr{float: right;margin: 0 0 $px $px;}
-.cb{clear: both;}
+.fl{float: left!important;}
+.fr{float: right!important;}
+.imgfl{float: left;margin: 0 $px $px 0!important;}
+.imgfr{float: right;margin: 0 0 $px $px!important;}
+.cb{clear: both!important;}
 /*インラインブロック*/
 .ib{@include ib;}
 /*画像ホバー*/
-.hvop:hover{@include op(0.8);}
+.hvop:hover{@include op(0.8 !important);}
 /*画像ホバー(拡大)*/
-.hvsc:hover{transform: scale(1.2);}
+.hvsc:hover{transform: scale(1.2 !important);}
