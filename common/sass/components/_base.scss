@@ -104,8 +104,8 @@ a {
 /*フロート*/
 .fl{float: left!important;}
 .fr{float: right!important;}
-.imgfl{float: left;margin: 0 $px $px 0!important;}
-.imgfr{float: right;margin: 0 0 $px $px!important;}
+.imgfl{float: left;margin: 0 #{$px}px #{$px}px 0!important;}
+.imgfr{float: right;margin: 0 0 #{$px}px #{$px}px!important;}
 .cb{clear: both!important;}
 /*インラインブロック*/
 .ib{@include ib;}
