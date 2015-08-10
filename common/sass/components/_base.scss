@@ -67,13 +67,11 @@ a {
 /*画像置換*/
 .ir{@include ir}
 /*テキストサイズ変更*/
-.fz10{font-size:10px!important;}
-.fz11{font-size:11px!important;}
-.fz12{font-size:12px!important;}
-.fz13{font-size:13px!important;}
-.fz14{font-size:14px!important;}
-.fz15{font-size:15px!important;}
-.fz16{font-size:16px!important;}
+@for $i from 10 through 20 {
+  .fz#{$i} {
+    font-size:#{$i}px!important;
+  }
+}
 /*文字の太さ*/
 .fwb{font-weight:bold!important;}
 .fwn{font-weight:normal!important;}
@@ -86,26 +84,23 @@ a {
 /*背景をメインカラーに*/
 .bg{background: $c1!important;}
 /*マージンボトム*/
-.mb1{margin-bottom: $px1x!important;}
-.mb2{margin-bottom: $px2x!important;}
-.mb3{margin-bottom: $px3x!important;}
-.mb4{margin-bottom: $px4x!important;}
-.mb5{margin-bottom: $px5x!important;}
-.mb6{margin-bottom: $px6x!important;}
+@for $i from 0 through 10 {
+  .mb#{$i * $px} {
+    margin-bottom:#{$i * $px}px!important;
+  }
+}
 /*マージンライト*/
-.mr1{margin-right: $px1x!important;}
-.mr2{margin-right: $px2x!important;}
-.mr3{margin-right: $px3x!important;}
-.mr4{margin-right: $px4x!important;}
-.mr5{margin-right: $px5x!important;}
-.mr6{margin-right: $px6x!important;}
+@for $i from 0 through 10 {
+  .mr#{$i * $px} {
+    margin-right:#{$i * $px}px!important;
+  }
+}
 /*パディング*/
-.p1{padding: $px1x!important;}
-.p2{padding: $px2x!important;}
-.p3{padding: $px3x!important;}
-.p4{padding: $px4x!important;}
-.p5{padding: $px5x!important;}
-.p6{padding: $px6x!important;}
+@for $i from 0 through 10 {
+  .p#{$i * $px} {
+    margin-right:#{$i * $px}px!important;
+  }
+}
 /*フロート*/
 .fl{float: left!important;}
 .fr{float: right!important;}
