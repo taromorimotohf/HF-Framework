@@ -1,8 +1,2 @@
-<<<<<<< HEAD
-.DS_STORE
-.vagrant/
-.sass-cache/
-=======
 .sass-cache/
 .vagrant/
->>>>>>> master
