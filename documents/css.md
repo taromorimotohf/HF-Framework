@@ -68,7 +68,7 @@ At First, learn [Coding Guide](#Coding Guide)
 
 ### その他
 + 推測できる名称をつける
-  + 短縮名はなるべく使用しない。どうしても使用する場合は一般的に通じるかを考える(後日対応しても役割が推測できる名称にする) ⇒ [よく使われる短縮名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md)
+  + 短縮名はなるべく使用しない。どうしても使用する場合は一般的に通じるかを考える(後日対応しても役割が推測できる名称にする) ⇒ [よく使われる短縮名](https://github.com/hanuman6/HF-Framework/blob/master/documents/shortname.md)
   + サイズや色などを具体的に表す名称は避ける ⇒ Viewが変更された場合、名称と実際の表示の整合性がとれなくなるため
     + NG ⇒ ```.w960-box``` (w960pxのボックスの意) ボックスサイズが変更された場合、整合性がとれなくなる
     + NG ⇒ ```.red``` (文字色が赤いため) 色が変更になった場合、整合性がとれなくなる
@@ -77,7 +77,7 @@ At First, learn [Coding Guide](#Coding Guide)
     + OK ⇒ ```.mb10```  (margin-bottom: 10px;) 場合によって使用可。 ただし、規則性がなければならない。『プロトコル』参照
 + jQueryなどjs用のclassにはプレフィックス（接頭辞）```js_``` を付与する
 
-⇒ [よく使われる短縮名](https://github.com/hanuman6/HF-Framework/blob/master/_documents/shortname.md)
+⇒ [よく使われる短縮名](https://github.com/hanuman6/HF-Framework/blob/master/documents/shortname.md)
 
 
 ### 見出し
