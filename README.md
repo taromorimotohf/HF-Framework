@@ -7,26 +7,25 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 
 まず最初に[Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)をお読みください。
 
-## Quickstart
+## Get Started
 
-#### 1. すぐに使う
+### 1. とにかく使ってみる
 
-フレームワーク本体をダウンロードして利用します。
+フレームワーク本体をダウンロードして利用します。publicフォルダがサイトルートです。
 
   * [Download the latest release](https://github.com/hanuman6/HF-Framework/archive/master.zip): `HF-Framework`
 
-#### 2. Sassを使って利用する
+### 2. Sassを使って利用する
 
 [フレームワーク本体](https://github.com/hanuman6/HF-Framework/archive/master.zip)とSassコンパイルアプリケーションの[prepros](https://prepros.io/)をインストールして利用します。preprosの設定ファイルが入っているので簡単に利用できます。
 
-  * [Install prepros](https://prepros.io/): `prepros`
-
-
-#### 3. 開発する(上級)
-
-[Node.js](http://nodejs.org/)をインストール  
-  * [Install Node.js](http://nodejs.org/): `Node.js`  
+  * [Install prepros](https://prepros.io/): `prepros`  
   
+### 3. Sassを使って利用する(上級)
+
+* [Node.js](http://nodejs.org/)をインストール  
+* [Install Node.js](http://nodejs.org/): `Node.js`  
+
 npmでGulp本体と必要なモジュールをインストール  
 ```rb
 sudo npm install -g gulp
@@ -39,10 +38,32 @@ npm install --save-dev gulp gulp-watch gulp-ruby-sass
 ```rb
 # scss のコンパイル ( gulp-ruby-sass )
 gulp rubysass
- 
+
 # scss に変更があったら自動的にコンパイル
 gulp watch 
 ```
+
+### 4. 開発環境を構築して使う
+
+* step1: [Download and Install Vagrant](https://www.vagrantup.com/downloads.html)  
+
+* step2: [Download and Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
+
+* step3: プロジェクトフォルダにクローンを作る
+```rb
+git clone https://github.com/hanuman6/HF-Framework.git プロジェクトフォルダ
+```
+
+* step4: プロジェクトフォルダに移動  
+```rb
+cd プロジェクトフォルダ
+```
+
+* step5: サーバーのスタート  
+```rb
+vagrant up
+```
+
 
 ## Documents
 ### Coding Guide
@@ -63,35 +84,35 @@ gulp watch
 
 #### Directory
 ```
-HF-Framework/ ...................... ルート・ディレクトリ
-├── common/
-│    ├── css/ ...................... 出力CSS
-│    │    ├── common.css
-│    │    └── ie.css
-│    ├── fonts/
-│    ├── img/
-│    │    └── libs/  ............... アイコンやサムネイルなど固定素材
-│    ├── inc/
-│    ├── js/
-│    │    ├── libs/  ............... jQueryなどのライブラリ
-│    │    ├── app.js ............... jQueryプラグイン (基本触らない)
-│    │    └── common.js ............ メインスクリプト
-│    └── sass/
-│         ├── addon/ ............... 追加用Sassパーシャル
-│         │    ├── _bxslider.scss
-│         │    ├── _print.scss
-│         │    └── _wp.scss
-│         ├── components/ .......... コンテンツ用Sassパーシャル
-│         │    ├── _base.scss
-│         │    ├── _mixin.scss
-│         │    ├── _normalize.scss
-│         │    └── _reset.scss
-│         ├── _setting.scss ........ 基本設定Sassパーシャル
-│         ├── common.scss .......... メインSCSS
-│         └── ie.scss
-├─── index.php ..................... ルートファイル
-├─── screenshot.php
-└─── style.css ..................... 上書き編集用CSS
+  public/ ...................... サイトルート・ディレクトリ
+  ├── common/
+  │    ├── css/ ...................... 出力CSS
+  │    │    ├── common.css
+  │    │    └── ie.css
+  │    ├── fonts/
+  │    ├── img/
+  │    │    └── libs/  ............... アイコンやサムネイルなど固定素材
+  │    ├── inc/
+  │    ├── js/
+  │    │    ├── libs/  ............... jQueryなどのライブラリ
+  │    │    ├── app.js ............... jQueryプラグイン (基本触らない)
+  │    │    └── common.js ............ メインスクリプト
+  │    └── sass/
+  │         ├── addon/ ............... 追加用Sassパーシャル
+  │         │    ├── _bxslider.scss
+  │         │    ├── _print.scss
+  │         │    └── _wp.scss
+  │         ├── components/ .......... コンテンツ用Sassパーシャル
+  │         │    ├── _base.scss
+  │         │    ├── _mixin.scss
+  │         │    ├── _normalize.scss
+  │         │    └── _reset.scss
+  │         ├── _setting.scss ........ 基本設定Sassパーシャル
+  │         ├── common.scss .......... メインSCSS
+  │         └── ie.scss
+  ├─── index.php ..................... ルートファイル
+  ├─── screenshot.php
+  └─── style.css ..................... 上書き編集用CSS
 ```
 
 #### Other documentation
