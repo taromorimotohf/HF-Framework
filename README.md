@@ -32,7 +32,7 @@ sudo npm install -g gulp
 ```
 作業ディレクトリ移動し、必要なモジュールをインストール
 ```rb
-npm install --save-dev gulp gulp-watch gulp-ruby-sass
+npm install --save-dev gulp gulp-watch gulp-ruby-sass gulp-pleeease
 ```
 実行してみる  
 ```rb
