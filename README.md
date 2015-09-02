@@ -64,6 +64,16 @@ cd プロジェクトフォルダ
 vagrant up
 ```
 
+* option1: ルートフォルダの変更
+
+```rb
+vagrant up
+vagrant ssh
+sudo vim /etc/apache2/sites-available/000-default.conf (or the editor of your choosing)
+Change the document root to "public_html"
+Run sudo service apache2 restart
+Rename the public folder to public_html
+```
 
 ## Documents
 ### Coding Guide
