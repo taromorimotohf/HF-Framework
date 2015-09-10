@@ -36,6 +36,7 @@ npm install --save-dev gulp gulp-watch gulp-ruby-sass gulp-pleeease gulp-imagemi
 ```
 Sassのコンパイル 
 ```rb
+gulp sass
 ```
 自動でCSSコンパイルとベンタープレフィックスを付与
 ```rb
