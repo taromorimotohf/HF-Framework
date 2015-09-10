@@ -32,15 +32,23 @@ sudo npm install -g gulp
 ```
 作業ディレクトリ移動し、必要なモジュールをインストール
 ```rb
-npm install --save-dev gulp gulp-watch gulp-ruby-sass gulp-pleeease
+npm install --save-dev gulp gulp-watch gulp-ruby-sass gulp-pleeease gulp-imagemin imagemin-pngquant gulp-frontnote
 ```
-実行してみる  
+Sassのコンパイル 
 ```rb
-# scss のコンパイル ( gulp-ruby-sass )
-gulp rubysass
-
-# scss に変更があったら自動的にコンパイル
+gulp sass
+```
+自動でCSSコンパイルとベンタープレフィックスを付与
+```rb
 gulp watch 
+```
+imgフォルダの画像を圧縮しimg_minに出力する
+```rb
+gulp img 
+```
+スタイルガイドを出力
+```rb
+gulp guide
 ```
 
 ### 4. 開発環境を構築して使う
