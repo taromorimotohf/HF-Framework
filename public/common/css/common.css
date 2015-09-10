@@ -89,7 +89,6 @@ figure {
 }
 
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -146,8 +145,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 input[type=search] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -198,7 +195,8 @@ body {
   font-smoothing: antialiased;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%;
   text-align: justify;
   text-justify: inter-ideograph;
   text-align: left;
@@ -212,13 +210,15 @@ a {
 a:hover {
   color: #5ea4d8;
   text-decoration: underline;
-  transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
+          transition: all 300ms linear;
 }
 a:active, a:focus {
   color: #d9eaf6;
 }
 a img:hover {
-  transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
+          transition: all 300ms linear;
 }
 
 /*--------------------------------------------
@@ -292,6 +292,22 @@ a img:hover {
   font-size: 16px !important;
 }
 
+.fz17 {
+  font-size: 17px !important;
+}
+
+.fz18 {
+  font-size: 18px !important;
+}
+
+.fz19 {
+  font-size: 19px !important;
+}
+
+.fz20 {
+  font-size: 20px !important;
+}
+
 /*文字の太さ*/
 .fwb {
   font-weight: bold !important;
@@ -325,78 +341,138 @@ a img:hover {
 }
 
 /*マージンボトム*/
-.mb1 {
-  margin-bottom: 5px !important;
-}
-
-.mb2 {
-  margin-bottom: 10px !important;
-}
-
-.mb3 {
-  margin-bottom: 15px !important;
-}
-
-.mb4 {
-  margin-bottom: 20px !important;
+.mb0 {
+  margin-bottom: 0px !important;
 }
 
 .mb5 {
+  margin-bottom: 5px !important;
+}
+
+.mb10 {
+  margin-bottom: 10px !important;
+}
+
+.mb15 {
+  margin-bottom: 15px !important;
+}
+
+.mb20 {
+  margin-bottom: 20px !important;
+}
+
+.mb25 {
   margin-bottom: 25px !important;
 }
 
-.mb6 {
+.mb30 {
   margin-bottom: 30px !important;
 }
 
+.mb35 {
+  margin-bottom: 35px !important;
+}
+
+.mb40 {
+  margin-bottom: 40px !important;
+}
+
+.mb45 {
+  margin-bottom: 45px !important;
+}
+
+.mb50 {
+  margin-bottom: 50px !important;
+}
+
 /*マージンライト*/
-.mr1 {
-  margin-right: 5px !important;
-}
-
-.mr2 {
-  margin-right: 10px !important;
-}
-
-.mr3 {
-  margin-right: 15px !important;
-}
-
-.mr4 {
-  margin-right: 20px !important;
+.mr0 {
+  margin-right: 0px !important;
 }
 
 .mr5 {
+  margin-right: 5px !important;
+}
+
+.mr10 {
+  margin-right: 10px !important;
+}
+
+.mr15 {
+  margin-right: 15px !important;
+}
+
+.mr20 {
+  margin-right: 20px !important;
+}
+
+.mr25 {
   margin-right: 25px !important;
 }
 
-.mr6 {
+.mr30 {
   margin-right: 30px !important;
 }
 
+.mr35 {
+  margin-right: 35px !important;
+}
+
+.mr40 {
+  margin-right: 40px !important;
+}
+
+.mr45 {
+  margin-right: 45px !important;
+}
+
+.mr50 {
+  margin-right: 50px !important;
+}
+
 /*パディング*/
-.p1 {
-  padding: 5px !important;
-}
-
-.p2 {
-  padding: 10px !important;
-}
-
-.p3 {
-  padding: 15px !important;
-}
-
-.p4 {
-  padding: 20px !important;
+.p0 {
+  margin-right: 0px !important;
 }
 
 .p5 {
-  padding: 25px !important;
+  margin-right: 5px !important;
 }
 
-.p6 {
-  padding: 30px !important;
+.p10 {
+  margin-right: 10px !important;
+}
+
+.p15 {
+  margin-right: 15px !important;
+}
+
+.p20 {
+  margin-right: 20px !important;
+}
+
+.p25 {
+  margin-right: 25px !important;
+}
+
+.p30 {
+  margin-right: 30px !important;
+}
+
+.p35 {
+  margin-right: 35px !important;
+}
+
+.p40 {
+  margin-right: 40px !important;
+}
+
+.p45 {
+  margin-right: 45px !important;
+}
+
+.p50 {
+  margin-right: 50px !important;
 }
 
 /*フロート*/
@@ -432,20 +508,202 @@ a img:hover {
 /*画像ホバー*/
 .hvop:hover {
   opacity: 0.8 !important;
+  filter: alpha(opacity=80);
 }
 
 /*画像ホバー(拡大)*/
 .hvsc:hover {
-  transform: scale(1.2 !important);
+  -webkit-transform: scale(1.2 !important);
+      -ms-transform: scale(1.2 !important);
+          transform: scale(1.2 !important);
 }
 
+input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: block;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  -webkit-transition: all 300ms linear;
+          transition: all 300ms linear;
+}
+input:not([type]):focus, input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
+  border: 1px solid #aaa;
+  background: #fafafa;
+  outline: none;
+}
+
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  border: 1px solid #ccc;
+  padding: 10px 6% 10px 10px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") 94% center no-repeat;
+  -webkit-transition: all 300ms linear;
+          transition: all 300ms linear;
+}
+select:focus {
+  border: 1px solid #aaa;
+  background: #fafafa url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") 94% center no-repeat;
+  outline: none;
+}
+
+input[type=radio], input[type=checkbox] {
+  display: none;
+}
+
+.radio, .checkbox {
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+          transition: all 200ms linear;
+  position: relative;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 10px 10px 10px 42px;
+  border-radius: 4px;
+  background: #f3f3f3;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.radio:hover, .checkbox:hover {
+  background-color: #ebebeb;
+}
+.radio:hover:after, .checkbox:hover:after {
+  border-color: #53b300;
+}
+.radio:after, .checkbox:after {
+  -webkit-transition: all 200ms linear;
+          transition: all 200ms linear;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  display: block;
+  margin-top: -10px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #bbb;
+  border-radius: 4px;
+  content: '';
+}
+
+.radio:before {
+  -webkit-transition: all 200ms linear;
+          transition: all 200ms linear;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #53b300;
+  content: '';
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+input[type=radio]:checked + .radio:before {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.checkbox:before {
+  -webkit-transition: all 200ms linear;
+          transition: all 200ms linear;
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  display: block;
+  margin-top: -7px;
+  width: 5px;
+  height: 9px;
+  border-right: 3px solid  #53b300;
+  border-bottom: 3px solid  #53b300;
+  content: '';
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+input[type=checkbox]:checked + .checkbox:before {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.error {
+  color: red;
+  background: #f9cee0;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+.error-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.error-list li {
+  color: red;
+}
+
+@media screen and (max-width: 767px) {
+  .checkbox {
+    margin: 0 0 3%;
+  }
+
+  input, select, textarea, .checkbox {
+    width: 100%;
+  }
+}
 @media screen and (min-width: 768px) {
+  /*
+  #overview
+  Gulp入門サンプル
+
+  サンプルファイルです
+  */
+  /*#styleguide
+  見出し
+
+  ```
+  <h1>見出し</h1>
+  <h2>見出し</h2>
+  <h3>見出し</h3>
+  <h4>見出し</h4>
+  <h5>見出し</h5>
+  <h6>見出し</h6>
+  ```
+  */
+  /*#styleguide
+  フォーム系
+
+  サンプルの見出しスタイル
+  hoverすると青く2倍になる
+
+  ```
+  <input type="text">
+  <select name="" id="">
+  <option value=""></option>
+  </select>
+  ```
+  */
   /*--------------------------------------------
     1.ヘッダー
   ---------------------------------------------*/
   header {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 15;
   }
   header nav#gNav {
     *zoom: 1;
@@ -470,8 +728,8 @@ a img:hover {
   #contents {
     *zoom: 1;
     width: 100%;
-    margin-bottom: 15px;
-    margin: 0 auto 15px auto;
+    margin-bottom: 15;
+    margin: 0 auto 15 auto;
     background: #ccc;
   }
   #contents:after {
@@ -490,7 +748,7 @@ a img:hover {
   footer {
     *zoom: 1;
     width: 1040px;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 15 auto;
   }
   footer:after {
     content: "";
@@ -511,13 +769,16 @@ a img:hover {
     color: black !important;
     box-shadow: none !important;
     text-shadow: none !important;
-    filter: Gray();
+    -webkit-filter: Gray();
+            filter: Gray();
     filter: url("desaturate.svg#grayscale");
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
-    filter: grayscale(100%);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
   }
 
   a {
