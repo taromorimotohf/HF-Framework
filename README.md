@@ -9,23 +9,23 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 
 ## 用意するもの
 #### Sass(SCSS)
-* **[Prepros](https://prepros.io/)**: `Sassのコンパイルを簡単にできるGUIアプリケーション。Node.jsやRubyを内蔵していて、これ一本で完結できる。`
-* [Node.js](https://nodejs.org/) *(option)*: `サーバーサイドJavaScript環境。Sassや後述するGulpを利用するために必要。`
+* **[Prepros](https://prepros.io/)**: Sassのコンパイルを簡単にできるGUIアプリケーション。Node.jsやRubyを内蔵していて、これ一本で完結できる。
+* [Node.js](https://nodejs.org/) *(option)*: サーバーサイドJavaScript環境。Sassや後述するGulpを利用するために必要。
 
 #### ローカル開発環境(Vagrant)
-* **[Vagrant](https://www.vagrantup.com/downloads.html)**: `ローカル環境を構築するツール`
-* **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)**: `仮想環境構築ツール`
-* ターミナル/コマンドライン: `標準でもよいがiTermやConEmuがあると捗る`
-* SSHクライアント: `[Tera Term](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)`
+* **[Vagrant](https://www.vagrantup.com/downloads.html)**: ローカル環境を構築するツール
+* **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)**: 仮想環境構築ツール
+* ターミナル/コマンドライン: 標準でもよいがiTermやConEmuがあると捗る
+* SSHクライアント: [TeraTerm](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)
 
 #### Git(SourceTree)
 * **[SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)**: `GitやBitbacketをGUIで使えるアプリケーション`
-* [bitbucketアカウント](https://bitbucket.org/) *(option)*: `SourceTreeの開発元の提供するgithub互換バージョン管理ウェブサービス。`
+* [bitbucketアカウント](https://bitbucket.org/) *(option)*: SourceTreeの開発元の提供するgithub互換バージョン管理ウェブサービス。
 
 #### Framework
-* [HF-Framework](https://github.com/hanuman6/HF-Framework/archive/master.zip) : `フレームワーク本体。後述のファイルも含んだパッケージ。`
-* **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**: `VagrantでのLAMP環境の設定ファイル`
-* [gulpfile.js](https://github.com/hanuman6/HF-Framework/blob/master/public/gulpfile.js): `gulpの設定ファイル`
+* [HF-Framework](https://github.com/hanuman6/HF-Framework/archive/master.zip) : フレームワーク本体。後述のファイルも含んだパッケージ。
+* **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**: VagrantでのLAMP環境の設定ファイル
+* [gulpfile.js](https://github.com/hanuman6/HF-Framework/blob/master/public/gulpfile.js): gulpの設定ファイル
 
 ## Sassのコンパイル
 
