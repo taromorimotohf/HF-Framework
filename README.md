@@ -15,6 +15,8 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 #### ローカル開発環境(Vagrant)
 * **[Vagrant](https://www.vagrantup.com/downloads.html)**: `ローカル環境を構築するツール`
 * **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)**: `仮想環境構築ツール`
+* ターミナル/コマンドライン: `標準でもよいがiTermやConEmuがあると捗る`
+* **SSHクライアント**: `[Tera Term](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)`
 
 #### Git(SourceTree)
 * **[SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)**: `GitやBitbacketをGUIで使えるアプリケーション`
@@ -33,9 +35,6 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 Frameworkに同封の**設定ファイル(prepros.cfg)**を利用すると楽ですが、手動で設定する場合は**Auto Compile**と**Auto Prefix CSS**は必須、**Use LibSass**はエラーが出なければ利用した方が早いです。More OptionからCSS→Auto Prefixerを**last 5 versions**に設定しておくとベンダープレフィックスがほぼほぼ自動で付きます。
 
 ### 上級
-
-* [Node.js](http://nodejs.org/)
-* [Install Node.js](http://nodejs.org/): `Node.js`  
 
 [Node.js](http://nodejs.org/)がインストール済みを前提とします。  
 
