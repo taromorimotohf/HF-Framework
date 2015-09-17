@@ -24,7 +24,7 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 
 #### Framework
 * [HF-Framework](https://github.com/hanuman6/HF-Framework/archive/master.zip) : フレームワーク本体。後述のファイルも含んだパッケージ。
-* **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**: VagrantでのLAMP環境の設定ファイル
+* [Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile): VagrantでのLAMP環境の設定ファイル
 * [gulpfile.js](https://github.com/hanuman6/HF-Framework/blob/master/public/gulpfile.js): gulpの設定ファイル
 
 ## Sassのコンパイル
