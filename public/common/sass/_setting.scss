@@ -5,18 +5,10 @@
 //============================================================
 
 // フォント設定
-$font: Opens San, "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , Meiryo , Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , Meiryo , Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
 // 基本ピクセル設定
 $px: 5;
-
-// サイズ6種
-$px1x: $px; //5
-$px2x: $px1x * 2; //10
-$px3x: $px1x * 3; //15
-$px4x: $px1x * 4; //20
-$px5x: $px1x * 5; //25
-$px6x: $px1x * 6; //30
 
 // カラーテーマ5種
 $c1: #fcfff5;

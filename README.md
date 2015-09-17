@@ -1,90 +1,133 @@
 # [HF-Framework](https://github.com/hanuman6/HF-Framework)
-HF-Framework is a responsive front-end framework. You can quickly prototype and build sites or apps that work on any kind of device, more elements, tips and best practices.
+HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)を使ったフロントエンド開発パッケージです。
 
 <a href="http://www.w3.org/html/logo/">
 <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
 </a>
 
-まず最初に[Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)をお読みください。
+利用にあたっては[Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)を読み、用法と容量を守って利用ください。
 
-## Get Started
+## 用意するもの
+#### Sass(SCSS)
+* **[Prepros](https://prepros.io/)**: `Sassのコンパイルを簡単にできるGUIアプリケーション。Node.jsやRubyを内蔵していて、これ一本で完結できる。`
+* [Node.js](https://nodejs.org/) *(option)*: `サーバーサイドJavaScript環境。Sassや後述するGulpを利用するために必要。`
 
-### 1. とにかく使ってみる
+#### ローカル開発環境(Vagrant)
+* **[Vagrant](https://www.vagrantup.com/downloads.html)**: `ローカル環境を構築するツール`
+* **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)**: `仮想環境構築ツール`
 
-フレームワーク本体をダウンロードして利用します。publicフォルダがサイトルートです。
+#### Git(SourceTree)
+* **[SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)**: `GitやBitbacketをGUIで使えるアプリケーション`
+* [bitbucketアカウント](https://bitbucket.org/) *(option)*: `SourceTreeの開発元の提供するgithub互換バージョン管理ウェブサービス。`
 
-  * [Download the latest release](https://github.com/hanuman6/HF-Framework/archive/master.zip): `HF-Framework`
+#### Framework
+* [HF-Framework](https://github.com/hanuman6/HF-Framework/archive/master.zip) : `フレームワーク本体。後述のファイルも含んだパッケージ。`
+* **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**: `VagrantでのLAMP環境の設定ファイル`
+* [gulpfile.js](https://github.com/hanuman6/HF-Framework/blob/master/public/gulpfile.js): `gulpの設定ファイル`
 
-### 2. Sassを使って利用する
+## Sassのコンパイル
 
-[フレームワーク本体](https://github.com/hanuman6/HF-Framework/archive/master.zip)とSassコンパイルアプリケーションの[prepros](https://prepros.io/)をインストールして利用します。preprosの設定ファイルが入っているので簡単に利用できます。
+### 初級
 
-  * [Install prepros](https://prepros.io/): `prepros`  
-  
-### 3. Sassを使って利用する(上級)
+[このあたり](http://blog.sou-lab.com/prepros/)を参考に[Prepros](https://prepros.io/)を常駐させてコンパイルします。  
+Frameworkに同封の**設定ファイル(prepros.cfg)**を利用すると楽ですが、手動で設定する場合は**Auto Compile**と**Auto Prefix CSS**は必須、**Use LibSass**はエラーが出なければ利用した方が早いです。More OptionからCSS→Auto Prefixerを**last 5 versions**に設定しておくとベンダープレフィックスがほぼほぼ自動で付きます。
 
-* [Node.js](http://nodejs.org/)をインストール  
+### 上級
+
+* [Node.js](http://nodejs.org/)
 * [Install Node.js](http://nodejs.org/): `Node.js`  
 
-npmでGulp本体と必要なモジュールをインストール  
-```rb
+[Node.js](http://nodejs.org/)がインストール済みを前提とします。  
+
+npmでGulp本体をインストール  
+```unix
 sudo npm install -g gulp
 ```
 作業ディレクトリ移動し、必要なモジュールをインストール
-```rb
-npm install --save-dev gulp gulp-watch gulp-ruby-sass gulp-pleeease gulp-imagemin imagemin-pngquant gulp-frontnote
+```unix
+npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-imagemin imagemin-pngquant
 ```
-Sassのコンパイル 
-```rb
+実行してみる  
+```unix
+# scss のコンパイル ( gulp-sass )
 gulp sass
-```
-自動でCSSコンパイルとベンタープレフィックスを付与
-```rb
+
+# scss に変更があったら自動的にコンパイル
 gulp watch 
-```
-imgフォルダの画像を圧縮しimg_minに出力する
-```rb
+
+# 画像の圧縮
 gulp img 
 ```
-スタイルガイドを出力
-```rb
-gulp guide
+
+## ローカル開発環境(Vagrant)を立ち上げる
+
+[Vagrant](https://www.vagrantup.com/downloads.html)と[VirtualBox](https://www.virtualbox.org/wiki/Downloads) がインストール済みを前提とします。
+
+### パッケージで使う
+
+* step1: [HF-framwork](https://github.com/hanuman6/HF-Framework/archive/master.zip)をダウンロードし展開する。
+* step2: コマンドライン(ターミナル)を立ち上げフォルダのルートに移動しする。
+```unix
+cd ディレクトリパス
 ```
 
-### 4. 開発環境を構築して使う
+* step3: Vagrantを立ち上げる。publicフォルダがサイトルートになります。
 
-* step1: [Download and Install Vagrant](https://www.vagrantup.com/downloads.html)  
+### Vagrant コマンド
 
-* step2: [Download and Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
-
-* step3: プロジェクトフォルダにクローンを作る
-```rb
-git clone https://github.com/hanuman6/HF-Framework.git プロジェクトフォルダ
-```
-
-* step4: プロジェクトフォルダに移動  
-```rb
-cd プロジェクトフォルダ
-```
-
-* step5: サーバーのスタート  
-```rb
+```unix
+# Vagrantの立ち上げ
 vagrant up
+
+# Vagrantの終了
+vagrant up
+
+# Vagrantの再起動
+vagrant reload
+
+# Vagrantの一時停止
+vagrant suspend
+
+# Vagrantの再開
+vagrant resume
+
+# Vagrantの再起動
+vagrant reload
+
+# Vagrantの消去
+vagrant destroy
 ```
 
-* option1: ルートフォルダの変更
+### public以外の独自ディレクトリで使う
 
-```rb
-vagrant up
-vagrant ssh
+* step1: **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**をダウンロードし利用したいディレクトリに設置。
+* step2: Vagrantを立ち上げる。
+* step3: SSHで接続してルートフォルダの変更する。ID/PASSは「vagrant」「vagrant」で接続できる。下記コマンドからVimで設定ファイルを変更する。
+```ssh
 sudo vim /etc/apache2/sites-available/000-default.conf (or the editor of your choosing)
-Change the document root to "public_html"
-Run sudo service apache2 restart
-Rename the public folder to public_html
 ```
+
+* step4: Vagrantの再起動
+
+### 使用するVim コマンド
+
+```vim
+# インサートモード
+i
+
+# インサートモードの終了
+Esc
+
+# 保存して終了
+;wq
+```
+
+## Git(SourceTree)を利用してローカルを共有する
+
+後ほど説明
 
 ## Documents
-### Coding Guide
+### コーディングガイド
 * [HTML](https://github.com/hanuman6/HF-Framework/blob/master/documents/html.md/)
 * [Meta](https://github.com/hanuman6/HF-Framework/blob/master/documents/meta.md/)
 * [Short Name](https://github.com/hanuman6/HF-Framework/blob/master/documents/shortname.md/)
@@ -94,13 +137,13 @@ Rename the public folder to public_html
 * [php](https://github.com/hanuman6/HF-Framework/blob/master/documents/php.md/)
 * [Sass(SCSS) Usage](https://github.com/hanuman6/HF-Framework/blob/master/documents/sass.md/)
 
-### Framework
+### Fフレームワーク
 * [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/documents/intro.md/)
 * [Basic Usage](https://github.com/hanuman6/HF-Framework/blob/master/documents/usage.md/)
 * [Use Mixin/Protocol](https://github.com/hanuman6/HF-Framework/blob/master/documents/mixin.md/)
 * [Development](https://github.com/hanuman6/HF-Framework/blob/master/documents/dev.md/)
 
-#### Directory
+#### ディレクトリ構成
 ```
   public/ ...................... サイトルート・ディレクトリ
   ├── common/
@@ -110,7 +153,7 @@ Rename the public folder to public_html
   │    ├── fonts/
   │    ├── img/
   │    │    └── libs/  ............... アイコンやサムネイルなど固定素材
-  │    ├── inc/
+  │    ├── inc/ ...................... 各種インクルードPHP
   │    ├── js/
   │    │    ├── libs/  ............... jQueryなどのライブラリ
   │    │    ├── app.js ............... jQueryプラグイン (基本触らない)
@@ -118,6 +161,7 @@ Rename the public folder to public_html
   │    └── sass/
   │         ├── addon/ ............... 追加用Sassパーシャル
   │         │    ├── _bxslider.scss
+  │         │    ├── _form.scss
   │         │    ├── _print.scss
   │         │    └── _wp.scss
   │         ├── components/ .......... コンテンツ用Sassパーシャル
@@ -127,18 +171,14 @@ Rename the public folder to public_html
   │         │    └── _reset.scss
   │         ├── _setting.scss ........ 基本設定Sassパーシャル
   │         ├── common.scss .......... メインSCSS
-  │         └── ie.scss
+  │         └── ie.scss .............. IE用のSCSS
   ├─── index.php ..................... ルートファイル
-  ├─── screenshot.php
-  └─── style.css ..................... 上書き編集用CSS
+  ├─── screenshot.php ................ Wordpressテーマのサムネイル
+  ├─── gulpfile.js ................... Gulp設定ファイル
+  ├─── prepros.cfg ................... Prepros設定ファイル
+  └─── style.css ..................... 上書き編集用CSS(Wordpressではテーマ説明)
 ```
 
-#### Other documentation
-##### Library
-- JS:   [html5shiv](https://github.com/afarkas/html5shiv)
-- JS:   [css3-mediaqueries-js](https://github.com/livingston/css3-mediaqueries-js)
-- JS:   [jquery-match-height](https://github.com/liabru/jquery-match-height)
-- JS:   [bxslider-4](https://github.com/stevenwanderski/bxslider-4)
 
 ##### Links
 - [SASS（SCSS）とcompassとPreprosの、初心者にも優しいお付き合い](http://satohmsys.info/sass-compass-prepros/)
@@ -146,6 +186,7 @@ Rename the public folder to public_html
 - [SASS](http://sass-lang.com/)
 
 ### History
+* 0.4.0 - 簡易リリース
 * 0.3.6 - Vagrant環境を統合
 * 0.3.1 - ドキュメントを整備し始める
 * 0.3.0 - グループで使えるように変更

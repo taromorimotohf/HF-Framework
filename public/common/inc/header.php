@@ -1,6 +1,6 @@
 <header>
     <h1 class="title"><a href="#">タイトル</a></h1>
-    <nav id="gNav">
+    <nav class="g_nav">
       <ul>
         <li>
           <a href="#">nav ul li a</a>
@@ -13,5 +13,5 @@
         </li>
       </ul>
     </nav>
-    <!-- /#gNav -->
+    <!-- /.g_nav -->
 </header>

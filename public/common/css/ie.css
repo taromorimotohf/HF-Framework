@@ -1,5 +1,4 @@
 html.ie7 img {
   -ms-interpolation-mode: bicubic;
   -webkit-filter: expression(document.execCommand("BackgroundImageCache", false, true));
-          filter: expression(document.execCommand("BackgroundImageCache", false, true));
-}
+          filter: expression(document.execCommand("BackgroundImageCache", false, true)); }
