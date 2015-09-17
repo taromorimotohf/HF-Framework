@@ -16,7 +16,7 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 * **[Vagrant](https://www.vagrantup.com/downloads.html)**: `ローカル環境を構築するツール`
 * **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)**: `仮想環境構築ツール`
 * ターミナル/コマンドライン: `標準でもよいがiTermやConEmuがあると捗る`
-* **SSHクライアント**: `[Tera Term](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)`
+* SSHクライアント: `[Tera Term](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)`
 
 #### Git(SourceTree)
 * **[SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)**: `GitやBitbacketをGUIで使えるアプリケーション`
