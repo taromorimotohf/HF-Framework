@@ -62,15 +62,16 @@ gulp img
 
 [Vagrant](https://www.vagrantup.com/downloads.html)と[VirtualBox](https://www.virtualbox.org/wiki/Downloads) がインストール済みを前提とします。
 
-### パッケージで使う
+### フレームワークをベースに使う
 
 * step1: [HF-framwork](https://github.com/hanuman6/HF-Framework/archive/master.zip)をダウンロードし展開する。
-* step2: コマンドライン(ターミナル)を立ち上げフォルダのルートに移動しする。
+* step2: コマンドライン(ターミナル)を立ち上げフォルダのルート(vagrantfileのあるディレクトリ)に移動しする。
 ```unix
 cd ディレクトリパス
 ```
 
-* step3: Vagrantを立ち上げる。publicフォルダがサイトルートになります。
+* step3: Vagrantを立ち上げる`vagrant up`。publicフォルダがサイトルートになります。
+* step4: [http://192.168.33.10/](http://192.168.33.10/)にアクセスする。デフォルトではpublicフォルダがドキュメントルートになります。
 
 ### Vagrant コマンド
 
@@ -79,7 +80,7 @@ cd ディレクトリパス
 vagrant up
 
 # Vagrantの終了
-vagrant up
+vagrant halt
 
 # Vagrantの再起動
 vagrant reload
@@ -97,7 +98,13 @@ vagrant reload
 vagrant destroy
 ```
 
-### public以外の独自ディレクトリで使う
+### ローカルURLを変更する
+
+* step1: **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**をテキストエディタで開く。
+* step2: 4行目`ip: "192.168.33.10"`の部分を変更する。
+* step3: vagrantを立ち上げている場合は再起動`vagrant reload`
+
+### ドキュメントルートを変更する
 
 * step1: **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**をダウンロードし利用したいディレクトリに設置。
 * step2: Vagrantを立ち上げる。
