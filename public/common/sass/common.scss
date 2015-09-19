@@ -56,8 +56,8 @@ a {
     nav.g_nav {
       @include cf;
       li {
-          float: left;
-          list-style-type: none;
+        float: left;
+        list-style-type: none;
       }
     }
   }

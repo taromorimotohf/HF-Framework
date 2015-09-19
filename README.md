@@ -1,40 +1,59 @@
 # [HF-Framework](https://github.com/hanuman6/HF-Framework)
-HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)を使ったフロントエンド開発パッケージです。
+HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)を使ったフロントエンド開発パッケージです。  
+<br>
+![workflow](http://create.hot-factory.jp/framework/img/img01.png)
 
-<a href="http://www.w3.org/html/logo/">
-<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
-</a>
-
-利用にあたっては[Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)を読み、用法と容量を守って利用ください。
+利用にあたってはこのドキュメントを読み[コーディングガイド](https://github.com/hanuman6/HF-Framework#coding-guide)に基づいてコーディングしてください。
 
 ## 用意するもの
 #### Sass(SCSS)
-* **[Prepros](https://prepros.io/)**: Sassのコンパイルを簡単にできるGUIアプリケーション。Node.jsやRubyを内蔵していて、これ一本で完結できる。
+* **[Prepros](https://prepros.io/)**: Sassのコンパイルを簡単にできるGUIアプリケーション。[Node.js](https://nodejs.org/)や[Ruby](http://rubyinstaller.org/)を内蔵していて、これ一本で完結できる。
 * [Node.js](https://nodejs.org/) *(option)*: サーバーサイドJavaScript環境。Sassや後述するGulpを利用するために必要。
 
 #### ローカル開発環境(Vagrant)
 * **[Vagrant](https://www.vagrantup.com/downloads.html)**: ローカル環境を構築するツール
 * **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)**: 仮想環境構築ツール
-* ターミナル/コマンドライン: 標準でもよいがiTermやConEmuがあると捗る
-* SSHクライアント: [TeraTerm](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)
+* ターミナル/コマンドライン *(option)*: 標準でもよいが[iTerm](https://www.iterm2.com/)や[ConEmu](https://osdn.jp/projects/conemu/)があると捗る
+* SSHクライアント *(option)*: [TeraTerm](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)
 
 #### Git(SourceTree)
 * **[SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)**: `GitやBitbacketをGUIで使えるアプリケーション`
-* [bitbucketアカウント](https://bitbucket.org/) *(option)*: SourceTreeの開発元の提供するgithub互換バージョン管理ウェブサービス。
+* [Bitbucket](https://bitbucket.org/) *(option)*: SourceTreeの開発元の提供するgithub互換バージョン管理ウェブサービス。[github](https://github.com/)でも構わないが、private repositryの利用が有料。(Bitbucketは5コミットまで無料)
 
 #### Framework
 * [HF-Framework](https://github.com/hanuman6/HF-Framework/archive/master.zip) : フレームワーク本体。後述のファイルも含んだパッケージ。
-* [Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile): VagrantでのLAMP環境の設定ファイル
-* [gulpfile.js](https://github.com/hanuman6/HF-Framework/blob/master/public/gulpfile.js): gulpの設定ファイル
+* [Vagrantfile](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/Vagrantfile): VagrantでのLAMP環境の設定ファイル
+* [gulpfile.js](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/public/gulpfile.js): gulpの設定ファイル
 
 ## Sassのコンパイル
 
-### 初級
+### Preprosでコンパイル
 
-[このあたり](http://blog.sou-lab.com/prepros/)を参考に[Prepros](https://prepros.io/)を常駐させてコンパイルします。  
-Frameworkに同封の**設定ファイル(prepros.cfg)**を利用すると楽ですが、手動で設定する場合は**Auto Compile**と**Auto Prefix CSS**は必須、**Use LibSass**はエラーが出なければ利用した方が早いです。More OptionからCSS→Auto Prefixerを**last 5 versions**に設定しておくとベンダープレフィックスがほぼほぼ自動で付きます。
+[Prepros](https://prepros.io/)を起動し、プロジェクトフォルダをドラッグするとSCSS→CSSのコンパイル監視がスタートします。  
+出力先があっているか、まずは設定を確認。  
+Sass設定は上から3つはチェックを入れておきます。  
+手動でコンパイルもできますが、**Auto Compile**にチェックがればSassの保存のタイミングで自動でCSSを生成します。  
 
-### 上級
+![img](http://create.hot-factory.jp/framework/img/img02.png)
+
+**MORE OPTION**→**Project Option**より詳細設定に入ります。  
+
+![img](http://create.hot-factory.jp/framework/img/img03.png)
+
+**Auto Prefixer**(自動でベンダープレフィックスを付加)が上手く動かない場合は、設定を変更します。
+
+![img](http://create.hot-factory.jp/framework/img/img04.png)
+
+コンパイルが成功すると通知がでます。  
+
+![img](http://create.hot-factory.jp/framework/img/img05.png)
+
+失敗する場合ログを見て設定を見直す。だいたいSassの記述ミスの場合はが多い。
+
+![img](http://create.hot-factory.jp/framework/img/img06.png)
+
+
+### gulp(タスクランナー)でコンパイル
 
 [Node.js](http://nodejs.org/)がインストール済みを前提とします。  
 
@@ -42,19 +61,26 @@ npmでGulp本体をインストール
 ```unix
 sudo npm install -g gulp
 ```
-作業ディレクトリ移動し、必要なモジュールをインストール
+作業ディレクトリ移動し、必要なモジュールをインストール。  
+確実に必要なモジュールは
+
+* gulp (タスクランナー)
+* gulp-watch (ファイル監視)
+* gulp-sass (Sassコンパイル)
+* gulp-pleeease (ベンダープレフィックス付加)
+
 ```unix
 npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-imagemin imagemin-pngquant
 ```
 実行してみる  
 ```unix
-# scss のコンパイル ( gulp-sass )
+# scss のコンパイル
 gulp sass
 
 # scss に変更があったら自動的にコンパイル
 gulp watch 
 
-# 画像の圧縮
+# 画像の圧縮（オプション）
 gulp img 
 ```
 
@@ -73,7 +99,7 @@ cd ディレクトリパス
 * step3: Vagrantを立ち上げる`vagrant up`。publicフォルダがサイトルートになります。
 * step4: [http://192.168.33.10/](http://192.168.33.10/)にアクセスする。デフォルトではpublicフォルダがドキュメントルートになります。
 
-### Vagrant コマンド
+#### よく使うVagrantコマンド
 
 ```unix
 # Vagrantの立ち上げ
@@ -98,24 +124,24 @@ vagrant reload
 vagrant destroy
 ```
 
-### ローカルURLを変更する
+#### ローカルURLを変更する
 
-* step1: **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**をテキストエディタで開く。
+* step1: **[Vagrantfile](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/Vagrantfile)**をテキストエディタで開く。
 * step2: 4行目`ip: "192.168.33.10"`の部分を変更する。
 * step3: vagrantを立ち上げている場合は再起動`vagrant reload`
 
-### ドキュメントルートを変更する
+#### ドキュメントルートを変更する
 
-* step1: **[Vagrantfile](https://github.com/hanuman6/HF-Framework/blob/master/Vagrantfile)**をダウンロードし利用したいディレクトリに設置。
+* step1: **[Vagrantfile](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/Vagrantfile)**をダウンロードし利用したいディレクトリに設置。
 * step2: Vagrantを立ち上げる。
-* step3: SSHで接続してルートフォルダの変更する。ID/PASSは「vagrant」「vagrant」で接続できる。下記コマンドからVimで設定ファイルを変更する。
+* step3: SSHで接続してルートフォルダの変更する。ID/PASSは「vagrant」「vagrant」で鍵なしで接続できる。下記コマンドからVimで設定ファイルを変更する。
 ```ssh
 sudo vim /etc/apache2/sites-available/000-default.conf (or the editor of your choosing)
 ```
 
 * step4: Vagrantの再起動
 
-### 使用するVim コマンド
+#### よく使用するVim コマンド
 
 ```vim
 # インサートモード
@@ -130,7 +156,20 @@ Esc
 
 ## Git(SourceTree)を利用してローカルを共有する
 
-後ほど説明
+※githubを利用する場合は管理者に問い合わせてください。   
+
+### Bitbacketにリポジトリを立てて運用する
+* step1: [Bitbacket](https://bitbucket.org/)のWebサイトでリポジトリを作成します。その際アクセス管理より共同で作業するユーザーを追加しておきます。
+
+* step2: リポジトリのパスをコピーする。  
+
+![img](http://create.hot-factory.jp/framework/img/img07.png)
+
+* step3: [SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)でクローンを作成する。
+
+![img](http://create.hot-factory.jp/framework/img/img08.png)
+
+* step4: Gitのワークフローに沿って作業します。  
 
 ## Documents
 ### コーディングガイド
@@ -143,11 +182,9 @@ Esc
 * [php](https://github.com/hanuman6/HF-Framework/blob/master/documents/php.md/)
 * [Sass(SCSS) Usage](https://github.com/hanuman6/HF-Framework/blob/master/documents/sass.md/)
 
-### Fフレームワーク
-* [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/documents/intro.md/)
-* [Basic Usage](https://github.com/hanuman6/HF-Framework/blob/master/documents/usage.md/)
+### フレームワークの説明
+* [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/README.md)
 * [Use Mixin/Protocol](https://github.com/hanuman6/HF-Framework/blob/master/documents/mixin.md/)
-* [Development](https://github.com/hanuman6/HF-Framework/blob/master/documents/dev.md/)
 
 #### ディレクトリ構成
 ```
@@ -185,18 +222,21 @@ Esc
   └─── style.css ..................... 上書き編集用CSS(Wordpressではテーマ説明)
 ```
 
-
-##### Links
-- [SASS（SCSS）とcompassとPreprosの、初心者にも優しいお付き合い](http://satohmsys.info/sass-compass-prepros/)
-- [HTMLHint](http://htmlhint.com/)
-- [SASS](http://sass-lang.com/)
-
 ### History
+* 0.4.2 - readme.mdを作成
 * 0.4.0 - 簡易リリース
 * 0.3.6 - Vagrant環境を統合
 * 0.3.1 - ドキュメントを整備し始める
 * 0.3.0 - グループで使えるように変更
 * 0.0.1 - 個人で使ってたのを移植
+
+### Powerd by
+- [SASS](http://sass-lang.com/)
+- [Vagrant](https://www.vagrantup.com/)
+- [Node.js](https://nodejs.org/)
+- [Scotch Box](https://box.scotch.io/)
+- [gulp.js](http://gulpjs.com/)
+- [Prepros](https://prepros.io/)
 
 ### License
 
