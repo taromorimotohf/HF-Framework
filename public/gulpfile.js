@@ -1,4 +1,4 @@
-//npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-imagemin imagemin-pngquant
+//npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant
 
 /**************************************************
  * modules laod
@@ -7,6 +7,7 @@ var gulp = require('gulp');
 var watch = require('gulp-watch');
 var sass = require('gulp-sass');
 var pleeease = require('gulp-pleeease');
+var plumber = require("gulp-plumber");
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
@@ -24,6 +25,7 @@ var scssPath = './common/sass';
  */
 gulp.task('sass', function(){
   gulp.src('./common/sass/*.scss')
+    .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest(cssDestPath));
 });

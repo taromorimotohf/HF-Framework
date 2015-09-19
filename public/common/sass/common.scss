@@ -3,6 +3,7 @@
 //    メインCSS
 //============================================================
 @import "components/reset";  //リセットスタイルを選ぶ
+@import "components/font";  //カスタムフォント
 @import "setting";  //基本設定
 @import "components/mixin";  //便利なmixin
 @import "components/base";  //プロトコル
