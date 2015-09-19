@@ -1,5 +1,5 @@
 # [HF-Framework](https://github.com/hanuman6/HF-Framework)
-HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)を使ったフロントエンド開発パッケージです。  
+HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)を使った新規サイト用のBoilerplateです。Vagrantfileは[Scotch Box](https://box.scotch.io/)を利用しています。
 <br>
 ![workflow](http://create.hot-factory.jp/framework/img/img01.png)
 
