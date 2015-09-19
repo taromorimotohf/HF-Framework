@@ -62,15 +62,18 @@ npmでGulp本体をインストール
 sudo npm install -g gulp
 ```
 作業ディレクトリ移動し、必要なモジュールをインストール。  
-確実に必要なモジュールは
+使用しているモジュールは
 
 * gulp (タスクランナー)
 * gulp-watch (ファイル監視)
 * gulp-sass (Sassコンパイル)
 * gulp-pleeease (ベンダープレフィックス付加)
+* gulp-plumber (エラー停止させない)
+* gulp-imagemin (画像の圧縮)
+* imagemin-pngquant (画像の圧縮補助)
 
 ```unix
-npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-imagemin imagemin-pngquant
+npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant
 ```
 実行してみる  
 ```unix
