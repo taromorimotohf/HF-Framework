@@ -318,106 +318,52 @@ table {
   transform: scale(1.2 !important); }
 
 /*--------------------------------------------
-標準設定
+プロトコルのサンプル
 ---------------------------------------------*/
-body {
-  background-color: #fff;
-  color: #585858;
-  *font-size: small;
-  *font: x-small;
-  font-weight: normal;
-  font-style: normal;
-  font: 14px/1.61 "Noto Sans Japanese", "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  text-align: justify;
-  text-justify: inter-ideograph;
-  text-align: left;
-  text-rendering: optimizeLegibility; }
+/*
+#styleguide
+送信ボタン1
+```
+<a href="" class="btn">送信</a>
+```
+*/
+.btn {
+  width: 200px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  text-align: center;
+  background: #2980b9;
+  border-radius: 4px;
+  display: block;
+  color: #fff;
+  border-bottom: 2px solid #20638f;
+  text-decoration: none;
+  transition: all 300ms linear; }
+  .btn:hover {
+    background: #3498db;
+    border-bottom: 2px solid #217dbb; }
 
-a {
-  color: #2971a7;
-  text-decoration: none; }
-  a:hover {
-    color: #5ea4d8;
-    text-decoration: underline;
-    transition: all 300ms linear; }
-  a:active,
-  a:focus {
-    color: #d9eaf6; }
-  a img:hover {
-    transition: all 300ms linear; }
-
-@media screen and (min-width: 768px) {
-  /*--------------------------------------------
-    1.ヘッダー
-  ---------------------------------------------*/
-  header {
-    width: 100%; }
-    header nav.g_nav {
-      *zoom: 1; }
-      header nav.g_nav:after {
-        content: "";
-        display: table;
-        clear: both; }
-      header nav.g_nav:before {
-        content: "";
-        display: table; }
-      header nav.g_nav li {
-        float: left;
-        list-style-type: none; }
-  /*--------------------------------------------
-    2.コンテンツ
-  ---------------------------------------------*/
-  .contents {
-    *zoom: 1;
-    width: 100%;
-    margin: 0 auto;
-    background: #ccc; }
-    .contents:after {
-      content: "";
-      display: table;
-      clear: both; }
-    .contents:before {
-      content: "";
-      display: table; }
-  /*--------------------------------------------
-    3.フッター
-  ---------------------------------------------*/
-  footer {
-    *zoom: 1;
-    width: 1040px;
-    margin: 0 auto; }
-    footer:after {
-      content: "";
-      display: table;
-      clear: both; }
-    footer:before {
-      content: "";
-      display: table; }
-    footer .copyright {
-      text-align: center; } }
-
-@media print {
-  * {
-    background: none !important;
-    color: black !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    filter: Gray();
-    filter: url("desaturate.svg#grayscale");
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%); }
-  a {
-    text-decoration: underline; }
-  a[href]:after {
-    content: " (" attr(href) ")"; }
-  a[href="#"],
-  a[href="javascript:"] {
-    content: ""; } }
+/*
+#styleguide
+送信ボタン2
+```
+<a href="" class="btn_red">送信</a>
+```
+*/
+.btn_red {
+  width: 200px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  text-align: center;
+  background: #c0392b;
+  border-radius: 4px;
+  display: block;
+  color: #fff;
+  border-bottom: 2px solid #962d22;
+  text-decoration: none;
+  transition: all 300ms linear; }
+  .btn_red:hover {
+    background: #e74c3c;
+    border-bottom: 2px solid #d62c1a; }

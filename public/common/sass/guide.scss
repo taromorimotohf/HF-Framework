@@ -1,0 +1,65 @@
+@charset "utf-8";
+//============================================================
+//    メインCSS
+//============================================================
+@import "components/reset";  //リセットスタイルを選ぶ
+@import "components/font";  //カスタムフォント
+@import "setting";  //基本設定
+@import "components/mixin";  //便利なmixin
+@import "components/base";  //プロトコル
+/*--------------------------------------------
+プロトコルのサンプル
+---------------------------------------------*/
+/*
+#styleguide
+送信ボタン1
+```
+<a href="" class="btn">送信</a>
+```
+*/
+
+.btn {
+  width: 200px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  text-align: center;
+  background: #2980b9;
+  border-radius: 4px;
+  display: block;
+  color: #fff;
+  border-bottom: 2px solid darken(#2980b9, 10%);
+  text-decoration: none;
+  @include tr(all, 300ms, linear);
+  &:hover {
+    background: #3498db;
+    border-bottom: 2px solid darken(#3498db, 10%);
+  }
+}
+
+/*
+#styleguide
+送信ボタン2
+```
+<a href="" class="btn_red">送信</a>
+```
+*/
+
+.btn_red {
+  width: 200px;
+  height: 44px;
+  line-height: 44px;
+  font-size: 16px;
+  text-align: center;
+  background: #c0392b;
+  border-radius: 4px;
+  display: block;
+  color: #fff;
+  border-bottom: 2px solid darken(#c0392b, 10%);
+  text-decoration: none;
+  @include tr(all, 300ms, linear);
+  &:hover {
+    background: #e74c3c;
+    border-bottom: 2px solid darken(#e74c3c, 10%);
+  }
+}

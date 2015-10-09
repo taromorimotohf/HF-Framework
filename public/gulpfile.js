@@ -10,6 +10,7 @@ var pleeease = require('gulp-pleeease');
 var plumber = require("gulp-plumber");
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var frontnote = require("gulp-frontnote");
 
 /**************************************************
  * path
@@ -25,9 +26,25 @@ var scssPath = './common/sass';
  */
 gulp.task('sass', function(){
   gulp.src('./common/sass/*.scss')
+    .pipe(frontnote({
+        css: './common/css/guide.css'
+    }))
     .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest(cssDestPath));
+});
+
+/**
+ * frontnote スタイルガイド
+ */
+gulp.task('guide', function(){
+  gulp.src('./common/sass/guide.scss')
+    .pipe(frontnote({
+        css: 'css/guide.css'
+    }))
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(gulp.dest('./guide/css'));
 });
 
 /**
