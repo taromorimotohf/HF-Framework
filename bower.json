@@ -1,6 +1,6 @@
 {
   "name": "HF-Framework",
-  "version": "0.02",
+  "version": "0.3.4",
   "homepage": "https://github.com/hanuman6/HF-Framework",
   "authors": [
     "Yoshihiro Fujita <yoshihiro_fujita@hot-factory.jp>"
@@ -10,13 +10,16 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "src",
-    "srcs"
+    ".vagrant",
+    ".git"
   ],
   "dependencies": {
-    "bxslider-4": "dw-bxslider-4#~4.2.5",
+    "bxslider-4": "latest",
     "jquery": "jQuery#~1.11.3",
-    "matchHeight": "~0.6.0",
-    "perfect-scrollbar": "~0.6.5"
+    "matchHeight": "latest",
+    "perfect-scrollbar": "latest",
+    "animate.css": "latest",
+    "WOW": "latest",
+    "angular-latest": "latest"
   }
 }

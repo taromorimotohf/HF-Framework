@@ -6,60 +6,247 @@
 @import "components/font";  //カスタムフォント
 @import "setting";  //基本設定
 @import "components/mixin";  //便利なmixin
+@import "components/form";  //便利なmixin
 @import "components/base";  //プロトコル
 /*--------------------------------------------
 プロトコルのサンプル
 ---------------------------------------------*/
+
+/*
+#overview
+Style Guide
+*/
+
+/*
+#colors
+基本カラー
+
+@primary #78B5F1
+@secondary #424E32
+@hilight #E95251
+@base #B6BFB2
+@base2 #C4AEB4
+@base3 #9A858C
+*/
+
 /*
 #styleguide
-送信ボタン1
-```
-<a href="" class="btn">送信</a>
+Basic Typography
+
+基本フォントスタイル.
+```<h1>h1. タイトル</h1>
+<h2>h2. タイトル</h2>
+<h3>h3. タイトル</h3>
+<h4>h4. タイトル</h4>
+<h5>h5. タイトル</h5>
+<h6>h6. タイトル</h6>
 ```
 */
 
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 26px;
+}
+h3 {
+  font-size: 21px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 11px;
+}
+
+/*
+#styleguide
+.ttl01
+
+見出しパターン1
+```<h4 class="ttl01">h3. タイトル</h4>
+```
+*/
+.ttl01 {
+  font-size: 24px;
+  color: #3498db;
+  position: relative;
+  padding-bottom: .5em;
+  border-bottom: 4px solid #ccc;
+}
+.ttl01::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  z-index: 2;
+  content: '';
+  width: 20%;
+  height: 4px;
+  background-color: #3498db;
+}
+
+/*
+#styleguide
+.ttl02
+
+見出しパターン2
+```<h4 class="ttl02">h4. タイトル</h4>
+```
+*/
+.ttl02 {
+  position: relative;
+  padding-bottom: .5em;
+}
+.ttl02::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #fff;
+}
+
+/*
+#styleguide
+.ttl03
+
+見出しパターン2
+```<h4 class="ttl03">h4. タイトル</h4>
+```
+*/
+.ttl03 {
+  position: relative;
+  padding: .5em .75em;
+  background-color: #e8e8e8;
+}
+.ttl03::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #f0f0f0;
+}
+
+/*
+#styleguide
+.btn
+
+ベーシックボタン
+```<a href="#" class="btn">送信</a> <br>
+<input type="button" value="送信" class="btn"> <br>
+<button class="btn">送信</button>
+```
+*/
 .btn {
-  width: 200px;
+  width: 210px;
   height: 44px;
   line-height: 44px;
   font-size: 16px;
   text-align: center;
-  background: #2980b9;
+  background: #bdc3c7;
   border-radius: 4px;
   display: block;
+  border:none;
   color: #fff;
-  border-bottom: 2px solid darken(#2980b9, 10%);
+  padding: 0;
+  border-bottom: 2px solid darken(#bdc3c7, 10%);
   text-decoration: none;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   @include tr(all, 300ms, linear);
   &:hover {
-    background: #3498db;
-    border-bottom: 2px solid darken(#3498db, 10%);
+    background: #ecf0f1;
+    border-bottom: 2px solid darken(#ecf0f1, 10%);
+    color: #fff;
+  }
+  &:focus {
+    outline: none;
   }
 }
 
 /*
 #styleguide
-送信ボタン2
-```
-<a href="" class="btn_red">送信</a>
+.btn-primary
+
+プライマリーボタン
+```<a href="#" class="btn btn-primary">送信</a> <br>
+<input type="button" value="送信" class="btn btn-primary"> <br>
+<button class="btn btn-primary">送信</button>
 ```
 */
-
-.btn_red {
-  width: 200px;
-  height: 44px;
-  line-height: 44px;
-  font-size: 16px;
-  text-align: center;
-  background: #c0392b;
-  border-radius: 4px;
-  display: block;
+.btn-primary {
+  background: #3498db;
+  border-bottom: 2px solid darken(#3498db, 10%);
   color: #fff;
+  &:hover {
+    background: #2980b9;
+    border-bottom: 2px solid darken(#2980b9, 10%);
+    color: #fff;
+  }
+}
+
+/*
+#styleguide
+.btn-danger
+
+キャンセルボタン
+```<a href="#" class="btn btn-danger">送信</a> <br>
+<input type="button" value="送信" class="btn btn-danger"> <br>
+<button class="btn btn-danger">送信</button>
+```
+*/
+.btn-danger {
+  background: #c0392b;
   border-bottom: 2px solid darken(#c0392b, 10%);
-  text-decoration: none;
-  @include tr(all, 300ms, linear);
+  color: #fff;
   &:hover {
     background: #e74c3c;
     border-bottom: 2px solid darken(#e74c3c, 10%);
+    color: #fff;
   }
 }
+
+
+/*
+#styleguide
+input select radio checkbox textarea submit
+
+フォームパーツ
+```<div class="mb10">
+  <input type="text" name="" value="" placeholder="Your Name">
+</div>
+<div class="mb10">
+  <select name="">
+    <option value="" selected>お選びください</option>
+    <option value="" >選択項目1</option>
+    <option value="" >選択項目2</option>
+    <option value="" >選択項目3</option>
+  </select>
+</div>
+<div class="mb10">
+  <input type="checkbox" name="" value="" id="checkbox1">
+  <label for="checkbox1" class="checkbox">チェックボックス</label>
+</div>
+<div class="mb10">
+  <textarea rows="6" cols="30" name=""></textarea>
+</div>
+<div class="mb10">
+  <input type="submit" value="入力内容を確認する" class="btn-submit">
+</div>
+```
+*/

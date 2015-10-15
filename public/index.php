@@ -14,6 +14,7 @@
     <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/header.php')/* header */ ?>
     <div class="contents">
     コンテンツ
+
     </div>
     <!-- .contents -->
     <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/footer.php')/* footer */ ?>

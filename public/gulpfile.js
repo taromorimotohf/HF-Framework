@@ -26,25 +26,9 @@ var scssPath = './common/sass';
  */
 gulp.task('sass', function(){
   gulp.src('./common/sass/*.scss')
-    .pipe(frontnote({
-        css: './common/css/guide.css'
-    }))
     .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest(cssDestPath));
-});
-
-/**
- * frontnote スタイルガイド
- */
-gulp.task('guide', function(){
-  gulp.src('./common/sass/guide.scss')
-    .pipe(frontnote({
-        css: 'css/guide.css'
-    }))
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(gulp.dest('./guide/css'));
 });
 
 /**
@@ -86,6 +70,23 @@ gulp.task('img', function () {
     use: [pngquant()]
   }))
     .pipe(gulp.dest(dstGlob));
+});
+
+/**
+ * frontnote スタイルガイド
+ */
+gulp.task('doc', function(){
+  gulp.src('./common/sass/*.scss')
+    .pipe(frontnote({
+        css: '/common/css/guide.css',
+        // template: './doc/template',
+        overview: './doc/overview.md',
+        out: './doc',
+        includePath: 'assets/**/*'
+    }))
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(gulp.dest(cssDestPath));
 });
 
 /**************************************************

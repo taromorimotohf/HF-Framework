@@ -77,6 +77,127 @@ table {
   src: url("../fonts/noto/noto-black.eot");
   src: url("../fonts/noto/noto-black.eot?#iefix") format("embedded-opentype"), url("../fonts/noto/noto-black.woff") format("woff"), url("../fonts/noto/noto-black.ttf") format("truetype"); }
 
+input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: block;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px;
+  transition: all 300ms linear; }
+  input:not([type]):focus, input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
+    border: 1px solid #aaa;
+    background: #fafafa;
+    outline: none; }
+
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  border: 1px solid #ccc;
+  padding: 10px 6% 10px 10px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") 94% center no-repeat;
+  transition: all 300ms linear; }
+  select:focus {
+    border: 1px solid #aaa;
+    background: #fafafa url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAZJCYWISIYIyQYIiUWIiIYIyQYIiXh0rToAAAACHRSTlMA/hTRqiinvwFkb0sAAABCSURBVHjajchBDsAgDAPBOJDw/x+XVN0icQGfPGs3i+2GEqeiLCXWLENzvdzrDfP2ls/NjfKbgimYglfBq2Dm+LwHguMA235EdKYAAAAASUVORK5CYII=") 94% center no-repeat;
+    outline: none; }
+
+input[type=radio], input[type=checkbox] {
+  display: none; }
+
+.radio, .checkbox {
+  box-sizing: border-box;
+  transition: all 200ms linear;
+  position: relative;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 10px 10px 10px 42px;
+  border-radius: 4px;
+  background: #f3f3f3;
+  vertical-align: middle;
+  cursor: pointer; }
+  .radio:hover, .checkbox:hover {
+    background-color: #ebebeb; }
+    .radio:hover:after, .checkbox:hover:after {
+      border-color: #53b300; }
+  .radio:after, .checkbox:after {
+    transition: all 200ms linear;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    display: block;
+    margin-top: -10px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #bbb;
+    border-radius: 4px;
+    content: ''; }
+
+.radio:before {
+  transition: all 200ms linear;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #53b300;
+  content: '';
+  opacity: 0; }
+  input[type=radio]:checked + .radio:before {
+    opacity: 1; }
+
+.checkbox:before {
+  transition: all 200ms linear;
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  display: block;
+  margin-top: -7px;
+  width: 5px;
+  height: 9px;
+  border-right: 3px solid  #53b300;
+  border-bottom: 3px solid  #53b300;
+  content: '';
+  opacity: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+  input[type=checkbox]:checked + .checkbox:before {
+    opacity: 1; }
+
+.error {
+  color: red;
+  background: #f9cee0;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+.error-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+  .error-list li {
+    color: red; }
+
+@media screen and (max-width: 767px) {
+  .checkbox {
+    margin: 0 0 3%; }
+  input, select, textarea, .checkbox {
+    width: 100%; } }
+
 /*--------------------------------------------
   PC/SP振り分け設定
 ---------------------------------------------*/
@@ -321,19 +442,225 @@ table {
 プロトコルのサンプル
 ---------------------------------------------*/
 /*
-#styleguide
-基本ボタン
+#overview
+Style Guide
+*/
+/*
+#colors
+基本カラー
 
-ベーシックなボタン
+@primary #78B5F1
+@secondary #424E32
+@hilight #E95251
+@base #B6BFB2
+@base2 #C4AEB4
+@base3 #9A858C
+*/
+/*
+#styleguide
+Basic Typography
+
+基本フォントスタイル.
+```<h1>h1. タイトル</h1>
+<h2>h2. タイトル</h2>
+<h3>h3. タイトル</h3>
+<h4>h4. タイトル</h4>
+<h5>h5. タイトル</h5>
+<h6>h6. タイトル</h6>
 ```
-<a href="" class="btn">送信</a>
+*/
+h1 {
+  font-size: 32px; }
+
+h2 {
+  font-size: 26px; }
+
+h3 {
+  font-size: 21px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  font-size: 11px; }
+
+/*
+#styleguide
+.ttl01
+
+見出しパターン1
+```<h4 class="ttl01">h3. タイトル</h4>
+```
+*/
+.ttl01 {
+  font-size: 24px;
+  color: #3498db;
+  position: relative;
+  padding-bottom: .5em;
+  border-bottom: 4px solid #ccc; }
+
+.ttl01::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  z-index: 2;
+  content: '';
+  width: 20%;
+  height: 4px;
+  background-color: #3498db; }
+
+/*
+#styleguide
+.ttl02
+
+見出しパターン2
+```<h4 class="ttl02">h4. タイトル</h4>
+```
+*/
+.ttl02 {
+  position: relative;
+  padding-bottom: .5em; }
+
+.ttl02::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #fff; }
+
+/*
+#styleguide
+.ttl03
+
+見出しパターン2
+```<h4 class="ttl03">h4. タイトル</h4>
+```
+*/
+.ttl03 {
+  position: relative;
+  padding: 0.5em 0.75em;
+  background-color: #e8e8e8; }
+
+.ttl03::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #f0f0f0; }
+
+/*
+#styleguide
+.btn
+
+ベーシックボタン
+```<a href="#" class="btn">送信</a> <br>
+<input type="button" value="送信" class="btn"> <br>
+<button class="btn">送信</button>
 ```
 */
 .btn {
-  width: 200px;
+  width: 210px;
   height: 44px;
   line-height: 44px;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
-  background: #dedede;
-  border-radius: 4px; }
+  background: #bdc3c7;
+  border-radius: 4px;
+  display: block;
+  border: none;
+  color: #fff;
+  padding: 0;
+  border-bottom: 2px solid #a1aab0;
+  text-decoration: none;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 300ms linear; }
+  .btn:hover {
+    background: #ecf0f1;
+    border-bottom: 2px solid #cfd9db;
+    color: #fff; }
+  .btn:focus {
+    outline: none; }
+
+/*
+#styleguide
+.btn-primary
+
+プライマリーボタン
+```<a href="#" class="btn btn-primary">送信</a> <br>
+<input type="button" value="送信" class="btn btn-primary"> <br>
+<button class="btn btn-primary">送信</button>
+```
+*/
+.btn-primary {
+  background: #3498db;
+  border-bottom: 2px solid #217dbb;
+  color: #fff; }
+  .btn-primary:hover {
+    background: #2980b9;
+    border-bottom: 2px solid #20638f;
+    color: #fff; }
+
+/*
+#styleguide
+.btn-danger
+
+キャンセルボタン
+```<a href="#" class="btn btn-danger">送信</a> <br>
+<input type="button" value="送信" class="btn btn-danger"> <br>
+<button class="btn btn-danger">送信</button>
+```
+*/
+.btn-danger {
+  background: #c0392b;
+  border-bottom: 2px solid #962d22;
+  color: #fff; }
+  .btn-danger:hover {
+    background: #e74c3c;
+    border-bottom: 2px solid #d62c1a;
+    color: #fff; }
+
+/*
+#styleguide
+input select radio checkbox textarea submit
+
+フォームパーツ
+```<div class="mb10">
+  <input type="text" name="" value="" placeholder="Your Name">
+</div>
+<div class="mb10">
+  <select name="">
+    <option value="" selected>お選びください</option>
+    <option value="" >選択項目1</option>
+    <option value="" >選択項目2</option>
+    <option value="" >選択項目3</option>
+  </select>
+</div>
+<div class="mb10">
+  <input type="checkbox" name="" value="" id="checkbox1">
+  <label for="checkbox1" class="checkbox">チェックボックス</label>
+</div>
+<div class="mb10">
+  <textarea rows="6" cols="30" name=""></textarea>
+</div>
+<div class="mb10">
+  <input type="submit" value="入力内容を確認する" class="btn-submit">
+</div>
+```
+*/
