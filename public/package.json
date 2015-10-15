@@ -2,29 +2,20 @@
   "name": "Hf-framework",
   "version": "0.3.4",
   "homepage": "https://github.com/hanuman6/HF-Framework",
-  "description": "ローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)を使った新規サイト用のBoilerplate",
+  "description": "npm install ",
   "main": "gulpfile.js",
   "directories": {
     "doc": "doc"
   },
-  "dependencies": {
-    "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.4",
-    "gulp-watch": "^4.3.5"
-  },
   "devDependencies": {
     "gulp": "latest",
-    "gulp-sass": "^latest",
-    "gulp-watch": "latest",
+    "gulp-frontnote": "latest",
+    "gulp-imagemin": "latest",
     "gulp-pleeease": "latest",
     "gulp-plumber": "latest",
-    "gulp-imagemin": "latest",
-    "imagemin-pngquant": "latest",
-    "gulp-frontnote": "latest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hanuman6/HF-Framework.git"
+    "gulp-sass": "latest",
+    "gulp-watch": "latest",
+    "imagemin-pngquant": "latest"
   },
   "author": "hanuman6",
   "license": "MIT"
