@@ -57,10 +57,8 @@ Sass設定は上から3つはチェックを入れておきます。
 
 [Node.js](http://nodejs.org/)がインストール済みを前提とします。  
 
-npmでGulp本体をインストール  
-```unix
-sudo npm install -g gulp
-```
+#### 導入  
+
 作業ディレクトリ移動し、必要なモジュールをインストール。  
 使用しているモジュールは
 
@@ -71,20 +69,34 @@ sudo npm install -g gulp
 * gulp-plumber (エラー停止させない)
 * gulp-imagemin (画像の圧縮)
 * imagemin-pngquant (画像の圧縮補助)
+* gulp-frontnote（スタイルガイド作成）
 
-```unix
+```sh
+# npmでGulp本体をインストール
+sudo npm install -g gulp
+
+# package.json記載のdependenciesをinstall
+npm install
+```
+
+#### Run  
+
+```sh
 npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant
 ```
 実行してみる  
-```unix
-# scss のコンパイル
+```sh
+# scssのコンパイル
 gulp sass
 
-# scss に変更があったら自動的にコンパイル
+# scssをwatchし、変更があったら自動的にコンパイル
 gulp watch 
 
 # 画像の圧縮（オプション）
 gulp img 
+
+# スタイルガイドを生成（オプション）
+gulp doc 
 ```
 
 ## ローカル開発環境(Vagrant)を立ち上げる
@@ -95,7 +107,7 @@ gulp img
 
 * step1: [HF-framwork](https://github.com/hanuman6/HF-Framework/archive/master.zip)をダウンロードし展開する。
 * step2: コマンドライン(ターミナル)を立ち上げフォルダのルート(vagrantfileのあるディレクトリ)に移動しする。
-```unix
+```sh
 cd ディレクトリパス
 ```
 
@@ -104,7 +116,7 @@ cd ディレクトリパス
 
 #### よく使うVagrantコマンド
 
-```unix
+```sh
 # Vagrantの立ち上げ
 vagrant up
 
