@@ -81,9 +81,6 @@ npm install
 
 #### Run  
 
-```sh
-npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant
-```
 実行してみる  
 ```sh
 # scssのコンパイル
