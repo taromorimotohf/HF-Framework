@@ -5,7 +5,7 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
 </a>
 
-At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)
+At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework/tree/master/documents)
 
 ## HTML
 
@@ -95,7 +95,7 @@ sublimeやbracketsはググってください
 + SP ⇒ Android,iOS
 
 ### 対応ブラウザ(バージョン指定がないものは最新）
-+ IE8〜
++ IE9〜
 + Chrome
 + Firefox
 + safari
@@ -117,7 +117,7 @@ imageやmedia、scriptなどを指定するときに、http:,https:は省略す�
 |---|---|---|
 | ID | キャメルケース | pageTop, gNav |
 | CLASS  | ハイフン  | contents-top, side-wrap |
-| IMAGES  | アンダーバー  | bnr_top001.png, main_title.png |
+| IMAGES  | ハイフン  | bnr-top001.png, main-title.png |
 
 またID以外では原則大文字は使用しない
 詳しくは下記命名サンプル表を参照
