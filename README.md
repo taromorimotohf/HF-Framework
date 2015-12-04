@@ -3,7 +3,7 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 <br>
 ![workflow](http://create.hot-factory.jp/framework/img/img01.png)
 
-利用にあたってはこのドキュメントを読み[コーディングガイド](https://github.com/hanuman6/HF-Framework#coding-guide)に基づいてコーディングしてください。
+利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
 ## 用意するもの
 #### Sass(SCSS)
