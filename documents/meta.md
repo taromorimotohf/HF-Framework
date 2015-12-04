@@ -1,11 +1,7 @@
 # [HF-Framework](https://github.com/hanuman6/HF-Framework)
-HF-Framework is a responsive front-end framework. You can quickly prototype and build sites or apps that work on any kind of device, more elements, tips and best practices.
+HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)を使った新規サイト用のBoilerplateです。Vagrantfileは[Scotch Box](https://box.scotch.io/)を利用しています。
 
-<a href="http://www.w3.org/html/logo/">
-<img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics">
-</a>
-
-At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)
+利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
 ## Meta
 
@@ -31,13 +27,7 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 ```html
 <meta name="description" content="サイトの説明文">
 ```
-### http-equiv
-**デフォルトCSSの指定**
-デフォルトで使用されるスタイルの指定。  
-link要素で複数のCSSファイルを指定している場合、その中で優先利用するCSSファイルを指定する事ができる。  
-```html
-<meta http-equiv="default-style" content="style.css">
-```
+
 ### OGP
 各ベンダーのガイドラインに添って記載する。  
 コロコロ変わるので注意。  
@@ -48,10 +38,6 @@ link要素で複数のCSSファイルを指定している場合、その中で�
 | OGP image | 最低600 x 315（推奨1200 x 630 px 以上） |
 | apple-touch-icon | 180x180 |
 | favicon | 32x32 |
-
-便利なリンク:  
-[OGP画像シミュレータ | og:image Simulator](http://ogimage.tsmallfield.com/)  
-[Debugger | og:image Simulator](https://developers.facebook.com/tools/debug/)
 
 ### License
 

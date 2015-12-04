@@ -245,6 +245,8 @@ Esc
 ### Links
 - [HTML/CSSを爆速コーディング Emmet入門](http://www.adobe.com/jp/jos/pinchin/article/learning-Emmet/why-emmet.html)
 - [Sublime Text入門](http://www.buildinsider.net/small/sublimetext)
+- [OGP画像シミュレータ | og:image Simulator](http://ogimage.tsmallfield.com/)  
+- [Debugger | og:image Simulator](https://developers.facebook.com/tools/debug/)
 
 ### Powerd by
 - [SASS](http://sass-lang.com/)
