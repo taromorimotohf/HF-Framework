@@ -30,13 +30,13 @@ At First, learn [Coding Guide](#Coding Guide)
   + 最小フォントサイズは10px(Chromeの初期設定値は10px以下を全て10pxで描画する)
 1. CSSの読み込み方
   + @importを使わずlinkを使用する
-  + できる限り1ファイルに記述をまとめるようにする。ただし、リセット用のスタイルは別ファイルでもOK
+  + 最終CSSはできる限り1ファイルに記述をまとめるようにする。逆に作業時SASSはパーシャルで分離する。
 
 
 ### 命名規則
 + BEMを基本とした命名規則を使用します。  
 + Block（塊）Element（要素）Modifier[KeyとValue]（状態変化）を利用しすべてハイフン連結で命名していきます。
-+ ただし、下層要素で省略できるクラス名は省略する。
++ ただし、下層要素で省略できるクラス名は省略する。ハイフン連結最大は3ワードまで。
 
 [例]タブでコンテンツ切り替える要素の場合
 ```css
@@ -75,7 +75,7 @@ At First, learn [Coding Guide](#Coding Guide)
     + OK ⇒ ```.profile-box``` (プロフィールに使用するボックスの意) ボックスサイズが変更されても、プロフィールに関わる要素である事は変わらない
     + OK ⇒ ```.state-error```  (エラー用の文字色）文字色が変更されても、エラー文字の色設定である事は変わらない
     + OK ⇒ ```.mb10```  (margin-bottom: 10px;) 場合によって使用可。 ただし、規則性がなければならない。『プロトコル』参照
-+ jQueryなどjs用のclassにはプレフィックス（接頭辞）```js_``` を付与する
++ CSSに関係しない、jQueryなどjs用のclassにはプレフィックス（接頭辞）```js_``` を付与する
 
 ⇒ [よく使われる短縮名](https://github.com/hanuman6/HF-Framework/blob/master/documents/shortname.md)
 
@@ -117,6 +117,7 @@ At First, learn [Coding Guide](#Coding Guide)
 ### プロトコル
 ----------------
 必要があれば使用します（任意）  
+※随時更新されるために、詳しくは_base.scssを参照。  
 
 ###汎用クラス
 ```CSS
@@ -328,7 +329,7 @@ At First, learn [Coding Guide](#Coding Guide)
 
 #### 汎用クラス命名規則
 命名規則はEmmet/Zen Codingの短縮に準じます。　
-
+すなわちEmmet/Zen Codingを覚えましょう。捗ります。
 
 ### License
 
