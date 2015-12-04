@@ -242,6 +242,10 @@ Esc
 * 0.3.0 - グループで使えるように変更
 * 0.0.1 - 個人で使ってたのを移植
 
+### Links
+- [HTML/CSSを爆速コーディング Emmet入門](http://www.adobe.com/jp/jos/pinchin/article/learning-Emmet/why-emmet.html)
+- [Sublime Text入門](http://www.buildinsider.net/small/sublimetext)
+
 ### Powerd by
 - [SASS](http://sass-lang.com/)
 - [Vagrant](https://www.vagrantup.com/)
