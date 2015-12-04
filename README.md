@@ -3,7 +3,7 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 <br>
 ![workflow](http://create.hot-factory.jp/framework/img/img01.png)
 
-利用にあたってはこのドキュメントを読み[コーディングガイド](https://github.com/hanuman6/HF-Framework#coding-guide)に基づいてコーディングしてください。
+利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
 ## 用意するもの
 #### Sass(SCSS)
@@ -241,6 +241,10 @@ Esc
 * 0.3.1 - ドキュメントを整備し始める
 * 0.3.0 - グループで使えるように変更
 * 0.0.1 - 個人で使ってたのを移植
+
+### Links
+- [HTML/CSSを爆速コーディング Emmet入門](http://www.adobe.com/jp/jos/pinchin/article/learning-Emmet/why-emmet.html)
+- [Sublime Text入門](http://www.buildinsider.net/small/sublimetext)
 
 ### Powerd by
 - [SASS](http://sass-lang.com/)
