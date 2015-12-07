@@ -4,6 +4,9 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
 ## SASS
+Syntactically Awesome StyleSheet」の略。直訳すると「構文的にすげえスタイルシート」だそうな。  
+そのままではブラウザから認識されないので、コンパイルしてCSSを生成する。  
+コンパイルには[Prepros](https://prepros.io/)や[Codekit](https://incident57.com/codekit/)などのGUIツール、[Gulp](http://gulpjs.com/)や[Grunt](http://gruntjs.com/)などのタスクランナー、Sublime Textの[プラグイン](https://packagecontrol.io/packages/Sass)を利用する方法などいろいろあります。
 
 ### 基本
 
