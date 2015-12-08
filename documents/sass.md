@@ -134,6 +134,22 @@ a:visited{
 }
 ```
 
+### Partial
+SassではCSSのように「@import」が利用できる。
+ただCSSと違い、完全に1つのCSSファイルにまとまってコンパイルされるので、HTTPリクエストを減らす効果があります。   
+
+分轄されたSassファイルはpartial（パーシャル）と呼び、ファイル名の最初に_(アンダーバー)を付けます。  
+呼び出し時は下記のように_(アンダーバー)と拡張子は省略できます。
+
+基本的にはSassで編集時には細かくパーツごとにをpartialを切って、最終CSSは1枚で運用するのがSassっぽいですね。  
+```scss
+@import "components/reset";  //リセットスタイルを選ぶ
+@import "components/font";  //カスタムフォントを使う
+@import "setting";  //基本設定
+@import "components/mixin";  //便利なmixinを読み込む
+@import "components/base";  //プロトコル系
+```
+
 ### License
 
 The MIT License (MIT)
