@@ -37,6 +37,23 @@ $color:#aa443f;
   color: #aa443f;
 }
 ```
+変数が利用できるということは、もちろん演算もできます。  
+複雑な演算はもちろんRGB値の演算など捗ります。  
+個人的には明度の調節（lighten / darken）がとても便利です。  
+```scss
+//かんたんな演算
+$base_width: 650px;  
+#contents {  
+    $pd: 10px;  
+    width: $base_width - ($pd * 2);  
+    padding: $pd;  
+}  
+```
+```scss
+//変数bg-colorに変base-colorを15%明度を下げたプロパティに代入（指定）
+$bg-color: darken( $base-color, 15% );
+}  
+```
 #### CSSの継承をネストでまとめられる
 ```scss
 //SASS
