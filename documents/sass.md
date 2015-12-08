@@ -15,17 +15,59 @@ HF-frameworkでは[Prepros](https://prepros.io/)、もしくは[Gulp](http://gul
 ### HF-FrameworkにおけるSass
 コンパイルは[Prepros](https://prepros.io/)、もしくは[Gulp](http://gulpjs.com/)の利用を前提としています。  
 [Compass](http://compass-style.org/)や[Foundation](http://foundation.zurb.com/)は採用せず、できるだけ自前のMixinを使う方向性です。  
-Sass記法ではなく、SCSS記法を使用します。
+Sass記法ではなく、SCSS記法を使用します。  
+オリジナルのMixinについては[Mixin](https://github.com/hanuman6/HF-Framework/edit/master/documents/mixin.md)を確認ください。
 
 ### 基本
+#### 変数
+$hogeで変数を利用できます
+```scss
+//SASS
+$width:500px;
+$color:#aa443f;
+.main {
+	width:$width;
+	color:$color;
+}
+```
+```scss
+//CSS(コンパイル後)
+.main {
+  width: 500 px;
+  color: #aa443f;
+}
+```
+#### CSSの継承をネストでまとめられる
+```scss
+//SASS
+div{
+  position:relative;
 
-### 変数
+  p{
+    position:absolute;
+    top:0;
+    left:0
 
-### ネスト
-
-### extend
-
-### minxin
+    span{
+      color:#000;
+    }
+  }
+}
+```
+```scss
+//CSS(コンパイル後)
+div{
+  position:relative;
+}
+div p{
+  position:absolute;
+  top:0;
+  left:0
+}
+div p span{
+  color:#000;
+}
+```
 
 ### License
 
