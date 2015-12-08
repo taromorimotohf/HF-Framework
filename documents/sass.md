@@ -111,6 +111,28 @@ a:visited{
   background:#f00;
 }
 ```
+実はプロパティのネストも使える。  
+borderの個別とはおさらばです。  
+```scss
+.sample {
+	border: {
+		top: 5px solid #ccc;
+		bottom: {
+			width: 3px;
+			style: dotted;
+			color: black;
+		}
+	}
+}
+```
+```css
+.sample {
+	border-top: 5px solid #ccc;
+	border-bottom-width: 3px;
+	border-bottom-style: dotted;
+	border-bottom-color: black;
+}
+```
 
 ### License
 
