@@ -42,12 +42,10 @@ $color:#aa443f;
 //SASS
 div{
   position:relative;
-
   p{
     position:absolute;
     top:0;
     left:0
-
     span{
       color:#000;
     }
@@ -66,6 +64,51 @@ div p{
 }
 div p span{
   color:#000;
+}
+```
+上記２つの出力結果を見るとわかりますが、ネストされた親子関係にはスペースが入って出力されます。  
+スペースを入れずに出力したい場合は&を使います。  
+&をセレクタの前に書くことで親セレクタを参照し、スペースをはさまず出力されます。  
+&連結は&:hoverなどめちゃめちゃ使うし、BEM記法とも相性がよいです。
+```scss
+//SASS
+a{
+  &:link{
+  color:#f90;
+  }
+  &:hover{
+  color:#000;
+  }
+  &:visited{
+  color:#999;
+  }
+}
+.box{
+  width:200px;
+  height:200px;
+
+  &.red{
+  background:#f00;
+  }
+}
+```
+```scss
+//CSS(コンパイル後)
+a:link{
+  color:#f90;
+}
+a:hover{
+  color:#000;
+}
+a:visited{
+  color:#999;
+}
+.box{
+  width:200px;
+  height:200px;
+}
+.box.red{
+  background:#f00;
 }
 ```
 
