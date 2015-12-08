@@ -37,7 +37,7 @@ $color:#aa443f;
   color: #aa443f;
 }
 ```
-変数が利用できるということは、もちろん演算もできます。  
+変数が利用できるということは、もちろん算術演算子を利用した演算もできます。  
 複雑な演算はもちろんRGB値の演算など捗ります。  
 個人的には明度の調節（lighten / darken）がとても便利です。  
 ```scss
@@ -241,14 +241,15 @@ hoge() →　@mixin hoge
 
 HF-frameworkではmixin.scssにあらかたまとめている。
 ```scss
+//簡単なborderのmixin
 @mixin border($color:#666) {
   border-bottom: 1px solid $color;
 }
 #header {
-  @include border(#999); 
+  @include border(#999);//引数を入れて呼び出し
   #gnav {
     overflow: hidden;
-    @include border;
+    @include border;//引数無しで呼び出し
   }
 }
 ```
@@ -282,6 +283,10 @@ HF-frameworkではmixin.scssにあらかたまとめている。
 }
 ```
 どうみてもfunctionでした。ありがとうございました
+
+### その他
+他にもいろんな昨日はありますが、基本はこれだけ。  
+mixin、ネストと演算、変数を利用して、ごりごりコーディングしましょう。
 
 ### License
 
