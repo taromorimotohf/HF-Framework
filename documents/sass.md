@@ -151,7 +151,7 @@ a:visited{
 }
 ```
 
-### Partial
+### partial
 SassではCSSのように「@import」が利用できる。
 ただCSSと違い、完全に1つのCSSファイルにまとまってコンパイルされるので、HTTPリクエストを減らす効果があります。   
 
@@ -166,6 +166,122 @@ SassではCSSのように「@import」が利用できる。
 @import "components/mixin";  //便利なmixinを読み込む
 @import "components/base";  //プロトコル系
 ```
+
+### extend
+定義しているスタイルを継承する。  
+コンパイルすると、セレクタがグループ化される。  
+```scss
+.box {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ccc;
+
+  p {
+    line-height: 1.3;
+  }
+}
+.contentsBox {
+  @extend .box;
+  background-color: #eee;
+}
+```
+```css
+.box, .contentsBox {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ccc;
+}
+
+.box p, .contentsBox p {
+  line-height: 1.3;
+}
+
+.contentsBox {
+  background-color: #eee;
+}
+```
+extendする元のスタイルをCSSに出したくないとき、プレイスホルダーセレクタを使う。  
+なんだかmixinぽくなるのであまり使わないパターン
+```scss
+%box {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ccc;
+}
+.contenteBox {
+  @extend %box;
+  p {
+    line-height: 1.3;
+  }
+}
+.noteBox {
+  @extend %box;
+}
+```
+```css
+.contenteBox, .noteBox {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #ccc;
+}
+.contenteBox p {
+  line-height: 1.3;
+}
+```
+
+### mixin
+引数を使うことができ、初期値を設定しておくことも可能。  
+使いこなせばsassの超重要な要素。  
+@mixinで指定する。  
+定義しても、@includeで呼び出さないと使えない。  
+開発時に触るよりは予めmixin（関数）を用意しておくのがよい。  
+compassやburbonなども乱暴に言うとmixin集のようなものだし、奥が深い。  
+ぶっちゃけもはや関数(function)。  
+hoge() →　@mixin hoge
+
+HF-frameworkではmixin.scssにあらかたまとめている。
+```scss
+@mixin border($color:#666) {
+  border-bottom: 1px solid $color;
+}
+#header {
+  @include border(#999); 
+  #gnav {
+    overflow: hidden;
+    @include border;
+  }
+}
+```
+```css
+#header {
+  border-bottom: 1px solid #999999;
+}
+#header #gnav {
+  overflow: hidden;
+  border-bottom: 1px solid #666666;
+}
+```
+引数の初期値を入れたい場合は、「:」の後に値を入れる。
+```scss
+@mixin border($color: #666) {
+  border-bottom: 1px solid $color;
+}
+```
+引数を複数指定したい場合は、「,」で区切る。
+```scss
+@mixin box($color: #666, $width: 300px, $height: 300px) {
+  border: 1px solid $color;
+  width: $width;
+  height: $height;
+}
+```
+引数使わないときは以下の書き方でOK。()なくて良い
+```scss
+@mixin border {
+  border-bottom: 1px solid #999;
+}
+```
+どうみてもfunctionでした。ありがとうございました
 
 ### License
 
