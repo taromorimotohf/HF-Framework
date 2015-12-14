@@ -9,7 +9,6 @@
   },
   "devDependencies": {
     "gulp": "latest",
-    "gulp-frontnote": "latest",
     "gulp-imagemin": "latest",
     "gulp-pleeease": "latest",
     "gulp-plumber": "latest",
