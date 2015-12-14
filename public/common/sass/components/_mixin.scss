@@ -47,6 +47,15 @@
 //@include op(0.5);
 
 //--------------------------------------
+//    box-sizing（ボックスサイズ）
+//--------------------------------------
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+          box-sizing: $box-model;
+}
+//@include box-sizing(border-box);
+
+//--------------------------------------
 //    box-shadow（ボックスシャドウ）
 //--------------------------------------
 @mixin bs( $h:0px, $v:0, $b:10px, $s:0px, $c:rgba(0,0,0,0.2)) {

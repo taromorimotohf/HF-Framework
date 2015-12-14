@@ -235,6 +235,7 @@ Esc
 ```
 
 ### History
+* 0.4.3 - sass.mdを作成
 * 0.4.2 - README.mdを作成
 * 0.4.0 - 簡易リリース
 * 0.3.6 - Vagrant環境を統合
