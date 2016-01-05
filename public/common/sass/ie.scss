@@ -4,21 +4,13 @@
 // ===================================================================
 
 // IE9より下
-
-html.lt-ie9 {
+html.no-csstransforms3d {
+  .flexbox {
+    -js-display: flex;
+  }
 }
 
 // IE8より下
+html.no-borderradius {
 
-html.lt-ie8 {
-}
-
-// IE7より下
-
-html.lt-ie7 {
-}
-
-html.ie7 img {
-  -ms-interpolation-mode: bicubic;
-  filter: expression(document.execCommand("BackgroundImageCache", false, true));
 }

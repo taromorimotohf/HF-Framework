@@ -5,6 +5,16 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 
 利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
+### History
+* 0.4.4 - Flexboxを導入。Polyfillは[flexibility.js](https://github.com/10up/flexibility)を採用。
+* 0.4.3 - sass.mdを作成
+* 0.4.2 - README.mdを作成
+* 0.4.0 - 簡易リリース
+* 0.3.6 - Vagrant環境を統合
+* 0.3.1 - ドキュメントを整備し始める
+* 0.3.0 - グループで使えるように変更
+* 0.0.1 - 個人で使ってたのを移植
+
 ## 用意するもの
 #### Sass(SCSS)
 * **[Prepros](https://prepros.io/)**: Sassのコンパイルを簡単にできるGUIアプリケーション。[Node.js](https://nodejs.org/)や[Ruby](http://rubyinstaller.org/)を内蔵していて、これ一本で完結できる。
@@ -233,15 +243,6 @@ Esc
   ├─── prepros.cfg ................... Prepros設定ファイル
   └─── style.css ..................... 上書き編集用CSS(Wordpressではテーマ説明)
 ```
-
-### History
-* 0.4.3 - sass.mdを作成
-* 0.4.2 - README.mdを作成
-* 0.4.0 - 簡易リリース
-* 0.3.6 - Vagrant環境を統合
-* 0.3.1 - ドキュメントを整備し始める
-* 0.3.0 - グループで使えるように変更
-* 0.0.1 - 個人で使ってたのを移植
 
 ### Links
 - [HTML/CSSを爆速コーディング Emmet入門](http://www.adobe.com/jp/jos/pinchin/article/learning-Emmet/why-emmet.html)

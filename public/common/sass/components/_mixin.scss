@@ -223,33 +223,6 @@
 //@include middleL(25)
 
 //--------------------------------------
-//    fontface（自作webフォント）
-//--------------------------------------
-
-//@mixin font-face($style-name, $file, $family, $category:"") {
-//    $filepath: "../fonts/" + $family + "/" + $file;
-//    @font-face {
-//        font-family: "#{$style-name}";
-//        src: url($filepath + ".eot");
-//        src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf")  format('truetype'), url($filepath + ".svg#" + $style-name + "") format('svg');
-//    }
-//    %#{$style-name} {
-//        font: {
-//            @if $category != "" {
-//                family: "#{$style-name}", #{$category};
-//            }
-//            @else {
-//                family: "#{$style-name}";
-//                weight: normal;
-//            }
-//        }
-//    }
-//}
-
-//@include font-face('Ashbury', 'AshburyLig-webfont', 'Ashbury', 'serif');
-//@include font-face('noto', 'noto_sans_jp_medium', 'noto', 'serif');
-
-//--------------------------------------
 //    keyframe animation
 //--------------------------------------
 
@@ -353,3 +326,17 @@ $ease-in-out-circ:cubic-bezier(0.785, 0.135, 0.15, 0.86);
 $ease-in-back:cubic-bezier(0.6, -0.28, 0.735, 0.045);
 $ease-out-back:cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $ease-in-out-back:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+//--------------------------------------
+//    Flexbox
+//--------------------------------------
+
+@mixin flexbox {
+  display:-webkit-box; // old
+  display:-moz-box; // old
+  display:-ms-flexbox; // ie
+  display:-webkit-flex; // new
+  display:flex; // new
+}
+
+//@include flexbox();

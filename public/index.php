@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" class="no-js">
 <head>
   <title>Home | <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/title.php')/* title */ ?></title>
   <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/meta.php')/* meta */ ?>
