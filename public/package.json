@@ -1,12 +1,8 @@
 {
   "name": "Hf-framework",
   "version": "0.3.4",
-  "homepage": "https://github.com/hanuman6/HF-Framework",
   "description": "npm install ",
   "main": "gulpfile.js",
-  "directories": {
-    "doc": "doc"
-  },
   "devDependencies": {
     "gulp": "latest",
     "gulp-imagemin": "latest",
@@ -14,7 +10,9 @@
     "gulp-plumber": "latest",
     "gulp-sass": "latest",
     "gulp-watch": "latest",
-    "imagemin-pngquant": "latest"
+    "imagemin-pngquant": "latest",
+    "gulp-uglify": "latest",
+    "gulp-rename": "latest"
   },
   "author": "hanuman6",
   "license": "MIT"

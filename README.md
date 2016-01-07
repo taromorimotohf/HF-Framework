@@ -6,6 +6,7 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
 ### History
+* 0.4.5 - gulpによるjsの圧縮機能を追加
 * 0.4.4 - Flexboxを導入。Polyfillは[flexibility.js](https://github.com/10up/flexibility)を採用。
 * 0.4.3 - sass.mdを作成
 * 0.4.2 - README.mdを作成
@@ -79,14 +80,18 @@ Sass設定は上から3つはチェックを入れておきます。
 * gulp-plumber (エラー停止させない)
 * gulp-imagemin (画像の圧縮)
 * imagemin-pngquant (画像の圧縮補助)
-* gulp-frontnote（スタイルガイド作成）
+* imagemin-rename (ファイルのリネーム)
+* gulp-uglify (jsの圧縮)
 
 ```sh
 # npmでGulp本体をインストール
-sudo npm install -g gulp
+npm install -g gulp
 
 # package.json記載のdependenciesをinstall
 npm install
+
+# もしくは
+npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant gulp-uglify gulp-rename
 ```
 
 #### Run  

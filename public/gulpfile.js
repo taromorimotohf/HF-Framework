@@ -1,7 +1,10 @@
-//npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant
+/*
+if packege.json is exist => npm install
+if packege.json is not exist => npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant gulp-uglify
+*/
 
 /**************************************************
- * modules laod
+ * modules load
  *************************************************/
 var gulp = require('gulp');
 var watch = require('gulp-watch');
@@ -10,17 +13,20 @@ var pleeease = require('gulp-pleeease');
 var plumber = require("gulp-plumber");
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 /**************************************************
  * path
  *************************************************/
 var cssDestPath = './common/css';
 var scssPath = './common/sass';
+var jsPath = './common/js';
 /**************************************************
  * main tasks
  *************************************************/
-/**
- * gulp--sass SCSSのコンパイル
- */
+/*
+sass SCSSのコンパイル
+*/
 gulp.task('sass', function(){
   gulp.src('./common/sass/*.scss')
     .pipe(plumber())
@@ -29,25 +35,34 @@ gulp.task('sass', function(){
     }))
     .pipe(gulp.dest(cssDestPath));
 });
-/**
- * gulp-pleeease CSSのベンダープレフィックス付加や圧縮など
- */
+/*
+pleeease CSSのベンダープレフィックス付加や圧縮など
+*/
 gulp.task('pleeease', function () {
-  return gulp.src(cssDestPath + '/*.css')
+  gulp.src(cssDestPath + '/*.css')
     .pipe(pleeease({
         autoprefixer: {
             browsers: ['last 5 versions']
         },
-        minifier: false
+        minifier: true
     }))
     .pipe(gulp.dest(cssDestPath));
 });
-/**************************************************
- * option tasks
- *************************************************/
-/**
- * imagemin 画像の圧縮
- */
+/*
+uglify JSを圧縮して*min.jsとして出力
+*/
+gulp.task('uglify', function(){
+    gulp.src('./common/js/*.js')
+        .pipe(uglify({preserveComments: 'some'}))
+        .pipe(rename({
+          extname: '.min.js'
+        }))
+        .pipe(gulp.dest(jsPath));
+    ;
+});
+ /*
+imagemin 画像の圧縮
+*/
 var paths = {
   srcDir: 'common/img',
   dstDir: 'common/img_min'
@@ -71,9 +86,9 @@ gulp.task('img', function () {
     .pipe(gulp.dest(dstGlob));
 });
 /**************************************************
- * watch
+ * default task
  *************************************************/
-gulp.task('watch', function() {
+gulp.task('default', function() {
   gulp.watch( scssPath + '/*.scss', ['sass'] );
   return gulp.watch([ cssDestPath + '/*.css' ], ['pleeease']);
 });
