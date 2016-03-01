@@ -11,8 +11,7 @@
     "gulp-sass": "latest",
     "gulp-watch": "latest",
     "imagemin-pngquant": "latest",
-    "gulp-uglify": "latest",
-    "gulp-rename": "latest"
+    "gulp-uglify": "latest"
   },
   "author": "hanuman6",
   "license": "MIT"

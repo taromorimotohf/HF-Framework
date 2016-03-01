@@ -5,6 +5,44 @@
 //============================================================
 
 //--------------------------------------
+//    close-button（閉じるボタン）
+//--------------------------------------
+
+@mixin close-button($size: 32px, $border-width: 1px, $color: #000) {
+  @include ib;
+  position: relative;
+  width: $size;
+  height: $size;
+  
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &::before, &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: $size;
+    height: $border-width;
+    background-color: $color;
+  }
+  
+  &::before {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+  }
+  
+  &::after {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+  }
+}
+
+//--------------------------------------
 //    clearfix（クリアフィックス）
 //--------------------------------------
 @mixin cf {

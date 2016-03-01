@@ -1,6 +1,63 @@
-.sass-cache/
-.vagrant/
-bower_components/
-node_modules/
+# vagrant設定フォルダ
+vagrant/.vagrant
+
+# Mac
 .DS_Store
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+### Windows template
+# Windows image file caches
 Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Devフォルダ
+node_modules/
+.sass-cache/
+bower_components/
+
+# Bascketフォルダ
+#shopping/environments.php
+#shopping/log/*
+#shopping/logs/*
+#shopping/tmp/*
+#shopping/public_html/node_modules/
+#shopping/public_html/package.json
+#shopping/public_html/php/image
+#shopping/public_html/gulpfile.js
+
+# 空フォルダコミット
+!.gitkeep

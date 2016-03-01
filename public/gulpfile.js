@@ -14,7 +14,6 @@ var plumber = require("gulp-plumber");
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
 /**************************************************
  * path
  *************************************************/
@@ -52,7 +51,7 @@ gulp.task('pleeease', function () {
 uglify JSを圧縮して*min.jsとして出力
 */
 gulp.task('uglify', function(){
-    gulp.src('./common/js/*.js')
+    gulp.src('./common/js/common.js')
         .pipe(uglify({preserveComments: 'some'}))
         .pipe(rename({
           extname: '.min.js'
@@ -60,6 +59,9 @@ gulp.task('uglify', function(){
         .pipe(gulp.dest(jsPath));
     ;
 });
+/**************************************************
+ * option tasks
+ *************************************************/
  /*
 imagemin 画像の圧縮
 */
@@ -86,9 +88,14 @@ gulp.task('img', function () {
     .pipe(gulp.dest(dstGlob));
 });
 /**************************************************
- * default task
+ * Run task
  *************************************************/
-gulp.task('default', function() {
+gulp.task('watch', function() {
   gulp.watch( scssPath + '/*.scss', ['sass'] );
   return gulp.watch([ cssDestPath + '/*.css' ], ['pleeease']);
+});
+
+gulp.task('default', function() {
+  gulp.watch( scssPath + '/*.scss', ['sass'] );
+  return gulp.watch([ cssDestPath + '/*.css' ]);
 });
