@@ -13,7 +13,7 @@
   <div class="page">
     <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/header.php')/* header */ ?>
     <div class="contents">
-    コンテンツ2
+    コンテンツテスト
 
     </div>
     <!-- .contents -->
