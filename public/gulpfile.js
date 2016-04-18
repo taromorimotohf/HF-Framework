@@ -1,6 +1,6 @@
 /*
 if packege.json is exist => npm install
-if packege.json is not exist => npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant gulp-uglify
+if packege.json is not exist => npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant gulp-uglify gulp-sourcemaps gulp-rename
 */
 
 /**************************************************
@@ -14,6 +14,8 @@ var plumber = require("gulp-plumber");
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
 /**************************************************
  * path
  *************************************************/
@@ -28,9 +30,14 @@ sass SCSSのコンパイル
 */
 gulp.task('sass', function(){
   gulp.src('./common/sass/*.scss')
-    .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass({
-      style   : 'expanded'
+      outputStyle: 'expanded'
+    }))
+    .pipe(plumber())
+    .pipe(sourcemaps.write('maps', {
+        includeContent: false,
+        sourceRoot: './'
     }))
     .pipe(gulp.dest(cssDestPath));
 });
@@ -40,10 +47,8 @@ pleeease CSSのベンダープレフィックス付加や圧縮など
 gulp.task('pleeease', function () {
   gulp.src(cssDestPath + '/*.css')
     .pipe(pleeease({
-        autoprefixer: {
-            browsers: ['last 5 versions']
-        },
-        minifier: true
+        autoprefixer: {'browsers': ['last 3 versions', 'ie 8', 'ios 5', 'android 2.3']},
+        minifier: false
     }))
     .pipe(gulp.dest(cssDestPath));
 });
@@ -87,15 +92,10 @@ gulp.task('img', function () {
   }))
     .pipe(gulp.dest(dstGlob));
 });
+
 /**************************************************
  * Run task
  *************************************************/
-gulp.task('watch', function() {
-  gulp.watch( scssPath + '/*.scss', ['sass'] );
-  return gulp.watch([ cssDestPath + '/*.css' ], ['pleeease']);
-});
-
-gulp.task('default', function() {
-  gulp.watch( scssPath + '/*.scss', ['sass'] );
-  return gulp.watch([ cssDestPath + '/*.css' ]);
+gulp.task('default', function () {
+  gulp.watch(scssPath + '/*.scss', ['sass', 'pleeease']);
 });

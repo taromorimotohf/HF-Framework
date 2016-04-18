@@ -1,3 +1,5 @@
-html.ie7 img {
-  -ms-interpolation-mode: bicubic;
-  filter: expression(document.execCommand("BackgroundImageCache", false, true)); }
+html.no-csstransforms3d .flexbox {
+  -js-display: flex;
+}
+
+/*# sourceMappingURL=maps/ie.css.map */

@@ -1,17 +1,19 @@
 {
   "name": "Hf-framework",
   "version": "0.3.4",
-  "description": "npm install ",
+  "description": "npm install",
   "main": "gulpfile.js",
   "devDependencies": {
     "gulp": "latest",
-    "gulp-imagemin": "latest",
+    "gulp-watch": "latest",
+    "gulp-sass": "latest",
     "gulp-pleeease": "latest",
     "gulp-plumber": "latest",
-    "gulp-sass": "latest",
-    "gulp-watch": "latest",
+    "gulp-imagemin": "latest",
     "imagemin-pngquant": "latest",
-    "gulp-uglify": "latest"
+    "gulp-uglify": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-rename": "latest"
   },
   "author": "hanuman6",
   "license": "MIT"
