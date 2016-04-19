@@ -15,11 +15,14 @@
   ],
   "dependencies": {
     "bxslider-4": "latest",
-    "jquery": "jQuery#~1.11.3",
     "matchHeight": "latest",
     "perfect-scrollbar": "latest",
     "animate.css": "latest",
     "WOW": "latest",
-    "angular-latest": "latest"
+    "angular-latest": "latest",
+    "adaptive-backgrounds": "~1.0.3",
+    "bootstrap-datepicker": "~1.6.0",
+    "jquery": "~2.2.3",
+    "modernizr": "~3.3.1"
   }
 }

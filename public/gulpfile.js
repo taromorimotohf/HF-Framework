@@ -35,9 +35,9 @@ gulp.task('sass', function(){
       outputStyle: 'expanded'
     }))
     .pipe(plumber())
-    .pipe(sourcemaps.write('maps', {
+    .pipe(sourcemaps.write('../css/', {
         includeContent: false,
-        sourceRoot: './'
+        sourceRoot: '../sass/'
     }))
     .pipe(gulp.dest(cssDestPath));
 });
