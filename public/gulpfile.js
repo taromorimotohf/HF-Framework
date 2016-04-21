@@ -44,7 +44,7 @@ gulp.task('sass', function(){
 /*
 pleeease CSSのベンダープレフィックス付加や圧縮など
 */
-gulp.task('pleeease', function () {
+gulp.task('ple', function () {
   gulp.src(cssDestPath + '/*.css')
     .pipe(pleeease({
         autoprefixer: {'browsers': ['last 3 versions', 'ie 8', 'ios 5', 'android 2.3']},
@@ -55,7 +55,7 @@ gulp.task('pleeease', function () {
 /*
 uglify JSを圧縮して*min.jsとして出力
 */
-gulp.task('uglify', function(){
+gulp.task('js', function(){
     gulp.src('./common/js/common.js')
         .pipe(uglify({preserveComments: 'some'}))
         .pipe(rename({
@@ -97,5 +97,5 @@ gulp.task('img', function () {
  * Run task
  *************************************************/
 gulp.task('default', function () {
-  gulp.watch(scssPath + '/*.scss', ['sass', 'pleeease']);
+  gulp.watch(scssPath + '/*.scss', ['sass', 'ple']);
 });
