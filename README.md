@@ -6,6 +6,8 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
 ### History
+* 0.5.2 - preprosによるコンパイルを基本廃止
+* 0.5.0 - SASSソースマップ出力に対応
 * 0.4.5 - gulpによるjsの圧縮機能を追加
 * 0.4.4 - Flexboxを導入。Polyfillは[flexibility.js](https://github.com/10up/flexibility)を採用。
 * 0.4.3 - sass.mdを作成
