@@ -43,11 +43,11 @@ npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6f
 ### gulp(タスクランナー)でコンパイル
 
 [Node.js](http://nodejs.org/)がインストール済みを前提とします。  
-
+フレームワークにはpackage.jsonが入っているので、諸々一括でインストールが可能。
 #### 導入  
 
 作業ディレクトリ移動し、必要なモジュールをインストール。  
-使用しているモジュールは下記とか。※詳しくはpackage.
+使用しているモジュールは下記とか。
 * gulp (タスクランナー)
 * gulp-watch (ファイル監視)
 * gulp-sass (Sassコンパイル)
@@ -57,16 +57,19 @@ npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6f
 * imagemin-pngquant (画像の圧縮補助)
 * imagemin-rename (ファイルのリネーム)
 * gulp-uglify (jsの圧縮)
+* gulp-sourcemaps (sassソースマップの出力)
+
+適時gulpfile.jsの出力パスやらを変更してください。
 
 ```sh
 # npmでGulp本体をインストール
 npm install -g gulp
 
-# package.json記載のdependenciesをinstall
+# package.json記載の諸々パッケージをinstall
 npm install
 
-# もしくは
-npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant gulp-uglify gulp-rename
+# もしくは手動で
+npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant gulp-uglify gulp-rename gulp-sourcemaps
 ```
 
 #### Run  
@@ -77,13 +80,13 @@ npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp
 gulp sass
 
 # scssをwatchし、変更があったら自動的にコンパイル
-gulp watch 
+gulp
 
-# 画像の圧縮（オプション）
+# 画像の圧縮
 gulp img 
 
-# スタイルガイドを生成（オプション）
-gulp doc 
+# javascriptの圧縮
+gulp js 
 ```
 
 ## ローカル開発環境(Vagrant)を立ち上げる
@@ -138,7 +141,7 @@ vagrant destroy
 * step2: Vagrantを立ち上げる。
 * step3: SSHで接続してルートフォルダの変更する。ID/PASSは「vagrant」「vagrant」で鍵なしで接続できる。下記コマンドからVimで設定ファイルを変更する。
 ```ssh
-sudo vim /etc/apache2/sites-available/000-default.conf (or the editor of your choosing)
+sudo vim /etc/apache2/sites-available/000-default.conf
 ```
 
 * step4: Vagrantの再起動
@@ -194,33 +197,25 @@ Esc
   ├── common/
   │    ├── css/ ...................... 出力CSS
   │    │    ├── common.css
-  │    │    └── ie.css
-  │    ├── fonts/
+  │    │    ├── common.css.map ....... ソースマップ
+  │    │    └── polyfill.css
+  │    ├── fonts/*
   │    ├── img/
-  │    │    └── libs/  ............... アイコンやサムネイルなど固定素材
+  │    │    └── libs/* ............... アイコンやサムネイルなど固定素材
   │    ├── inc/ ...................... 各種インクルードPHP
   │    ├── js/
   │    │    ├── libs/  ............... jQueryなどのライブラリ
   │    │    ├── app.js ............... jQueryプラグイン (基本触らない)
   │    │    └── common.js ............ メインスクリプト
   │    └── sass/
-  │         ├── addon/ ............... 追加用Sassパーシャル
-  │         │    ├── _bxslider.scss
-  │         │    ├── _form.scss
-  │         │    ├── _print.scss
-  │         │    └── _wp.scss
-  │         ├── components/ .......... コンテンツ用Sassパーシャル
-  │         │    ├── _base.scss
-  │         │    ├── _mixin.scss
-  │         │    ├── _normalize.scss
-  │         │    └── _reset.scss
+  │         ├── addon/* .............. 追加用Sassパーシャル
+  │         ├── components/* ......... コンテンツ用Sassパーシャル
   │         ├── _setting.scss ........ 基本設定Sassパーシャル
   │         ├── common.scss .......... メインSCSS
-  │         └── ie.scss .............. IE用のSCSS
+  │         └── polyfill.scss ........ モダンブラウザ以外の対応用SCSS
   ├─── index.php ..................... ルートファイル
   ├─── screenshot.php ................ Wordpressテーマのサムネイル
   ├─── gulpfile.js ................... Gulp設定ファイル
-  ├─── prepros.cfg ................... Prepros設定ファイル
   └─── style.css ..................... 上書き編集用CSS(Wordpressではテーマ説明)
 ```
 
