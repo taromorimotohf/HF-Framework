@@ -18,14 +18,14 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 
 ## 用意するもの
 #### Sass(SCSS)
-* **[Prepros](https://prepros.io/)**: Sassのコンパイルを簡単にできるGUIアプリケーション。[Node.js](https://nodejs.org/)や[Ruby](http://rubyinstaller.org/)を内蔵していて、これ一本で完結できる。
-* [Node.js](https://nodejs.org/) *(option)*: サーバーサイドJavaScript環境。Sassや後述するGulpを利用するために必要。
+* [Node.js](https://nodejs.org/) : Gulpを利用することでcssやjsのコンパイルをします。
+* [Prepros](https://prepros.io/) *(option)*: Sassのコンパイルを簡単にできるGUIアプリケーション。
 
 #### ローカル開発環境(Vagrant)
 * **[Vagrant](https://www.vagrantup.com/downloads.html)**: ローカル環境を構築するツール
 * **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)**: 仮想環境構築ツール
-* ターミナル/コマンドライン *(option)*: 標準でもよいが[iTerm](https://www.iterm2.com/)や[ConEmu](https://osdn.jp/projects/conemu/)があると捗る
-* SSHクライアント *(option)*: [TeraTerm](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)
+* ターミナル/コマンドライン : 標準でもよいが[iTerm](https://www.iterm2.com/)や[ConEmu](https://osdn.jp/projects/conemu/)があると捗る
+* SSHクライアント : [TeraTerm](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)
 
 #### Git(SourceTree)
 * **[SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)**: `GitやBitbacketをGUIで使えるアプリケーション`
@@ -36,33 +36,9 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 * [Vagrantfile](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/Vagrantfile): VagrantでのLAMP環境の設定ファイル
 * [gulpfile.js](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/public/gulpfile.js): gulpの設定ファイル
 
-## Sassのコンパイル
-
-### Preprosでコンパイル
-
-[Prepros](https://prepros.io/)を起動し、プロジェクトフォルダをドラッグするとSCSS→CSSのコンパイル監視がスタートします。  
-出力先があっているか、まずは設定を確認。  
-Sass設定は上から3つはチェックを入れておきます。  
-手動でコンパイルもできますが、**Auto Compile**にチェックがればSassの保存のタイミングで自動でCSSを生成します。  
-
-![img](http://create.hot-factory.jp/framework/img/img02.png)
-
-**MORE OPTION**→**Project Option**より詳細設定に入ります。  
-
-![img](http://create.hot-factory.jp/framework/img/img03.png)
-
-**Auto Prefixer**(自動でベンダープレフィックスを付加)が上手く動かない場合は、設定を変更します。
-
-![img](http://create.hot-factory.jp/framework/img/img04.png)
-
-コンパイルが成功すると通知がでます。  
-
-![img](http://create.hot-factory.jp/framework/img/img05.png)
-
-失敗する場合ログを見て設定を見直す。だいたいSassの記述ミスの場合はが多い。
-
-![img](http://create.hot-factory.jp/framework/img/img06.png)
-
+## Sassをコンパイルするために
+node.jsを導入しnpmから諸々パッケージをインストールします。  
+npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6ffd866c3f2fda066)なんかを参照。
 
 ### gulp(タスクランナー)でコンパイル
 
@@ -71,8 +47,7 @@ Sass設定は上から3つはチェックを入れておきます。
 #### 導入  
 
 作業ディレクトリ移動し、必要なモジュールをインストール。  
-使用しているモジュールは
-
+使用しているモジュールは下記とか。※詳しくはpackage.
 * gulp (タスクランナー)
 * gulp-watch (ファイル監視)
 * gulp-sass (Sassコンパイル)
