@@ -96,6 +96,11 @@ gulp.task('img', function () {
 /**************************************************
  * Run task
  *************************************************/
+/*development*/
 gulp.task('default', function () {
   gulp.watch(scssPath + '/*.scss', ['sass', 'ple']);
+});
+/*production*/
+gulp.task('watch', function () {
+  gulp.watch(scssPath + '/*.scss', ['sass']);
 });

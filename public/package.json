@@ -5,15 +5,15 @@
   "main": "gulpfile.js",
   "devDependencies": {
     "gulp": "latest",
-    "gulp-watch": "latest",
-    "gulp-sass": "latest",
+    "gulp-imagemin": "latest",
     "gulp-pleeease": "latest",
     "gulp-plumber": "latest",
-    "gulp-imagemin": "latest",
-    "imagemin-pngquant": "latest",
-    "gulp-uglify": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "^2.3.0",
     "gulp-sourcemaps": "latest",
-    "gulp-rename": "latest"
+    "gulp-uglify": "latest",
+    "gulp-watch": "latest",
+    "imagemin-pngquant": "latest"
   },
   "author": "hanuman6",
   "license": "MIT"
