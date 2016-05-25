@@ -30,6 +30,7 @@
     "jScrollPane": "~2.0.23",
     "blockUI": "blockui#*",
     "ImageMapster": "imagemapster#*",
-    "jquery.cookie": "^1.4.1"
+    "jquery.cookie": "^1.4.1",
+    "lightcase": "^2.3.4"
   }
 }
