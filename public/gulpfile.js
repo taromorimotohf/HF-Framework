@@ -1,88 +1,76 @@
-/*
-if packege.json is exist => npm install
-if packege.json is not exist => npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant gulp-uglify gulp-sourcemaps gulp-rename
-*/
-
-/**************************************************
- * modules load
- *************************************************/
 var gulp = require('gulp');
-var watch = require('gulp-watch');
 var sass = require('gulp-sass');
-var pleeease = require('gulp-pleeease');
-var plumber = require("gulp-plumber");
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
-var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var minify = require('gulp-csso');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var shell = require('gulp-shell');
+var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
+var cssnext = require('gulp-cssnext');
+
 /**************************************************
  * path
  *************************************************/
-var cssDestPath = './common/css';
-var scssPath = './common/sass';
-var jsPath = './common/js';
+var paths = {
+  'scss': 'common/sass/',
+  'img': 'common/img/',
+  'commonJs': 'common/js/common.js',
+  'distJs': 'common/js/',
+  'distImg': 'common/_img/',
+  'css': 'common/css/'
+}
+
 /**************************************************
- * main tasks
+ * Task
  *************************************************/
 /*
-sass SCSSのコンパイル
+SCSSをコンパイル
 */
-gulp.task('sass', function(){
-  gulp.src('./common/sass/*.scss')
+gulp.task('scss', function() {
+  return gulp.src(paths.scss + '**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
     }))
-    .pipe(plumber())
-    .pipe(sourcemaps.write('../css/', {
-        includeContent: false,
-        sourceRoot: '../sass/'
+    .on('error', function(err) {
+      console.log(err.message);
+    })
+    .pipe(cssnext({
+        browsers: ['last 5 versions']
     }))
-    .pipe(gulp.dest(cssDestPath));
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.css))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 /*
-pleeease CSSのベンダープレフィックス付加や圧縮など
-*/
-gulp.task('ple', function () {
-  gulp.src(cssDestPath + '/*.css')
-    .pipe(pleeease({
-        autoprefixer: {'browsers': ['last 3 versions', 'ie 8', 'ios 5', 'android 2.3']},
-        minifier: false
-    }))
-    .pipe(gulp.dest(cssDestPath));
-});
-/*
-uglify JSを圧縮して*min.jsとして出力
+JSを圧縮して*min.jsとして出力
 */
 gulp.task('js', function(){
-    gulp.src('./common/js/common.js')
-        .pipe(uglify({preserveComments: 'some'}))
-        .pipe(rename({
-          extname: '.min.js'
-        }))
-        .pipe(gulp.dest(jsPath));
-    ;
+  return gulp.src(paths.commonJs)
+    .pipe(uglify({preserveComments: 'some'}))
+    .pipe(rename({
+      extname: '.min.js'
+    }))
+    .pipe(gulp.dest(paths.distJs));
+  ;
 });
+
 /**************************************************
  * option tasks
  *************************************************/
  /*
 imagemin 画像の圧縮
 */
-var paths = {
-  srcDir: 'common/img',
-  dstDir: 'common/img_min'
-}
-
 gulp.task('img', function () {
   var srcGlob = paths.srcDir + '/**/*.+(jpg|jpeg|png|gif|svg)';
   var dstGlob = paths.dstDir;
   var imageminOptions = {
     optimizationLevel: 7
   };
-
-  gulp.src(srcGlob)
+  gulp.src(img)
     .pipe(imagemin({
     progressive: true,
     svgoPlugins: [{
@@ -90,17 +78,15 @@ gulp.task('img', function () {
     }],
     use: [pngquant()]
   }))
-    .pipe(gulp.dest(dstGlob));
+    .pipe(gulp.dest(distImg));
 });
 
 /**************************************************
- * Run task
+ * Run Task
  *************************************************/
-/*development*/
-gulp.task('default', function () {
-  gulp.watch(scssPath + '/*.scss', ['sass', 'ple']);
+/*CSSのみタスク*/
+gulp.task('watch', function() {
+  gulp.watch([paths.scss + '**/*.scss'], ['scss']);
 });
-/*production*/
-gulp.task('watch', function () {
-  gulp.watch(scssPath + '/*.scss', ['sass']);
-});
+/*すべてのタスクを実行タスク*/
+gulp.task('default', ['js', 'scss']);

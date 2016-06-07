@@ -1,20 +1,26 @@
 {
-  "name": "Hf-framework",
-  "version": "0.3.4",
-  "description": "npm install",
-  "main": "gulpfile.js",
-  "devDependencies": {
-    "gulp": "latest",
-    "gulp-imagemin": "latest",
-    "gulp-pleeease": "latest",
-    "gulp-plumber": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "^2.3.0",
-    "gulp-sourcemaps": "latest",
-    "gulp-uglify": "latest",
-    "gulp-watch": "latest",
-    "imagemin-pngquant": "latest"
+  "name": "HF-Framework",
+  "version": "0.4.0",
+  "description": "Starter Kit for a Website Development.",
+  "author": "Yoshihiro Fujita <hanuman6@gmail.com>",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "hanuman6",
-  "license": "MIT"
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.8.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.1.0",
+    "gulp-cssnext": "^1.0.1",
+    "gulp-csso": "^1.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-shell": "^0.4.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+  }
 }
