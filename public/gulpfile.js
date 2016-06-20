@@ -1,13 +1,15 @@
+/*
+install => npm install
+update check => npm-check-updates -u
+update => npm update
+*/
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var rename = require('gulp-rename');
-var minify = require('gulp-csso');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var shell = require('gulp-shell');
-var browserSync = require('browser-sync');
-var sourcemaps = require('gulp-sourcemaps');
 var cssnext = require('gulp-cssnext');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 /**************************************************
  * path
@@ -20,7 +22,6 @@ var paths = {
   'distImg': 'common/_img/',
   'css': 'common/css/'
 }
-
 /**************************************************
  * Task
  *************************************************/
@@ -29,7 +30,6 @@ SCSSをコンパイル
 */
 gulp.task('scss', function() {
   return gulp.src(paths.scss + '**/*.scss')
-    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
     }))
@@ -39,11 +39,13 @@ gulp.task('scss', function() {
     .pipe(cssnext({
         browsers: ['last 5 versions']
     }))
-    .pipe(sourcemaps.write())
+    .pipe(cssnext({
+        browsers: 'last 5 versions',
+        features:{
+          sourcemap: true
+        }
+    }))
     .pipe(gulp.dest(paths.css))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
 });
 /*
 JSを圧縮して*min.jsとして出力
@@ -57,7 +59,6 @@ gulp.task('js', function(){
     .pipe(gulp.dest(paths.distJs));
   ;
 });
-
 /**************************************************
  * option tasks
  *************************************************/
@@ -65,8 +66,8 @@ gulp.task('js', function(){
 imagemin 画像の圧縮
 */
 gulp.task('img', function () {
-  var srcGlob = paths.srcDir + '/**/*.+(jpg|jpeg|png|gif|svg)';
-  var dstGlob = paths.dstDir;
+  var srcGlob = paths.img + '/**/*.+(jpg|jpeg|png|gif|svg)';
+  var dstGlob = paths.distImg;
   var imageminOptions = {
     optimizationLevel: 7
   };
@@ -80,13 +81,10 @@ gulp.task('img', function () {
   }))
     .pipe(gulp.dest(distImg));
 });
-
 /**************************************************
  * Run Task
  *************************************************/
-/*CSSのみタスク*/
-gulp.task('watch', function() {
+/*実行*/
+gulp.task('default', function() {
   gulp.watch([paths.scss + '**/*.scss'], ['scss']);
 });
-/*すべてのタスクを実行タスク*/
-gulp.task('default', ['js', 'scss']);
