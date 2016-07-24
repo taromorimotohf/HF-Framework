@@ -6,6 +6,7 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
 ### History
+* 0.5.6 - cssnextを導入
 * 0.5.2 - preprosによるコンパイルを基本廃止
 * 0.5.0 - SASSソースマップ出力に対応
 * 0.4.5 - gulpによるjsの圧縮機能を追加
@@ -49,17 +50,15 @@ npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6f
 #### 導入  
 
 作業ディレクトリ移動し、必要なモジュールをインストール。  
-使用しているモジュールは下記とか。
-* gulp (タスクランナー)
-* gulp-watch (ファイル監視)
-* gulp-sass (Sassコンパイル)
-* gulp-pleeease (ベンダープレフィックス付加)
-* gulp-plumber (エラー停止させない)
-* gulp-imagemin (画像の圧縮)
-* imagemin-pngquant (画像の圧縮補助)
-* imagemin-rename (ファイルのリネーム)
-* gulp-uglify (jsの圧縮)
-* gulp-sourcemaps (sassソースマップの出力)
+使用しているモジュールは下記。
+
+* "gulp": "^3.9.1",
+* "gulp-cssnext": "^1.0.1",
+* "gulp-imagemin": "^3.0.1",
+* "gulp-rename": "^1.2.2",
+* "gulp-sass": "^2.3.1",
+* "gulp-uglify": "^1.5.3",
+* "imagemin-pngquant": "^5.0.0"
 
 適時gulpfile.jsの出力パスやらを変更してください。
 
@@ -69,9 +68,6 @@ npm install -g gulp
 
 # package.json記載の諸々パッケージをinstall
 npm install
-
-# もしくは手動で
-npm install --save-dev gulp gulp-watch gulp-sass gulp-pleeease gulp-plumber gulp-imagemin imagemin-pngquant gulp-uglify gulp-rename gulp-sourcemaps
 ```
 
 #### Run  
