@@ -1,11 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
-var minify = require('gulp-csso');
-var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var shell = require('gulp-shell');
-var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
 var cssnext = require('gulp-cssnext');
 
@@ -40,10 +36,7 @@ gulp.task('scss', function() {
         browsers: ['last 5 versions']
     }))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.css))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
+    .pipe(gulp.dest(paths.css));
 });
 /*
 JSを圧縮して*min.jsとして出力
@@ -84,9 +77,7 @@ gulp.task('img', function () {
 /**************************************************
  * Run Task
  *************************************************/
-/*CSSのみタスク*/
-gulp.task('watch', function() {
+/*実行*/
+gulp.task('default', function() {
   gulp.watch([paths.scss + '**/*.scss'], ['scss']);
 });
-/*すべてのタスクを実行タスク*/
-gulp.task('default', ['js', 'scss']);
