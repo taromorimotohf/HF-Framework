@@ -8,6 +8,7 @@ var sass = require('gulp-sass');
 var cssnext = require('gulp-cssnext');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 
@@ -39,13 +40,8 @@ gulp.task('scss', function() {
     .pipe(cssnext({
         browsers: ['last 5 versions']
     }))
-    .pipe(cssnext({
-        browsers: 'last 5 versions',
-        features:{
-          sourcemap: true
-        }
-    }))
-    .pipe(gulp.dest(paths.css))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.css));
 });
 /*
 JSを圧縮して*min.jsとして出力
