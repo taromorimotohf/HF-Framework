@@ -5,7 +5,12 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 
 利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
+### 軽量版を作りました。シンプルにSassのコンパイルで使う場合は下記をご利用ください。
+
+[HF-Framework-Lite](https://github.com/hanuman6/HF-Framework-Lite/)
+
 ### History
+* 0.6.0 - コンパイル部を[HF-Framework-Lite](https://github.com/hanuman6/HF-Framework-Lite/)に分離
 * 0.5.6 - cssnextを導入
 * 0.5.2 - preprosによるコンパイルを基本廃止
 * 0.5.0 - SASSソースマップ出力に対応
