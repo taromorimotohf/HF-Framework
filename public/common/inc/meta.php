@@ -7,5 +7,6 @@ if ((navigator.userAgent.indexOf('iPhone') > 0) || navigator.userAgent.indexOf('
         document.write('<meta name="viewport" content="width=1040, user-scalable=yes">');
     }
 </script>
-<meta name="description" content="">
-<link rel="canonical" href="">
+<meta name="description" content="<?php echo $siteDescription ?>">
+<meta name="keyword" content="<?php echo $siteKeyword ?>">
+<link rel="canonical" href="<?php echo $siteHost ?>">

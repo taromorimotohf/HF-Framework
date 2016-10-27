@@ -1,7 +1,8 @@
+<?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/const.php')/* const */ ?>
 <!doctype html>
 <html lang="ja" class="no-js">
 <head>
-  <title>Home | <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/title.php')/* title */ ?></title>
+  <title>Home | <?php echo $siteTitle ?></title>
   <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/meta.php')/* meta */ ?>
   <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/ogp.php')/* ogp */ ?>
   <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/css.php')/* css */ ?>
