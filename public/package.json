@@ -1,9 +1,11 @@
 {
   "name": "hf-framwork",
-  "version": "0.4.0",
+  "version": "0.4.4",
   "description": "Starter Kit for a Website Development.",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "browser-sync": "latest"
+  },
   "devDependencies": {
     "gulp": "latest",
     "gulp-cssnext": "latest",

@@ -11,11 +11,14 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var browserSync = require('browser-sync').create();
+var reload = browserSync.reload;
 
 /**************************************************
  * path
  *************************************************/
 var paths = {
+  'source': '',
   'scss': 'common/sass/',
   'img': 'common/img/',
   'commonJs': 'common/js/common.js',
@@ -23,6 +26,7 @@ var paths = {
   'distImg': 'common/_img/',
   'css': 'common/css/'
 }
+
 /**************************************************
  * Task
  *************************************************/
@@ -53,7 +57,19 @@ gulp.task('js', function(){
       extname: '.min.js'
     }))
     .pipe(gulp.dest(paths.distJs));
-  ;
+});
+/*
+ブラウザー同期
+*/
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    proxy: '192.168.33.49'
+  });
+});
+gulp.task("reload", function () {
+    gulp.watch([paths.scss + '**/*.scss'], reload);
+    gulp.watch([paths.img + '**/*.img'], reload);
+    gulp.watch([paths.distJs + '**/*.js'], reload);
 });
 /**************************************************
  * option tasks
@@ -80,7 +96,7 @@ gulp.task('img', function () {
 /**************************************************
  * Run Task
  *************************************************/
-/*実行*/
-gulp.task('default', function() {
+gulp.task('watch', function() {
   gulp.watch([paths.scss + '**/*.scss'], ['scss']);
 });
+gulp.task('default', ['watch', 'browser-sync', 'reload']);
