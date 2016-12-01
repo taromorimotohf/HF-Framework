@@ -10,6 +10,8 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 [HF-Framework-Lite](https://github.com/hanuman6/HF-Framework-Lite/)
 
 ### History
+* 0.7.1 - betaリリース(common.jsをM本さん作へ暫定で変更)
+* 0.7.0 - gulpfileを変更(browserSyncを導入)
 * 0.6.0 - コンパイル部を[HF-Framework-Lite](https://github.com/hanuman6/HF-Framework-Lite/)に分離
 * 0.5.6 - cssnextを導入
 * 0.5.2 - preprosによるコンパイルを基本廃止
@@ -57,13 +59,21 @@ npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6f
 作業ディレクトリ移動し、必要なモジュールをインストール。  
 使用しているモジュールは下記。
 
-* "gulp": "^3.9.1",
-* "gulp-cssnext": "^1.0.1",
-* "gulp-imagemin": "^3.0.1",
-* "gulp-rename": "^1.2.2",
-* "gulp-sass": "^2.3.1",
-* "gulp-uglify": "^1.5.3",
-* "imagemin-pngquant": "^5.0.0"
+```
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "latest"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-cssnext": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-uglify": "latest",
+    "gulp-imagemin": "latest",
+    "imagemin-pngquant": "latest"
+  },
+```
 
 適時gulpfile.jsの出力パスやらを変更してください。
 

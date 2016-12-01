@@ -8,7 +8,6 @@ var sass = require('gulp-sass');
 var cssnext = require('gulp-cssnext');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var browserSync = require('browser-sync').create();
@@ -63,7 +62,7 @@ gulp.task('js', function(){
 */
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: '192.168.33.49'
+    proxy: 'vagrantのIP'
   });
 });
 gulp.task("reload", function () {
