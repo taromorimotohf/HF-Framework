@@ -1,15 +1,16 @@
-<?php 
+<?php
   /*変数*/
-  $siteHost = 'http://192.168.33.10/';
-  $siteTitle = 'HF-Framework';
-  $siteDescription = 'デスクリプション';
-  $siteKeyword = 'キーワード';
-  $companyName = '株式会社ホットファクトリー';
-  $webMaster = '藤田 善弘';
-  $address1 = '〒550-0003';
-  $address2 = '大阪府大阪市西区京町堀1丁目8-11 ラクメンビル靱公園ハウス';
-  $tel = '06-6445-7090';
-  $mail = 'yoshihiro_fujita@hot-factory.jp';
+  $siteHost = 'http://192.168.33.89/';
+  $siteTitle = '名古屋グランパスオフィシャルオンラインショップ';
+  $siteDescription = '名古屋グランパスのオフィシャルグッズご購入はこちらで!NOGOYA GRAMPUS WEB SHOP - NAGOYA GRAMPUS OFFICIAL ONLINE SHOP 名古屋グランパスオフィシャルオンラインショップ -';
+  $siteKeyword = 'NOGOYA GRAMPUS WEB SHOP,名古屋グランパス,グッズ,公式,通販,サポーター,応援グッズ,セール';
+  $companyName = '株式会社名古屋グランパスエイト';
+  $webMaster = '松原浩行';
+  $address1 = '〒460-0008';
+  $address2 = '愛知県愛知県名古屋市中区栄五丁目28番12号名古屋若宮ビル4階';
+  $tel = '052-242-9193';
+  $mail = 'info@grampus-direct.jp';
+  $url = 'http://shop.nagoya-grampus.jp/';
   $appId = 'xxxxxxxxxx';
   $gaTag = 'xxxxxxxxxx';
 ?>

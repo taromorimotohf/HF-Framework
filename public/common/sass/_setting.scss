@@ -5,13 +5,13 @@
 //============================================================
 
 // フォント設定
-$font: "Noto Sans Japanese", "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , Meiryo , Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$font: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
 // 基本ピクセル設定
 $px: 5;
 
 // カラーテーマ5種
-$c1: #fcfff5;
+$cMain: #d70c18;
 $c2: #91aa9d;
 $c3: #193441;
 $c4: #3e606f;
@@ -31,10 +31,10 @@ $w-site : 1040px;
 $w-sp: 767px;
 
 // 標準テキストカラー
-$tc : #585858;
+$tc : #222;
 
 // 標準背景色
-$bg : #fff;
+$bg : #f2f2f2;
 
 // 標準リンクカラー
-$lc : #2971a7;
+$lc : #69c;

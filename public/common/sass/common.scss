@@ -13,27 +13,27 @@
 body {
   background-color: $bg;
   color: $tc;
-  font-size: 14px;
-  line-height: 1.61;
+  font-size: 16px;
+  line-height: 1;
   font-family: $font;
   overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
-//標準リンク処理
+//標準リンク処理等
 a {
   color: $lc;
   text-decoration: none;
   &:hover {
-    color: lighten($lc, 20%);
-    text-decoration: underline;
-    @include tr(all, 300ms, linear);
+    text-decoration: none;
+    outline: 0;
+    transition: all 300ms ease;
   }
-  &:active,
+  &:active {
+    text-decoration: none;
+    outline: 0;
+  }
   &:focus {
-    color: lighten($lc, 50%);
-  }
-  img:hover {
-    @include tr(all, 300ms, linear);
+    border: 0 none;
   }
 }
 //============================================================

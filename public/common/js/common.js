@@ -6,31 +6,19 @@
 
 
 // レスポンシブ判定 & デバイス判定関数（PC,SP共通処理）
-// タブレットはiPad のみ判定しているが、別途判定が必要な場合はUAをclass名を追加する
 //-------------------------------------------------------------
 function checkDeviceAndWidthFunc(){
 
-  var desktop,smartphone;
-  var egwidth = $(window).width();
-  var ua = navigator.userAgent;
-
-  // iPad 判定
-  if(ua.indexOf('iPad') > 0){
-      document.getElementsByTagName("body")[0].setAttribute("class","tablet");
-  }
-  // PC or SP
-  if (egwidth <= 767) {
-    desktop = true;
-    smartphone = false;
-    $('body').removeClass('desktop').addClass('smartphone');
-  } else {
-    desktop = false;
-    smartphone = true;
-    $('body').addClass('desktop').removeClass('smartphone');
-  }
+  var pgwBrowser = $.pgwBrowser();
+  var jsBr = pgwBrowser.browser.group;
+  var jsBrVer = pgwBrowser.browser.group + pgwBrowser.browser.majorVersion;
+  var jsOS = pgwBrowser.os.group;
+  var jsOsVer = pgwBrowser.os.group + pgwBrowser.os.majorVersion;
+  console.info('横幅:' + pgwBrowser.viewport.width + 'px / 縦幅:' + pgwBrowser.viewport.height + 'px');
+  console.info(pgwBrowser.userAgent);
+  $('html').addClass(jsBr + ' ' + jsBrVer + ' ' + jsOS + ' ' + jsOsVer);
 
 }
-
 
 // load判定関数（PC,SP共通処理）
 //-------------------------------------------------------------
@@ -40,8 +28,6 @@ function loadedPageFunc (){
   $pageBody.addClass('loaded');
 
 }
-
-
 
 // アコーディオン処理（個別処理、PC,SP共通処理）
 // （class名を指定するとその次の要素がアコーディオン処理をする）
@@ -59,7 +45,6 @@ function showAccordionFunc($accodionClassName){
   });
 
 }
-
 
 // アコーディオン処理（一括処理、PC,SP共通処理）
 // （dl > dt dd での処理を想定とする　dtをクリックした時にddをアコーディオン処理）
@@ -81,7 +66,6 @@ function showAllAccordionFunc($accodionAllClassName){
   });
 
 }
-
 
 // TAB処理（PC,SP共通処理）
 // タブリストとタブコンテンツが必要
@@ -116,7 +100,6 @@ function showTabFunc($tabChooseClassName,$tabContentsClassName){
 
 }
 
-
 //page top関数（PC,SP共通処理）
 //-------------------------------------------------------------
 function goToPageTopFunc($pageTopId){
@@ -128,7 +111,6 @@ function goToPageTopFunc($pageTopId){
   });
 
 }
-
 
 //ページ内スクロール関数（PC,SP共通処理）
 //-------------------------------------------------------------
@@ -147,7 +129,6 @@ function smoothScrollMoveFunc($goToClassName){
 }
 
 //TOP PAGE 用関数
-
 //-------------------------------------------------------------
 function sohwTopPageSliderFunc(){
 
@@ -174,7 +155,7 @@ function sohwTopPageSliderFunc(){
 // PC、SP、iPadで処理を分ける場合は①の関数を参照して処理を分岐
 // ============================================================
 
-// ページの全データを読み込み後
+// --- ページの全データを読み込み後 ----------------------------------
 $(window).on('load', function() {
 
   loadedPageFunc();
@@ -182,14 +163,14 @@ $(window).on('load', function() {
 
 });
 
-// リサイズが走った場合
+// --- リサイズが走った場合 ----------------------------------------
 $(window).on('resize', function(){
 
   checkDeviceAndWidthFunc();
 
 });
 
-// DOM生成後
+// --- DOM生成後 -----------------------------------------------
 $(function(){
 
   // 共通処理
@@ -204,7 +185,5 @@ $(function(){
     sohwTopPageSliderFunc();
   }
   // TOP PAGE
-
-
 
 });

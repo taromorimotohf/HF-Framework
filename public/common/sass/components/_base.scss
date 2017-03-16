@@ -41,9 +41,9 @@
 .tal{text-align: left!important;}
 .tar{text-align: right!important;}
 /*文字をメインカラーに*/
-.cm{color: $c1!important;}
+.cm{color: $cMain!important;}
 /*背景をメインカラーに*/
-.bg{background: $c1!important;}
+.bg{background: $cMain!important;}
 /*マージンボトム*/
 @for $i from 0 through 10 {
   .mb#{$i * $px} {
