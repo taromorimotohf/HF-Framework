@@ -9,10 +9,11 @@
   "devDependencies": {
     "gulp": "latest",
     "gulp-cssnext": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-plumber": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
-    "gulp-imagemin": "latest",
     "imagemin-pngquant": "latest"
   },
   "scripts": {

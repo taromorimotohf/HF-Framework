@@ -1,5 +1,8 @@
-/*
-install => npm install
+/**************************************************
+ * Gulpfile v.1.0
+ *************************************************/
+/* Getting Start!
+install => npm install (yarn)
 update check => npm-check-updates -u
 update => npm update
 */
@@ -10,6 +13,7 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
@@ -18,12 +22,12 @@ var reload = browserSync.reload;
  *************************************************/
 var paths = {
   'source': '',
-  'scss': 'common/sass/',
-  'img': 'common/img/',
-  'commonJs': 'common/js/common.js',
-  'distJs': 'common/js/',
-  'distImg': 'common/_img/',
-  'css': 'common/css/'
+  'scss': 'sass/',
+  'img': 'img/',
+  'commonJs': 'js/common.js',
+  'distJs': 'js/',
+  'distImg': '_img/',
+  'css': 'css/'
 }
 
 /**************************************************
@@ -34,6 +38,13 @@ SCSSをコンパイル
 */
 gulp.task('scss', function() {
   return gulp.src(paths.scss + '**/*.scss')
+    .pipe(plumber({
+      errorHandler: function(err) {
+        console.log(err.messageFormatted);
+        this.emit('end');
+      }
+    }))
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
     }))
@@ -62,7 +73,7 @@ gulp.task('js', function(){
 */
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: 'vagrantのIP'
+    proxy: 'https://www.google.co.jp/'
   });
 });
 gulp.task("reload", function () {
@@ -98,4 +109,7 @@ gulp.task('img', function () {
 gulp.task('watch', function() {
   gulp.watch([paths.scss + '**/*.scss'], ['scss']);
 });
-gulp.task('default', ['watch', 'browser-sync', 'reload']);
+gulp.task('load', function() {
+  gulp.watch(['watch', 'browser-sync', 'reload']);
+});
+gulp.task('default', ['watch']);
