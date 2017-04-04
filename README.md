@@ -5,11 +5,8 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 
 利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
-### 軽量版を作りました。シンプルにSassのコンパイルで使う場合は下記をご利用ください。
-
-[HF-Framework-Lite](https://github.com/hanuman6/HF-Framework-Lite/)
-
 ### History
+* 0.8.0 - Sassのコンパイルでエラー終了しないように調整
 * 0.7.1 - betaリリース(common.jsをM本さん作へ暫定で変更)
 * 0.7.0 - gulpfileを変更(browserSyncを導入)
 * 0.6.0 - コンパイル部を[HF-Framework-Lite](https://github.com/hanuman6/HF-Framework-Lite/)に分離
@@ -29,7 +26,6 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 ## 用意するもの
 #### Sass(SCSS)
 * [Node.js](https://nodejs.org/) : Gulpを利用することでcssやjsのコンパイルをします。
-* [Prepros](https://prepros.io/) *(option)*: Sassのコンパイルを簡単にできるGUIアプリケーション。
 
 #### ローカル開発環境(Vagrant)
 * **[Vagrant](https://www.vagrantup.com/downloads.html)**: ローカル環境を構築するツール
@@ -39,12 +35,6 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 
 #### Git(SourceTree)
 * **[SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)**: `GitやBitbacketをGUIで使えるアプリケーション`
-* [Bitbucket](https://bitbucket.org/) *(option)*: SourceTreeの開発元の提供するgithub互換バージョン管理ウェブサービス。[github](https://github.com/)でも構わないが、private repositryの利用が有料。(Bitbucketは5コミットまで無料)
-
-#### Framework
-* [HF-Framework](https://github.com/hanuman6/HF-Framework/archive/master.zip) : フレームワーク本体。後述のファイルも含んだパッケージ。
-* [Vagrantfile](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/Vagrantfile): VagrantでのLAMP環境の設定ファイル
-* [gulpfile.js](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/public/gulpfile.js): gulpの設定ファイル
 
 ## Sassをコンパイルするために
 node.jsを導入しnpmから諸々パッケージをインストールします。  
@@ -60,17 +50,17 @@ npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6f
 使用しているモジュールは下記。
 
 ```
-  "main": "gulpfile.js",
   "dependencies": {
     "browser-sync": "latest"
   },
   "devDependencies": {
     "gulp": "latest",
     "gulp-cssnext": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-plumber": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
-    "gulp-imagemin": "latest",
     "imagemin-pngquant": "latest"
   },
 ```
@@ -78,7 +68,7 @@ npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6f
 適時gulpfile.jsの出力パスやらを変更してください。
 
 ```sh
-# npmでGulp本体をインストール
+# npmでGulp本体をグローバルにインストール
 npm install -g gulp
 
 # package.json記載の諸々パッケージをinstall
@@ -87,13 +77,16 @@ npm install
 
 #### Run  
 
-実行してみる  
+実行してみる(gulpfile.jsのあるディレクトリで実行)
 ```sh
-# scssのコンパイル
-gulp sass
-
-# scssをwatchし、変更があったら自動的にコンパイル
+# scssのコンパイル(devモード:ソースマップ付き)
 gulp
+
+# scssのコンパイル(ブラウザsyncモード:devにブラウザシンクを追加)
+gulp load
+
+# scssのコンパイル(productionモード:ソースマップ削除、minify)
+gulp pro
 
 # 画像の圧縮
 gulp img 
@@ -169,25 +162,8 @@ i
 Esc
 
 # 保存して終了
-;wq
+:wq
 ```
-
-## Git(SourceTree)を利用してローカルを共有する
-
-※githubを利用する場合は管理者に問い合わせてください。   
-
-### Bitbacketにリポジトリを立てて運用する
-* step1: [Bitbacket](https://bitbucket.org/)のWebサイトでリポジトリを作成します。その際アクセス管理より共同で作業するユーザーを追加しておきます。
-
-* step2: リポジトリのパスをコピーする。  
-
-![img](http://create.hot-factory.jp/framework/img/img07.png)
-
-* step3: [SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)でクローンを作成する。
-
-![img](http://create.hot-factory.jp/framework/img/img08.png)
-
-* step4: Gitのワークフローに沿って作業します。  
 
 ## Documents
 ### コーディングガイド
@@ -210,8 +186,8 @@ Esc
   ├── common/
   │    ├── css/ ...................... 出力CSS
   │    │    ├── common.css
-  │    │    ├── common.css.map ....... ソースマップ
-  │    │    └── polyfill.css
+  │    │    ├── static.css ........... 静的記述ファイル
+  │    │    └── polyfill.css
   │    ├── fonts/*
   │    ├── img/
   │    │    └── libs/* ............... アイコンやサムネイルなど固定素材
@@ -227,9 +203,7 @@ Esc
   │         ├── common.scss .......... メインSCSS
   │         └── polyfill.scss ........ モダンブラウザ以外の対応用SCSS
   ├─── index.php ..................... ルートファイル
-  ├─── screenshot.php ................ Wordpressテーマのサムネイル
-  ├─── gulpfile.js ................... Gulp設定ファイル
-  └─── style.css ..................... 上書き編集用CSS(Wordpressではテーマ説明)
+  └─── gulpfile.js ................... Gulp設定ファイル
 ```
 
 ### Links
