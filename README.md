@@ -1,15 +1,16 @@
 # [HF-Framework](https://github.com/hanuman6/HF-Framework)
-HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)を使った新規サイト用のBoilerplateです。Vagrantfileは[Scotch Box](https://box.scotch.io/)を利用しています。
+HF-Frameworkはローカル開発環境(Vagrant)とnode.js(Gulp)を利用した新規サイト用のBoilerplateです。Vagrantfileは[Scotch Box](https://box.scotch.io/)を利用しています。
 <br>
 ![workflow](http://create.hot-factory.jp/framework/img/img01.png)
 
 利用にあたってはこのドキュメントを読み[コーディングガイド一覧](https://github.com/hanuman6/HF-Framework/tree/master/documents)を確認してコーディングをお楽しみください。
 
-### History
+## History
+* 1.0.0 - 2xを別系統として作成するため1.0に
 * 0.8.0 - Sassのコンパイルでエラー終了しないように調整
 * 0.7.1 - betaリリース(common.jsをM本さん作へ暫定で変更)
 * 0.7.0 - gulpfileを変更(browserSyncを導入)
-* 0.6.0 - コンパイル部を[HF-Framework-Lite](https://github.com/hanuman6/HF-Framework-Lite/)に分離
+(https://github.com/hanuman6/HF-Framework-Lite/)に分離
 * 0.5.6 - cssnextを導入
 * 0.5.2 - preprosによるコンパイルを基本廃止
 * 0.5.0 - SASSソースマップ出力に対応
@@ -24,118 +25,100 @@ HF-Frameworkはローカル開発環境(Vagrant)とSass(SCSS)、Git(SourceTree)�
 * 0.0.1 - 個人で使ってたのを移植
 
 ## 用意するもの
-#### Sass(SCSS)
-* [Node.js](https://nodejs.org/) : Gulpを利用することでcssやjsのコンパイルをします。
-
-#### ローカル開発環境(Vagrant)
+* **[Node.js](https://nodejs.org/)** : Gulpを利用することでcssやjsのコンパイルをします。
 * **[Vagrant](https://www.vagrantup.com/downloads.html)**: ローカル環境を構築するツール
 * **[VirtualBox](https://www.virtualbox.org/wiki/Downloads)**: 仮想環境構築ツール
 * ターミナル/コマンドライン : 標準でもよいが[iTerm](https://www.iterm2.com/)や[ConEmu](https://osdn.jp/projects/conemu/)があると捗る
 * SSHクライアント : [TeraTerm](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)
 
-#### Git(SourceTree)
-* **[SourceTree](https://www.atlassian.com/ja/software/sourcetree/overview)**: `GitやBitbacketをGUIで使えるアプリケーション`
-
-## Sassをコンパイルするために
-node.jsを導入しnpmから諸々パッケージをインストールします。  
-npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6ffd866c3f2fda066)なんかを参照。
-
-### gulp(タスクランナー)でコンパイル
-
-[Node.js](http://nodejs.org/)がインストール済みを前提とします。  
+## タスクランナー
+node.jsを導入しnpmから諸々パッケージをインストールします。
+npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6ffd866c3f2fda066)なんかを参照。node.jsがインストール済みを前提とします。
 フレームワークにはpackage.jsonが入っているので、諸々一括でインストールが可能。
-#### 導入  
-
-作業ディレクトリ移動し、必要なモジュールをインストール。  
-使用しているモジュールは下記。
-
-```
-  "dependencies": {
-    "browser-sync": "latest"
-  },
-  "devDependencies": {
-    "gulp": "latest",
-    "gulp-cssnext": "latest",
-    "gulp-imagemin": "latest",
-    "gulp-plumber": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest",
-    "gulp-uglify": "latest",
-    "imagemin-pngquant": "latest"
-  },
-```
 
 適時gulpfile.jsの出力パスやらを変更してください。
 
+### STEP1
+npmでGulp本体をグローバルにインストールする。
+この工程はアンインストールしない限りは初回のみです。
 ```sh
-# npmでGulp本体をグローバルにインストール
-npm install -g gulp
-
-# package.json記載の諸々パッケージをinstall
-npm install
+$ npm install -g gulp
 ```
 
-#### Run  
+### STEP2
+package.json記載の諸々パッケージをinstall
 
+```sh
+# npmの場合
+$ npm install
+# yarnでも可能
+$ yarn
+```
+
+### STEP3
 実行してみる(gulpfile.jsのあるディレクトリで実行)
 ```sh
-# scssのコンパイル(devモード:ソースマップ付き)
-gulp
+# scssのコンパイル(devモード:ソースマップ、圧縮)
+$ gulp
 
 # scssのコンパイル(ブラウザsyncモード:devにブラウザシンクを追加)
-gulp load
+$ gulp reload
 
-# scssのコンパイル(productionモード:ソースマップ削除、minify)
-gulp pro
+# scssのコンパイル(productionモード:ソースマップ削除、expanded)
+$ gulp pro
 
 # 画像の圧縮
-gulp img 
+$ gulp img
 
 # javascriptの圧縮
-gulp js 
+$ gulp js
 ```
 
-## ローカル開発環境(Vagrant)を立ち上げる
+## ローカル開発環境(Vagrant)
 
 [Vagrant](https://www.vagrantup.com/downloads.html)と[VirtualBox](https://www.virtualbox.org/wiki/Downloads) がインストール済みを前提とします。
 
-### フレームワークをベースに使う
-
-* step1: [HF-framwork](https://github.com/hanuman6/HF-Framework/archive/master.zip)をダウンロードし展開する。
-* step2: コマンドライン(ターミナル)を立ち上げフォルダのルート(vagrantfileのあるディレクトリ)に移動しする。
+### STEP1
+HF-Framework、もしくはプロジェクトをClone
 ```sh
-cd ディレクトリパス
+$ git clone https://github.com/hanuman6/HF-Framework.git
 ```
+### STEP2
+Vagrantを立ち上げる
+```sh
+$ vagrant up
+```
+### STEP3
+[http://192.168.33.11/](http://192.168.33.11/)にアクセスする。
+デフォルトではpublicフォルダがドキュメントルートになります。
 
-* step3: Vagrantを立ち上げる`vagrant up`。publicフォルダがサイトルートになります。
-* step4: [http://192.168.33.10/](http://192.168.33.10/)にアクセスする。デフォルトではpublicフォルダがドキュメントルートになります。
 
-#### よく使うVagrantコマンド
+### よく使うVagrantコマンド
 
 ```sh
 # Vagrantの立ち上げ
-vagrant up
+$ vagrant up
 
 # Vagrantの終了
-vagrant halt
+$ vagrant halt
 
 # Vagrantの再起動
-vagrant reload
+$ vagrant reload
 
 # Vagrantの一時停止
-vagrant suspend
+$ vagrant suspend
 
 # Vagrantの再開
-vagrant resume
+$ vagrant resume
 
 # Vagrantの再起動
-vagrant reload
+$ vagrant reload
 
 # Vagrantの消去
-vagrant destroy
+$ vagrant destroy
 ```
 
-#### ローカルURLを変更する
+### ローカルURLを変更する
 
 * step1: **[Vagrantfile](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/Vagrantfile)**をテキストエディタで開く。
 * step2: 4行目`ip: "192.168.33.10"`の部分を変更する。
@@ -180,7 +163,7 @@ Esc
 * [Introduction](https://github.com/hanuman6/HF-Framework/blob/master/README.md)
 * [Use Mixin/Protocol](https://github.com/hanuman6/HF-Framework/blob/master/documents/mixin.md/)
 
-#### ディレクトリ構成
+## ディレクトリ構成
 ```
   public/ ...................... サイトルート・ディレクトリ
   ├── common/
@@ -206,25 +189,18 @@ Esc
   └─── gulpfile.js ................... Gulp設定ファイル
 ```
 
-### Links
-- [HTML/CSSを爆速コーディング Emmet入門](http://www.adobe.com/jp/jos/pinchin/article/learning-Emmet/why-emmet.html)
-- [Sublime Text入門](http://www.buildinsider.net/small/sublimetext)
-- [OGP画像シミュレータ | og:image Simulator](http://ogimage.tsmallfield.com/)  
-- [Debugger | og:image Simulator](https://developers.facebook.com/tools/debug/)
-
 ### Powerd by
 - [SASS](http://sass-lang.com/)
 - [Vagrant](https://www.vagrantup.com/)
 - [Node.js](https://nodejs.org/)
 - [Scotch Box](https://box.scotch.io/)
 - [gulp.js](http://gulpjs.com/)
-- [Prepros](https://prepros.io/)
 
 ### License
 
 The MIT License (MIT)
 
-Copyright (c) 2015 HF-Framwork  
+Copyright (c) 2015 HF-Framwork
 Copyright (c) 2014-2015 Nicholas Cerminara, scotch.io, LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

@@ -58,6 +58,7 @@ vagrant/.vagrant
 node_modules/
 .sass-cache/
 bower_components/
+*.lock
 
 # Bascket
 #shopping/environments.php

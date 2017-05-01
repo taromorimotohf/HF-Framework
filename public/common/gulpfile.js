@@ -81,7 +81,7 @@ gulp.task('ScssProduction', function() {
 */
 gulp.task('browser-sync', function() {
   browserSync.init({
-    proxy: 'https://www.google.co.jp/'
+    proxy: '192.168.33.11'
   });
 });
 gulp.task("reload", function () {
