@@ -22,5 +22,4 @@
   <!-- /.page -->
   <?php include($_SERVER[ 'DOCUMENT_ROOT'] . '/common/inc/js.php')/* js */ ?>
 </body>
-
 </html>

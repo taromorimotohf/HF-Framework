@@ -52,6 +52,7 @@ $RECYCLE.BIN/
 
 # vagrant
 vagrant/.vagrant
+.vagrant
 
 # Dev
 node_modules/
