@@ -9,8 +9,6 @@ HF-Frameworkはローカル開発環境(Vagrant)とnode.js(Gulp)を利用した�
 * 1.0.0 - 2xを別系統として作成するため1.0に
 * 0.8.0 - Sassのコンパイルでエラー終了しないように調整
 * 0.7.1 - betaリリース(common.jsをM本さん作へ暫定で変更)
-* 0.7.0 - gulpfileを変更(browserSyncを導入)
-(https://github.com/hanuman6/HF-Framework-Lite/)に分離
 * 0.5.6 - cssnextを導入
 * 0.5.2 - preprosによるコンパイルを基本廃止
 * 0.5.0 - SASSソースマップ出力に対応
@@ -32,14 +30,15 @@ HF-Frameworkはローカル開発環境(Vagrant)とnode.js(Gulp)を利用した�
 * SSHクライアント : [TeraTerm](https://osdn.jp/projects/ttssh2/)や[iTerm](https://www.iterm2.com/)
 
 ## タスクランナー
-node.jsを導入しnpmから諸々パッケージをインストールします。
-npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6ffd866c3f2fda066)なんかを参照。node.jsがインストール済みを前提とします。
+node.jsを導入しnpmから諸々パッケージをインストールします。  
+npmとかnode.jsについては[コチラ](http://qiita.com/megane42/items/2ab6ffd866c3f2fda066)なんかを参照。  
+node.jsがインストール済みを前提とします。  
 フレームワークにはpackage.jsonが入っているので、諸々一括でインストールが可能。
 
 適時gulpfile.jsの出力パスやらを変更してください。
 
 ### STEP1
-npmでGulp本体をグローバルにインストールする。
+npmでGulp本体をグローバルにインストールする。  
 この工程はアンインストールしない限りは初回のみです。
 ```sh
 $ npm install -g gulp
@@ -89,7 +88,7 @@ Vagrantを立ち上げる
 $ vagrant up
 ```
 ### STEP3
-[http://192.168.33.11/](http://192.168.33.11/)にアクセスする。
+192.168.33.11にアクセスする。  
 デフォルトではpublicフォルダがドキュメントルートになります。
 
 
@@ -124,7 +123,7 @@ $ vagrant destroy
 * step2: 4行目`ip: "192.168.33.10"`の部分を変更する。
 * step3: vagrantを立ち上げている場合は再起動`vagrant reload`
 
-#### ドキュメントルートを変更する
+### ドキュメントルートを変更する
 
 * step1: **[Vagrantfile](https://raw.githubusercontent.com/hanuman6/HF-Framework/master/Vagrantfile)**をダウンロードし利用したいディレクトリに設置。
 * step2: Vagrantを立ち上げる。
@@ -135,7 +134,7 @@ sudo vim /etc/apache2/sites-available/000-default.conf
 
 * step4: Vagrantの再起動
 
-#### よく使用するVim コマンド
+### よく使用するVim コマンド
 
 ```vim
 # インサートモード
