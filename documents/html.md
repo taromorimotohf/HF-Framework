@@ -90,15 +90,9 @@ sublimeやbracketsはググってください
 環境が対応しているのであれば、できるだけ共通パーツをインクルード可して再利用する
 [よく使うインクルードについて](https://github.com/hanuman6/HF-Framework/blob/master/documents/php.md/)
 
-### 対応OS
-+ PC ⇒ Windows,Mac
-+ SP ⇒ Android,iOS
-
-### 対応ブラウザ(バージョン指定がないものは最新）
-+ IE8〜
-+ Chrome
-+ Firefox
-+ safari
+### 対応OSと対応ブラウザ
+ユーザー環境を参照してください。
+  + [ユーザー環境](https://github.com/hanuman6/HF-Framework/blob/master/documents/user.md/)
 
 ### 外部ファイル参照
 imageやmedia、scriptなどを指定するときに、http:,https:は省略する。
