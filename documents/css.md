@@ -15,19 +15,17 @@ At First, learn [Coding Guide](#Coding Guide)
 1. インデント
   + インデント ⇒ 半角スペース2個。
 1. ID/CLASS
-  + IDは極力使わない（jQueryのアンカーとして利用したいため）。単語をつなげる場合はキャメルケースを用いる
+  + IDは極力使わない（Javascriptのアンカーとして利用したいため）。単語をつなげる場合はキャメルケースを用いる
   + CLASS名は小文字。単語をつなげる場合はハイフンを用いる
   1. セレクタ
     + タイプセレクタはできるだけ省略
     + セレクタを複数指定する場合は、カンマ(,)で区切り改行
   1. プロパティ
     + プロパティはショートハンドを使用する
-    + 値が『0』の場合は単位を付けない
-    + 小数点以下は0.を省略　ex: 0.8 ⇒ .8
     + 要素同士の空間は極力margin-bottomで設定する ⇒ ページ毎の設定にズレを生じさせないため規則性を持たせる
 1. フォント
-  + 基本フォントサイズは13px(ブラウザの基本サイズが13px)
-  + 最小フォントサイズは10px(Chromeの初期設定値は10px以下を全て10pxで描画する)
+  + 基本フォントサイズは14px（2017.07.29改定）
+  + 最小フォントサイズは10px(Chromeの初期設定値は10px以下を全て10pxで描画する)
 1. CSSの読み込み方
   + @importを使わずlinkを使用する
   + できる限り1ファイルに記述をまとめるようにする。ただし、リセット用のスタイルは別ファイルでもOK
@@ -120,31 +118,7 @@ At First, learn [Coding Guide](#Coding Guide)
 
 ###汎用クラス
 ```CSS
-/*クリアフィックス*/
-.cf {
-  *zoom: 1;
-}
-.cf:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.cf:before {
-  content: "";
-  display: table;
-}
 
-/*クリアフィックス(簡易)*/
-.oh {
-  overflow: hidden;
-}
-
-/*画像置換*/
-.ir {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
 
 /*テキストサイズ変更*/
 .fz10 {
@@ -195,121 +169,6 @@ At First, learn [Coding Guide](#Coding Guide)
 
 .tar {
   text-align: right;
-}
-
-/*文字をメインカラーに*/
-.cm {
-  color: #fcfff5;
-}
-
-/*背景をメインカラーに*/
-.bg {
-  background: #fcfff5;
-}
-
-/*マージンボトム*/
-.mb1 {
-  margin-bottom: 5px;
-}
-
-.mb2 {
-  margin-bottom: 10px;
-}
-
-.mb3 {
-  margin-bottom: 15px;
-}
-
-.mb4 {
-  margin-bottom: 20px;
-}
-
-.mb5 {
-  margin-bottom: 25px;
-}
-
-.mb6 {
-  margin-bottom: 30px;
-}
-
-/*マージンライト*/
-.mr1 {
-  margin-right: 5px;
-}
-
-.mr2 {
-  margin-right: 10px;
-}
-
-.mr3 {
-  margin-right: 15px;
-}
-
-.mr4 {
-  margin-right: 20px;
-}
-
-.mr5 {
-  margin-right: 25px;
-}
-
-.mr6 {
-  margin-right: 30px;
-}
-
-/*パディング*/
-.p1 {
-  padding: 5px;
-}
-
-.p2 {
-  padding: 10px;
-}
-
-.p3 {
-  padding: 15px;
-}
-
-.p4 {
-  padding: 20px;
-}
-
-.p5 {
-  padding: 25px;
-}
-
-.p6 {
-  padding: 30px;
-}
-
-/*フロート*/
-.fl {
-  float: left;
-}
-
-.fr {
-  float: right;
-}
-
-.imgfl {
-  float: left;
-  margin: 0 5px 5px 0;
-}
-
-.imgfr {
-  float: right;
-  margin: 0 0 5px 5px;
-}
-
-.cb {
-  clear: both;
-}
-
-/*インラインブロック*/
-.ib {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
 }
 
 /*画像ホバー*/
