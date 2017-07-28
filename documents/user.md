@@ -7,15 +7,17 @@ HF-Framework is a responsive front-end framework. You can quickly prototype and 
 
 At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-guide)
 
-## HTML
+## 対象ユーザー
 
-### 構造
-HTML5を採用し、原則としてスタイルと構造を分離したWeb標準に沿った記述でコーディングします。
-HTML(構造)とCSS(スタイル)とScript(動き)は独立させて、3つの相互関係はなるべく最小限に。
-必要であれば下記のツールなどでバリデーション確認します。
-+ [W3C HTML validator](http://validator.w3.org/nu/)
-+ [Another HTML-lint ](http://www.htmllint.net/html-lint/htmllint.html)
-+ [HTML5 Validator Bookmarklet](http://fotis.co/projects/html5-validator-bookmarklet/)
+### OSとブラウザーの種類・バージョン（PC）
+| Left align | Right align | Center align |
+|:-----------|------------:|:------------:|
+| This       | This        | This         |
+| column     | column      | column       |
+| will       | will        | will         |
+| be         | be          | be           |
+| left       | right       | center       |
+| aligned    | aligned     | aligned      |
 
 ### スタイル
 CSS2.1/CSS3を使用します。
