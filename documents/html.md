@@ -84,7 +84,7 @@ stylesheetとscriptのtype属性は省略する。
 
 ### 対応OSと対応ブラウザ
 ユーザー環境を参照してください。
-  + [ユーザー環境](https://github.com/hanuman6/HF-Framework/blob/master/documents/user.md/)
+- [ユーザー環境](https://github.com/hanuman6/HF-Framework/blob/master/documents/user.md/)
 
 ### 外部ファイル参照
 imageやmedia、scriptなどを指定するときに、http:,https:は省略する。
