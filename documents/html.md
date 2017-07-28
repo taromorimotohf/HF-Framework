@@ -34,16 +34,10 @@ CSS2.1/CSS3を使用します。
 + 個別ページ ⇒ 『ページ名 - カテゴリー名 | サイト名』
 + 文字数が60文字を超える場合は『ページ名(カテゴリー名) | サイト名』
 
-### meta要素
-詳細は[CSS](https://github.com/hanuman6/HF-Framework/blob/master/documents/meta.md)の項目を確認ください。
-rel属性、link要素、OGPについても上記項目で説明しています。
-
 ### Type属性
 stylesheetとscriptのtype属性は省略する。
 
 ### script要素
-ヘッダではhtml5タグを利用するためにフレームワークの```ie.js``` を利用する、
-もしくはhtml5shivの[cdn](https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js)を必ず利用する。
 詳細は[javascript](https://github.com/hanuman6/HF-Framework/blob/master/documents/js.md)の項目を確認ください。
 
 ### 改行コード
@@ -83,8 +77,6 @@ stylesheetとscriptのtype属性は省略する。
 > ⇒ 『インデント』チェック
 > ⇒  使用:2スペース
 > ⇒  タブサイズ2,『スペースとして挿入』チェック
-
-sublimeやbracketsはググってください
 
 ### PHPインクルード
 環境が対応しているのであれば、できるだけ共通パーツをインクルード可して再利用する
