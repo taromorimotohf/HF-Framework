@@ -10,14 +10,18 @@ At First, learn [Coding Guide](https://github.com/hanuman6/HF-Framework#coding-g
 ## 対象ユーザー
 
 ### OSとブラウザーの種類・バージョン（PC）
-| Left align | Right align | Center align |
-|:-----------|------------:|:------------:|
-| This       | This        | This         |
-| column     | column      | column       |
-| will       | will        | will         |
-| be         | be          | be           |
-| left       | right       | center       |
-| aligned    | aligned     | aligned      |
+|  | Windows10 | Windows8 | Mac OS |
+|:-|:-:|:-:|:-:|
+| Internet Explorer 11以上（Edge含む） | ● | ● | - |
+| FireFox最新版 | ● | ● | ● |
+| Google Chrome最新版 | ● | ● | ● |
+| Safari最新版 | - | - | ● |
+
+### OSとブラウザーの種類・バージョン（スマートデバイス）
+|  | iOS10 | Android 4.4以上 |
+|:-|:-:|:-:|
+| スマートフォン | ● | ● |
+| タブレット | ● | ● |
 
 ### スタイル
 CSS2.1/CSS3を使用します。
