@@ -11,12 +11,11 @@ At First, learn [Coding Guide](#Coding Guide)
 
 ### OGタグ（Facebook）
 
-+サイト名、ページタイトル、要約文、URL、OGイメージ、コンテンツタイプ、言語を指定してください。
-+特に指定がない場合は、下層ページの内容はすべてトップページと同じ内容にしてください。
++サイト名、ページタイトル、説明文、URL、OGイメージ、コンテンツタイプを指定してください。
 +タイトルについてはtitleタグのものを、要約文については、metaタグのdescriptionと同じ内容を記載してください。
 +公開前のテスト時は、公開前の情報がシェアされないように十分に注意してください。
 +公開後は必ず意図した形でシェアできるかどうかFacebookデバッガーで確認してください。
-[Facebookシェアデバッガー](https://developers.facebook.com/tools/debug/)
+ [Facebookシェアデバッガー](https://developers.facebook.com/tools/debug/)
 
 ```
 <meta property="og:type" content="website">
@@ -26,14 +25,17 @@ At First, learn [Coding Guide](#Coding Guide)
 <meta property="og:url" content="URL">
 <meta property="og:image" content="URL/assets/img/ogp.png">
 ```
+
+シェアボタンの種類や埋め込み方法
+
+
 ### OGタグ（Twitterカード）
 
-+サイト名、ページタイトル、要約文、URL、OGイメージ、コンテンツタイプ、言語を指定してください。
-+特に指定がない場合は、下層ページの内容はすべてトップページと同じ内容にしてください。
++サイト名、ページタイトル、説明文、URL、OGイメージ、コンテンツタイプを指定してください。
 +タイトルについてはtitleタグのものを、要約文については、metaタグのdescriptionと同じ内容を記載してください。
 +公開前のテスト時は、公開前の情報がシェアされないように十分に注意してください。
-+公開後は必ず意図した形でシェアできるかどうかFacebookデバッガーで確認してください。
-[Facebookシェアデバッガー](https://developers.facebook.com/tools/debug/)
++公開後は必ず意図した形でシェアできるかどうかTwitter カードバリデーターで確認してください。
+ [Twitter Card validator](https://cards-dev.twitter.com/validator)
 
 ```
 <meta name="twitter:card" content="summary_large_image">
@@ -43,6 +45,12 @@ At First, learn [Coding Guide](#Coding Guide)
 <meta name="twitter:image" content="画像URL（絶対パス）">
 <meta name="twitter:description" content="説明文">
 ```
+シェアボタンの種類や埋め込み方法
+
+### YOUTUBE埋め込み
+
+
+## 
 
 ### License
 
