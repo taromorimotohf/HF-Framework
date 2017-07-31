@@ -103,7 +103,7 @@ imageやmedia、scriptなどを指定するときに、http:,https:は省略す�
 |---|---|---|
 | ID | キャメルケース | pageTop, gNav |
 | CLASS  | ハイフン  | contents-top, side-wrap |
-| IMAGES  | アンダーバー  | bnr_top001.png, main_title.png |
+| IMAGES  | ハイフン  | bnr-top001.png, main-title.png |
 
 またID以外では原則大文字は使用しない
 詳しくは下記命名サンプル表を参照
