@@ -20,9 +20,9 @@ Wordpressを使ったサイト構築の場合は、以下のガイドライン�
 * テーマ名はサイト名がわかる名前で半角英数字を使用する。
 * screenshot.png は　サイトのキャプチャを使用する。
 * style.css はテーマ名の設定のみに使用する。
-* header.php、footer.phpはWPのhead関数、Footer関数のみの記述としてください。
-* テーマフォルダ内に「common」フォルダを置いて、フレームワークに則った、実装をしてください。
-* function.phpには基本的な画像のトリミングサイズカスタマイズや、パーマリンク設定のカスタマイズ等の基本的なカスタマイズの記述としてください。
+* header.php、footer.phpはWPのhead関数、Footer関数のみの記述とする。
+* テーマフォルダ内に「common」フォルダを置いて、フレームワークに則った、実装とする。
+* function.phpには基本的な画像のトリミングサイズカスタマイズや、パーマリンク設定のカスタマイズ等の基本的なカスタマイズの記述とする。
 * 管理画面に大幅なカスタマイズを行う場合はテーマフォルダ内に「functions」というフォルダを作成して、その中にカスタマイズファイルを設置してfunction.phpからインクルードさせてください。
 
 
@@ -36,11 +36,10 @@ Wordpressを使ったサイト構築の場合は、以下のガイドライン�
 *弊社で推奨するプラグインは以下になります。*
 
 * フォーム [MW WP Form](https://plugins.2inc.org/mw-wp-form/)
-* カスタム投稿生成　　[Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
-* カスタムフィールド生成　　[Smart Custom Fields](https://ja.wordpress.org/plugins/smart-custom-fields/)
+* カスタム投稿生成 [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
+* カスタムフィールド生成 [Smart Custom Fields](https://ja.wordpress.org/plugins/smart-custom-fields/)
 
 
-### テーマ作成
 The MIT License (MIT)
 
 Copyright (c) 2015 HF-Framwork
