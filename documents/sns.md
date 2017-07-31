@@ -9,7 +9,7 @@ At First, learn [Coding Guide](#Coding Guide)
 
 ## SNS
 
-### OGタグ（Facebook）
+### Facebook
 
 * サイト名、ページタイトル、説明文、URL、OGイメージ、コンテンツタイプを指定してください。
 * タイトルについてはtitleタグのものを、要約文については、metaタグのdescriptionと同じ内容を記載してください。
@@ -30,7 +30,7 @@ At First, learn [Coding Guide](#Coding Guide)
 シェアボタンの種類や埋め込み方法
 
 
-### OGタグ（Twitterカード）
+### Twitterカード
 
 * サイト名、ページタイトル、説明文、URL、OGイメージ、コンテンツタイプを指定してください。
 * タイトルについてはtitleタグのものを、要約文については、metaタグのdescriptionと同じ内容を記載してください。
