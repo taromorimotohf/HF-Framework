@@ -26,16 +26,17 @@ Wordpressを使ったサイト構築の場合は、以下のガイドライン�
 * 管理画面に大幅なカスタマイズを行う場合はテーマフォルダ内に「functions」というフォルダを作成して、その中にカスタマイズファイルを設置してfunction.phpからインクルードさせてください。
 
 
-### 推奨するプラグイン
+### プラグイン
 
 *プラグインを使うにあたって以下の要件を満たした上で利用してください。*
 
 * 更新頻度が6ヶ月以内に更新があるもの。
 * 利用する上で脆弱性の情報が出ていないもの。
+* Wordpress公式から配布されているもの。
 
 *弊社で推奨するプラグインは以下になります。*
 
-* フォーム [MW WP Form](https://plugins.2inc.org/mw-wp-form/)
+* フォーム [MW WP Form](https://ja.wordpress.org/plugins/mw-wp-form/)
 * カスタム投稿生成 [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)
 * カスタムフィールド生成 [Smart Custom Fields](https://ja.wordpress.org/plugins/smart-custom-fields/)
 
