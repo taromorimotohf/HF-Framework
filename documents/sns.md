@@ -12,11 +12,9 @@ At First, learn [Coding Guide](#Coding Guide)
 ### OGタグ（Facebook）
 
 +サイト名、ページタイトル、説明文、URL、OGイメージ、コンテンツタイプを指定してください。
-
 +タイトルについてはtitleタグのものを、要約文については、metaタグのdescriptionと同じ内容を記載してください。
 +公開前のテスト時は、公開前の情報がシェアされないように十分に注意してください。
 +公開後は必ず意図した形でシェアできるかどうかFacebookデバッガーで確認してください。
-
  [Facebookシェアデバッガー](https://developers.facebook.com/tools/debug/)
 
 ```
