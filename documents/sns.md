@@ -9,7 +9,7 @@ At First, learn [Coding Guide](#Coding Guide)
 
 ## SNS
 
-基本的にはFacebookをデフォルト対応とします。その他Twitterなどは、サイト毎に担当者間で確認の上、対応必要があればコーディングガイドに則って埋め込んでください。
+基本的にはFacebookをデフォルト対応とします。その他Twitterなどは、サイト毎に担当者に確認の上、対応必要があればコーディングガイドに則って埋め込んでください。
 
 ### Facebook
 
