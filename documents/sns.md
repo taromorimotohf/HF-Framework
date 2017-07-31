@@ -27,8 +27,13 @@ At First, learn [Coding Guide](#Coding Guide)
 <meta property="og:image" content="URL/assets/img/ogp.png">
 ```
 
-シェアボタンの種類や埋め込み方法
+#### ボタン埋め込み方法
 
+Facebookはシェアボタンを基本的に配置してください。
+
+```
+<a onclick="window.open(this.href, 'fb-news', 'width=640, height=500, menubar=no, toolbar=no, scrollbars=yes'); return false;" href="https://www.facebook.com/sharer/sharer.php?u=URL" target="_blank">***リンクさせる要素***</a>
+```
 
 ### Twitterカード
 
@@ -39,6 +44,7 @@ At First, learn [Coding Guide](#Coding Guide)
 
  [Twitter Card validator](https://cards-dev.twitter.com/validator)
 
+
 ```
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="TWITTERアカウント名">
@@ -47,7 +53,12 @@ At First, learn [Coding Guide](#Coding Guide)
 <meta name="twitter:image" content="画像URL（絶対パス）">
 <meta name="twitter:description" content="説明文">
 ```
-シェアボタンの種類や埋め込み方法
+
+#### ボタン埋め込み方法
+
+```
+<a href="https://twitter.com/intent/tweet?url=URL&text=ページタイトル | サイト名" target="_blank">***リンクさせる要素***</a>
+```
 
 ### YOUTUBE埋め込み
 
