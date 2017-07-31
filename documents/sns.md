@@ -15,6 +15,7 @@ At First, learn [Coding Guide](#Coding Guide)
 * タイトルについてはtitleタグのものを、要約文については、metaタグのdescriptionと同じ内容を記載してください。
 * 公開前のテスト時は、公開前の情報がシェアされないように十分に注意してください。
 * 公開後は必ず意図した形でシェアできるかどうかFacebookデバッガーで確認してください。
+
  [Facebookシェアデバッガー](https://developers.facebook.com/tools/debug/)
 
 ```
@@ -35,6 +36,7 @@ At First, learn [Coding Guide](#Coding Guide)
 * タイトルについてはtitleタグのものを、要約文については、metaタグのdescriptionと同じ内容を記載してください。
 * 公開前のテスト時は、公開前の情報がシェアされないように十分に注意してください。
 * 公開後は必ず意図した形でシェアできるかどうかTwitter カードバリデーターで確認してください。
+
  [Twitter Card validator](https://cards-dev.twitter.com/validator)
 
 ```
